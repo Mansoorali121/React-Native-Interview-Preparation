@@ -5,19 +5,36 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import React from 'react';
+import React, { useState } from 'react';
 
 const App = () => {
-  // Admin checker Button 
+  const [name, setName] = useState('');
+  const [message, setMessage] = useState('');
+
+  // Admin checker Button
+  const checkAdmin = () => {
+    if (name.trim() === '') {
+      setMessage('Please enter name ');
+    } else if (name === 'Admin' || name === 'admin') {
+      setMessage('Welcome Admin');
+    } else {
+      setMessage('You are not Admin');
+    }
+  };
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Admin Check Mobile App </Text>
       <Text style={styles.inputtitle}>Enter Your Name Here: </Text>
-      <TextInput placeholder="Name" style={styles.input} />
+      <TextInput placeholder="Name" style={styles.input}value={name} onChangeText={(text)=>setName(text)} />
       <View style={{ alignItems: 'center' }}>
-        <TouchableOpacity style={styles.button} activeOpacity={0.5}>
+        <TouchableOpacity
+          style={styles.button}
+          activeOpacity={0.5}
+          onPress={checkAdmin}
+        >
           <Text style={styles.btntext}>Check </Text>
         </TouchableOpacity>
+        <Text style={styles.message}>{message}</Text>
       </View>
     </View>
   );
@@ -48,4 +65,10 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   btntext: { color: 'white', fontWeight: 'bold' },
+  message: {
+    fontSize: 20,
+    fontWeight: 'semibold',
+    color: 'red',
+    marginTop: 20,
+  },
 });
