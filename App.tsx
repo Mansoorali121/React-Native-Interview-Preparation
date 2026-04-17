@@ -1,55 +1,16 @@
-import React, { useState } from "react";
-import { View, Text, TextInput, Button, StyleSheet } from "react-native";
+import { StyleSheet, Text, View } from 'react-native'
+import React from 'react'
 
-export default function App() {
-  const [name, setName] = useState("");
-  const [message, setMessage] = useState("");
-
-  const validateName = () => {
-    if (name.trim() === "") {
-      setMessage("Name required ❌");
-    } else if (name.length < 3) {
-      setMessage("Name too short ❌");
-    } else {
-      setMessage("Valid Name ✅");
-    }
-  };
-
+const App = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Enter Your Name</Text>
-
-      <TextInput
-        style={styles.input}
-        placeholder="Enter name"
-        value={name}
-        onChangeText={setName}
-      />
-
-      <Button title="Check Name" onPress={validateName} />
-
-      <Text style={styles.result}>{message}</Text>
+      <Text style={styles.title}>Admin Check Mobile App </Text>
     </View>
-  );
+  )
 }
 
+export default App;
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    padding: 20,
-  },
-  title: {
-    fontSize: 20,
-    marginBottom: 10,
-  },
-  input: {
-    borderWidth: 1,
-    padding: 10,
-    marginBottom: 10,
-  },
-  result: {
-    marginTop: 10,
-    fontSize: 18,
-  },
-});
+  container:{marginTop:50,alignItems:"center"},
+  title:{fontSize:20,fontWeight:"bold"},
+})
