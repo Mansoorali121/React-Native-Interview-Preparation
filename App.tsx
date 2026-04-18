@@ -145,6 +145,67 @@
 //   message: { marginTop: 20, fontSize: 18 },
 // });
 
+// import {
+//   StyleSheet,
+//   Text,
+//   TextInput,
+//   TouchableOpacity,
+//   View,
+// } from 'react-native';
+// import React, { useState } from 'react';
+
+// const App = () => {
+//   const [email, setEmail] = useState('');
+//   const [message, setMessage] = useState('');
+//   // Email Validation Function
+
+//   const validateEmail = () => {
+//     const trimedEmail = email.trim();
+
+//     if (trimedEmail === '') {
+//       setMessage('Please enter email');
+//     } else if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimedEmail)) {
+//       setMessage('Valid Email');
+//     } else {
+//       setMessage('Invalid Email');
+//     }
+//   };
+//   return (
+//     <View style={styles.container}>
+//       <Text style={styles.title}>Email Validation App </Text>
+//       <View style={styles.formcontainer}>
+//         <TextInput
+//           style={styles.input}
+//           placeholder="Email"
+//           value={email}
+//           onChangeText={setEmail}
+//         />
+//         <TouchableOpacity style={styles.button} onPress={validateEmail}>
+//           <Text style={styles.btntext}>Check Email </Text>
+//         </TouchableOpacity>
+//         <Text style={styles.message}>{message}</Text>
+//       </View>
+//     </View>
+//   );
+// };
+
+// export default App;
+
+// const styles = StyleSheet.create({
+//   container: { flex: 1, alignItems: 'center', marginTop: 20 },
+//   title: { fontSize: 20, fontWeight: 'bold', marginBottom: 20 },
+//   formcontainer: { marginTop: 20, gap: 20 },
+//   input: { borderWidth: 1, padding: 10, width: 230, borderRadius: 5 },
+//   button: {
+//     backgroundColor: 'green',
+//     padding: 15,
+//     alignItems: 'center',
+//     borderRadius: 10,
+//   },
+//   btntext: { color: '#fff', fontWeight: 'bold' },
+//   message:{fontSize:20,color:"red"},
+// });
+
 import {
   StyleSheet,
   Text,
@@ -155,36 +216,25 @@ import {
 import React, { useState } from 'react';
 
 const App = () => {
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-  // Email Validation Function
+  const [password,setPassword ] = useState("");
+  const [message,setMessage] = useState("");
 
-  const validateEmail = () => {
-    const trimedEmail = email.trim();
-
-    if (trimedEmail === '') {
-      setMessage('Please enter email');
-    } else if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimedEmail)) {
-      setMessage('Valid Email');
-    } else {
-      setMessage('Invalid Email');
-    }
-  };
+  // Password Strenght Checker Function 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Email Validation App </Text>
-      <View style={styles.formcontainer}>
-        <TextInput
-          style={styles.input}
-          placeholder="Email"
-          value={email}
-          onChangeText={setEmail}
-        />
-        <TouchableOpacity style={styles.button} onPress={validateEmail}>
-          <Text style={styles.btntext}>Check Email </Text>
+      <Text style={styles.title}>Password Strengthen Mobile App </Text>
+      <TextInput
+        placeholder="Password"
+        secureTextEntry={true}
+        style={styles.input}
+      />
+      <View style={styles.btncontainer}>
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.btnText}>Check Strength</Text>
         </TouchableOpacity>
-        <Text style={styles.message}>{message}</Text>
+        <Text style={styles.message}>{" "}</Text>
       </View>
+      
     </View>
   );
 };
@@ -192,16 +242,28 @@ const App = () => {
 export default App;
 
 const styles = StyleSheet.create({
-  container: { flex: 1, alignItems: 'center', marginTop: 20 },
-  title: { fontSize: 20, fontWeight: 'bold', marginBottom: 20 },
-  formcontainer: { marginTop: 20, gap: 20 },
-  input: { borderWidth: 1, padding: 10, width: 230, borderRadius: 5 },
-  button: {
-    backgroundColor: 'green',
-    padding: 15,
-    alignItems: 'center',
+  container: { flex: 1, alignItems: 'center', marginTop: 30 },
+  title: {
+    fontSize: 20,
+    fontWeight: 'semibold',
+    backgroundColor: 'blue',
+    color: 'white',
+    padding: 10,
+  },
+  input: {
+    borderWidth: 1,
+    padding: 10,
+    marginTop: 40,
+    width: 300,
     borderRadius: 10,
   },
-  btntext: { color: '#fff', fontWeight: 'bold' },
-  message:{fontSize:20,color:"red"},
+  button: {
+    borderWidth: 1,
+    padding: 10,
+    borderRadius: 8,
+    backgroundColor: 'salmon',
+  },
+  btnText: { color: '#fff', fontWeight: 'semibold' },
+  btncontainer: { alignItems: 'center', marginTop: 30 },
+  message:{fontSize:20,color:"red",marginTop:20},
 });
