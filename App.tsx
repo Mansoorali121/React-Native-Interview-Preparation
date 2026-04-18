@@ -285,18 +285,69 @@
 //   message: { fontSize: 20, color: 'red', marginTop: 20 },
 // });
 
-
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
+import React, { useState } from 'react';
 
 const App = () => {
+  const [number, setNumber] = useState('');
+  const [message, setMessage] = useState('');
+
+  // Even odd number checker function
+
+  const evenOdd = () => {
+    const value = number.trim();
+
+    if (value === '') {
+      setMessage('Enter a number');
+      return;
+    }
+    const num = Number(value);
+    if (isNaN(num)) {
+      setMessage('Invalid Number');
+    } else if (num % 2 == 0) {
+      setMessage('Even Number');
+    } else {
+      setMessage('Odd Number');
+    }
+  };
   return (
-    <View>
-      <Text>Even Odd Number Chekcer Programm </Text>
+    <View style={styles.container}>
+      <Text style={styles.title}>Even Odd Number Chekcer Programm </Text>
+      <TextInput
+        value={number}
+        placeholder="Enter number"
+        onChangeText={setNumber}
+        style={styles.input}
+      />
+      <Pressable style={styles.button} onPress={evenOdd}>
+        <Text style={styles.btntext}>Check </Text>
+      </Pressable>
+      <Text style={styles.message}>{message}</Text>
     </View>
-  )
-}
+  );
+};
 
 export default App;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container: { flex: 1, marginTop: 20, marginHorizontal: 10 },
+  title: { fontSize: 20, fontWeight: 'semibold' },
+  button: {
+    borderWidth: 1,
+    padding: 10,
+    backgroundColor: 'blue',
+    alignItems: 'center',
+    borderRadius: 10,
+    width: '50%',
+    marginTop: 20,
+  },
+  btntext: { color: '#fff' },
+  input: {
+    borderWidth: 1,
+    padding: 10,
+    marginTop: 40,
+    width: 300,
+    borderRadius: 10,
+  },
+  message: { fontSize: 20, color: 'red', marginTop: 20 },
+});
