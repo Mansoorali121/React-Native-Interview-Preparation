@@ -285,44 +285,116 @@
 //   message: { fontSize: 20, color: 'red', marginTop: 20 },
 // });
 
-import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
+// import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
+// import React, { useState } from 'react';
+
+// const App = () => {
+//   const [number, setNumber] = useState('');
+//   const [message, setMessage] = useState('');
+
+//   // Even odd number checker function
+
+//   const evenOdd = () => {
+//     const value = number.trim();
+
+//     if (value === '') {
+//       setMessage('Enter a number');
+//       return;
+//     }
+//     const num = Number(value);
+//     if (isNaN(num)) {
+//       setMessage('Invalid Number');
+//     } else if (num % 2 == 0) {
+//       setMessage('Even Number');
+//     } else {
+//       setMessage('Odd Number');
+//     }
+//   };
+//   return (
+//     <View style={styles.container}>
+//       <Text style={styles.title}>Even Odd Number Chekcer Programm </Text>
+//       <TextInput
+//         value={number}
+//         placeholder="Enter number"
+//         onChangeText={setNumber}
+//         style={styles.input}
+//       />
+//       <Pressable style={styles.button} onPress={evenOdd}>
+//         <Text style={styles.btntext}>Check </Text>
+//       </Pressable>
+//       <Text style={styles.message}>{message}</Text>
+//     </View>
+//   );
+// };
+
+// export default App;
+
+// const styles = StyleSheet.create({
+//   container: { flex: 1, marginTop: 20, marginHorizontal: 10 },
+//   title: { fontSize: 20, fontWeight: 'semibold' },
+//   button: {
+//     borderWidth: 1,
+//     padding: 10,
+//     backgroundColor: 'blue',
+//     alignItems: 'center',
+//     borderRadius: 10,
+//     width: '50%',
+//     marginTop: 20,
+//   },
+//   btntext: { color: '#fff' },
+//   input: {
+//     borderWidth: 1,
+//     padding: 10,
+//     marginTop: 40,
+//     width: 300,
+//     borderRadius: 10,
+//   },
+//   message: { fontSize: 20, color: 'red', marginTop: 20 },
+// });
+
+import {
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import React, { useState } from 'react';
 
 const App = () => {
-  const [number, setNumber] = useState('');
-  const [message, setMessage] = useState('');
+  const [text, setText] = useState('');
+  const [result, setResult] = useState('');
 
-  // Even odd number checker function
-
-  const evenOdd = () => {
-    const value = number.trim();
-
+  // Reverse String Function
+  const reverseString = () => {
+    const value = text.trim();
     if (value === '') {
-      setMessage('Enter a number');
+      setResult('Please enter a string');
       return;
     }
-    const num = Number(value);
-    if (isNaN(num)) {
-      setMessage('Invalid Number');
-    } else if (num % 2 == 0) {
-      setMessage('Even Number');
-    } else {
-      setMessage('Odd Number');
-    }
+    const reversed = value.split('').reverse().join('');
+    setResult(reversed);
   };
+
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Even Odd Number Chekcer Programm </Text>
-      <TextInput
-        value={number}
-        placeholder="Enter number"
-        onChangeText={setNumber}
-        style={styles.input}
-      />
-      <Pressable style={styles.button} onPress={evenOdd}>
-        <Text style={styles.btntext}>Check </Text>
-      </Pressable>
-      <Text style={styles.message}>{message}</Text>
+      <Text style={styles.title}>Reverse String App</Text>
+      <View style={{ marginTop: 20, gap: 20 }}>
+        <TextInput
+          style={styles.input}
+          placeholder="Enter name"
+          value={text}
+          onChangeText={setText}
+        />
+        <TouchableOpacity
+          style={styles.button}
+          activeOpacity={0.8}
+          onPress={reverseString}
+        >
+          <Text style={styles.btnText}>Reverse</Text>
+        </TouchableOpacity>
+        <Text style={styles.result}>{result}</Text>
+      </View>
     </View>
   );
 };
@@ -330,18 +402,8 @@ const App = () => {
 export default App;
 
 const styles = StyleSheet.create({
-  container: { flex: 1, marginTop: 20, marginHorizontal: 10 },
+  container: { flex: 1, alignItems: 'center', marginTop: 20 },
   title: { fontSize: 20, fontWeight: 'semibold' },
-  button: {
-    borderWidth: 1,
-    padding: 10,
-    backgroundColor: 'blue',
-    alignItems: 'center',
-    borderRadius: 10,
-    width: '50%',
-    marginTop: 20,
-  },
-  btntext: { color: '#fff' },
   input: {
     borderWidth: 1,
     padding: 10,
@@ -349,5 +411,12 @@ const styles = StyleSheet.create({
     width: 300,
     borderRadius: 10,
   },
-  message: { fontSize: 20, color: 'red', marginTop: 20 },
+  button: {
+    borderWidth: 1,
+    padding: 10,
+    borderRadius: 8,
+    backgroundColor: 'salmon',
+  },
+  btnText: { color: '#fff', fontWeight: 'semibold', textAlign: 'center' },
+  result: { fontSize: 20, color: 'red', marginTop: 20 },
 });
