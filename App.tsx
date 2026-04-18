@@ -206,81 +206,97 @@
 //   message:{fontSize:20,color:"red"},
 // });
 
-import {
-  StyleSheet,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
-} from 'react-native';
-import React, { useState } from 'react';
+// import {
+//   StyleSheet,
+//   Text,
+//   TextInput,
+//   TouchableOpacity,
+//   View,
+// } from 'react-native';
+// import React, { useState } from 'react';
+
+// const App = () => {
+//   const [password, setPassword] = useState('');
+//   const [message, setMessage] = useState('');
+
+//   // Password Strenght Checker Function
+//   const Checkpassword = () => {
+//     const pass = password.trim();
+//     if (pass === '') {
+//       setMessage('Please enter password');
+//     } else if (pass.length < 6) {
+//       setMessage('Weak password');
+//     } else if (pass.length < 10) {
+//       setMessage('Moderate password');
+//     } else {
+//       setMessage('Strong password');
+//     }
+//   };
+//   return (
+//     <View style={styles.container}>
+//       <Text style={styles.title}>Password Strengthen Mobile App </Text>
+//       <TextInput
+//         placeholder="Password"
+//         secureTextEntry={true}
+//         style={styles.input}
+//         value={password}
+//         onChangeText={setPassword}
+//       />
+//       <View style={styles.btncontainer}>
+//         <TouchableOpacity
+//           style={styles.button}
+//           onPress={Checkpassword}
+//           activeOpacity={0.6}
+//         >
+//           <Text style={styles.btnText}>Check Strength</Text>
+//         </TouchableOpacity>
+//         <Text style={styles.message}>{message}</Text>
+//       </View>
+//     </View>
+//   );
+// };
+
+// export default App;
+
+// const styles = StyleSheet.create({
+//   container: { flex: 1, alignItems: 'center', marginTop: 30 },
+//   title: {
+//     fontSize: 20,
+//     fontWeight: 'semibold',
+//     backgroundColor: 'blue',
+//     color: 'white',
+//     padding: 10,
+//   },
+//   input: {
+//     borderWidth: 1,
+//     padding: 10,
+//     marginTop: 40,
+//     width: 300,
+//     borderRadius: 10,
+//   },
+//   button: {
+//     borderWidth: 1,
+//     padding: 10,
+//     borderRadius: 8,
+//     backgroundColor: 'salmon',
+//   },
+//   btnText: { color: '#fff', fontWeight: 'semibold' },
+//   btncontainer: { alignItems: 'center', marginTop: 30 },
+//   message: { fontSize: 20, color: 'red', marginTop: 20 },
+// });
+
+
+import { StyleSheet, Text, View } from 'react-native'
+import React from 'react'
 
 const App = () => {
-  const [password, setPassword] = useState('');
-  const [message, setMessage] = useState('');
-
-  // Password Strenght Checker Function
-  const Checkpassword = () => {
-    const pass = password.trim();
-    if (pass === '') {
-      setMessage('Please enter password');
-    } else if (pass.length < 6) {
-      setMessage('Weak password');
-    } else if (pass.length < 10) {
-      setMessage('Moderate password');
-    } else {
-      setMessage('Strong password');
-    }
-  };
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Password Strengthen Mobile App </Text>
-      <TextInput
-        placeholder="Password"
-        secureTextEntry={true}
-        style={styles.input}
-        value={password}
-        onChangeText={setPassword}
-      />
-      <View style={styles.btncontainer}>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={Checkpassword}
-          activeOpacity={0.6}
-        >
-          <Text style={styles.btnText}>Check Strength</Text>
-        </TouchableOpacity>
-        <Text style={styles.message}>{message}</Text>
-      </View>
+    <View>
+      <Text>Even Odd Number Chekcer Programm </Text>
     </View>
-  );
-};
+  )
+}
 
 export default App;
 
-const styles = StyleSheet.create({
-  container: { flex: 1, alignItems: 'center', marginTop: 30 },
-  title: {
-    fontSize: 20,
-    fontWeight: 'semibold',
-    backgroundColor: 'blue',
-    color: 'white',
-    padding: 10,
-  },
-  input: {
-    borderWidth: 1,
-    padding: 10,
-    marginTop: 40,
-    width: 300,
-    borderRadius: 10,
-  },
-  button: {
-    borderWidth: 1,
-    padding: 10,
-    borderRadius: 8,
-    backgroundColor: 'salmon',
-  },
-  btnText: { color: '#fff', fontWeight: 'semibold' },
-  btncontainer: { alignItems: 'center', marginTop: 30 },
-  message: { fontSize: 20, color: 'red', marginTop: 20 },
-});
+const styles = StyleSheet.create({})
