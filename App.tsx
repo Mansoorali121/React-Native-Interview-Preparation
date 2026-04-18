@@ -216,10 +216,22 @@ import {
 import React, { useState } from 'react';
 
 const App = () => {
-  const [password,setPassword ] = useState("");
-  const [message,setMessage] = useState("");
+  const [password, setPassword] = useState('');
+  const [message, setMessage] = useState('');
 
-  // Password Strenght Checker Function 
+  // Password Strenght Checker Function
+  const Checkpassword = () => {
+    const pass = password.trim();
+    if (pass === '') {
+      setMessage('Please enter password');
+    } else if (pass.length < 6) {
+      setMessage('Weak password');
+    } else if (pass.length < 10) {
+      setMessage('Moderate password');
+    } else {
+      setMessage('Strong password');
+    }
+  };
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Password Strengthen Mobile App </Text>
@@ -227,14 +239,19 @@ const App = () => {
         placeholder="Password"
         secureTextEntry={true}
         style={styles.input}
+        value={password}
+        onChangeText={setPassword}
       />
       <View style={styles.btncontainer}>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={Checkpassword}
+          activeOpacity={0.6}
+        >
           <Text style={styles.btnText}>Check Strength</Text>
         </TouchableOpacity>
-        <Text style={styles.message}>{" "}</Text>
+        <Text style={styles.message}>{message}</Text>
       </View>
-      
     </View>
   );
 };
@@ -265,5 +282,5 @@ const styles = StyleSheet.create({
   },
   btnText: { color: '#fff', fontWeight: 'semibold' },
   btncontainer: { alignItems: 'center', marginTop: 30 },
-  message:{fontSize:20,color:"red",marginTop:20},
+  message: { fontSize: 20, color: 'red', marginTop: 20 },
 });
