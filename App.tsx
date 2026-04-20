@@ -115,7 +115,7 @@
 //   dleetetext: { color: '#fff', fontWeight: 'bold' },
 // });
 
-import { StyleSheet, Text, View } from 'react-native';
+import { FlatList, StyleSheet, Text, TextInput, View } from 'react-native';
 import React, { useState } from 'react';
 
 const App = () => {
@@ -130,13 +130,48 @@ const App = () => {
     { id: 5, name: 'Hassan' },
   ];
 
-  return (
-    <View>
-      <Text>Search Filter App </Text>
+  // Filter Logic
+  const filteredData = data.filter(item => {
+    item.name.toLowerCase().includes(search.toLowerCase());
+  });
+
+ return (
+    <View style={styles.container}>
+      <Text style={styles.title}>Search Filter App</Text>
+
+      {/* 🔹 Search Input */}
+      <TextInput
+        style={styles.input}
+        placeholder="Search name..."
+        value={search}
+        onChangeText={setSearch}
+      />
+
+      {/* 🔹 List */}
+      <FlatList
+        data={filteredData}
+        renderItem={({ item }) => (
+          <Text style={styles.item}>{item.name}</Text>
+        )}
+      />
     </View>
   );
 };
 
 export default App;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: { flex: 1, padding: 20 },
+  title: { fontSize: 22, fontWeight: "bold", marginBottom: 20 },
+  input: {
+    borderWidth: 1,
+    padding: 10,
+    borderRadius: 5,
+    marginBottom: 20,
+  },
+  item: {
+    fontSize: 18,
+    padding: 10,
+    borderBottomWidth: 1,
+  },
+});
