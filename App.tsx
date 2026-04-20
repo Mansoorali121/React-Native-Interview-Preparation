@@ -369,7 +369,7 @@ const App = () => {
   const reverseString = () => {
     const value = text.trim();
     if (value === '') {
-      setResult('Please enter a string');
+      setResult('Please enter an string');
       return;
     }
     const reversed = value.split('').reverse().join('');
