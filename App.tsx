@@ -421,12 +421,39 @@
 //   result: { fontSize: 20, color: 'red', marginTop: 20 },
 // });
 
-import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import {
+  FlatList,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import React, { useState } from 'react';
 
 const App = () => {
   const [task, setTask] = useState('');
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState<{ id: string; text: string }[]>([]);
+  const [message, setMessage] = useState('');
+
+  // Add Task Function
+  const addTask = () => {
+    const value = task.trim();
+
+    if (value === '') {
+      setMessage('Please enter task ❌');
+      return;
+    }
+
+    const newTask = {
+      id: Date.now().toString(),
+      text: value,
+    };
+
+    setTasks([...tasks, newTask]); // 👈 add to list
+    setTask(''); // clear input
+    setMessage('');
+  };
 
   return (
     <View style={styles.container}>
@@ -437,9 +464,23 @@ const App = () => {
         value={task}
         onChangeText={setTask}
       />
-      <TouchableOpacity>
-        <Text>Add Task</Text>
+      <TouchableOpacity
+        style={styles.button}
+        activeOpacity={0.6}
+        onPress={addTask}
+      >
+        <Text style={styles.btntitle}>Add Task</Text>
       </TouchableOpacity>
+      {message !== ' ' && <Text style={styles.error}>{message}</Text>}
+       <FlatList
+        data={tasks}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => (
+          <View style={styles.item}>
+            <Text style={styles.itemText}>{item.text}</Text>
+          </View>
+        )}
+      />
     </View>
   );
 };
@@ -447,7 +488,7 @@ const App = () => {
 export default App;
 
 const styles = StyleSheet.create({
-  container: { flex: 1, alignItems: 'center' },
+  container: { flex: 1, alignItems: 'center', gap: 20 },
   title: { fontSize: 26, fontWeight: 'bold', marginTop: 20 },
   input: {
     borderWidth: 1,
@@ -455,5 +496,26 @@ const styles = StyleSheet.create({
     padding: 10,
     width: '80%',
     borderRadius: 5,
+  },
+  button: {
+    width: '40%',
+    backgroundColor: 'red',
+    padding: 14,
+    alignItems: 'center',
+    borderRadius: 8,
+  },
+  btntitle: { color: '#fff', fontWeight: 'semibold' },
+  error: { color: 'red', marginTop: 50, fontSize: 22 },
+  count: {
+    fontSize: 16,
+    marginBottom: 10,
+  },
+  item: {
+    padding: 12,
+    borderBottomWidth: 1,
+    borderColor: "#ccc",
+  },
+  itemText: {
+    fontSize: 16,
   },
 });
