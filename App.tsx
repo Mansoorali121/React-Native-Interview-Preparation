@@ -352,49 +352,94 @@
 //   message: { fontSize: 20, color: 'red', marginTop: 20 },
 // });
 
-import {
-  StyleSheet,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+// import {
+//   StyleSheet,
+//   Text,
+//   TextInput,
+//   TouchableOpacity,
+//   View,
+// } from 'react-native';
+// import React, { useState } from 'react';
+
+// const App = () => {
+//   const [text, setText] = useState('');
+//   const [result, setResult] = useState('');
+
+//   // Reverse String Function
+//   const reverseString = () => {
+//     const value = text.trim();
+//     if (value === '') {
+//       setResult('Please enter an string');
+//       return;
+//     }
+//     const reversed = value.split('').reverse().join('');
+//     setResult(reversed);
+//   };
+
+//   return (
+//     <View style={styles.container}>
+//       <Text style={styles.title}>Reverse String App</Text>
+//       <View style={{ marginTop: 20, gap: 20 }}>
+//         <TextInput
+//           style={styles.input}
+//           placeholder="Enter name"
+//           value={text}
+//           onChangeText={setText}
+//         />
+//         <TouchableOpacity
+//           style={styles.button}
+//           activeOpacity={0.8}
+//           onPress={reverseString}
+//         >
+//           <Text style={styles.btnText}>Reverse</Text>
+//         </TouchableOpacity>
+//         <Text style={styles.result}>{result}</Text>
+//       </View>
+//     </View>
+//   );
+// };
+
+// export default App;
+
+// const styles = StyleSheet.create({
+//   container: { flex: 1, alignItems: 'center', marginTop: 20 },
+//   title: { fontSize: 20, fontWeight: 'semibold' },
+//   input: {
+//     borderWidth: 1,
+//     padding: 10,
+//     marginTop: 40,
+//     width: 300,
+//     borderRadius: 10,
+//   },
+//   button: {
+//     borderWidth: 1,
+//     padding: 10,
+//     borderRadius: 8,
+//     backgroundColor: 'salmon',
+//   },
+//   btnText: { color: '#fff', fontWeight: 'semibold', textAlign: 'center' },
+//   result: { fontSize: 20, color: 'red', marginTop: 20 },
+// });
+
+import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import React, { useState } from 'react';
 
 const App = () => {
-  const [text, setText] = useState('');
-  const [result, setResult] = useState('');
-
-  // Reverse String Function
-  const reverseString = () => {
-    const value = text.trim();
-    if (value === '') {
-      setResult('Please enter an string');
-      return;
-    }
-    const reversed = value.split('').reverse().join('');
-    setResult(reversed);
-  };
+  const [task, setTask] = useState('');
+  const [tasks, setTasks] = useState([]);
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Reverse String App</Text>
-      <View style={{ marginTop: 20, gap: 20 }}>
-        <TextInput
-          style={styles.input}
-          placeholder="Enter name"
-          value={text}
-          onChangeText={setText}
-        />
-        <TouchableOpacity
-          style={styles.button}
-          activeOpacity={0.8}
-          onPress={reverseString}
-        >
-          <Text style={styles.btnText}>Reverse</Text>
-        </TouchableOpacity>
-        <Text style={styles.result}>{result}</Text>
-      </View>
+      <Text style={styles.title}>To do List App </Text>
+      <TextInput
+        style={styles.input}
+        placeholder="Enter task"
+        value={task}
+        onChangeText={setTask}
+      />
+      <TouchableOpacity>
+        <Text>Add Task</Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -402,21 +447,13 @@ const App = () => {
 export default App;
 
 const styles = StyleSheet.create({
-  container: { flex: 1, alignItems: 'center', marginTop: 20 },
-  title: { fontSize: 20, fontWeight: 'semibold' },
+  container: { flex: 1, alignItems: 'center' },
+  title: { fontSize: 26, fontWeight: 'bold', marginTop: 20 },
   input: {
     borderWidth: 1,
+    marginTop: 20,
     padding: 10,
-    marginTop: 40,
-    width: 300,
-    borderRadius: 10,
+    width: '80%',
+    borderRadius: 5,
   },
-  button: {
-    borderWidth: 1,
-    padding: 10,
-    borderRadius: 8,
-    backgroundColor: 'salmon',
-  },
-  btnText: { color: '#fff', fontWeight: 'semibold', textAlign: 'center' },
-  result: { fontSize: 20, color: 'red', marginTop: 20 },
 });
