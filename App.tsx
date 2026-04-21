@@ -178,11 +178,35 @@
 
 
 import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 
 const App = () => {
+  const [count,setCount] = useState(0);
+  const [message,setMessage] = useState("");
+
+  // Increase Count 
+  const increase = () => {
+    if(count >= 10){
+      setMessage("Counter Limit reached");
+      return;
+    }
+    setCount(count+1);
+    setMessage("");
+  }
+
+  // Decrease Count
+  const Decrease = () => {
+    if(count <= 0){
+          setMessage("Min limit reached");
+          return;
+
+    }
+    setCount(count -1);
+    setMessage("");
+    
+  }
   return (
-    <View>
+    <View style={styles.container}>
       <Text>Counter With Limit </Text>
     </View>
   )
@@ -190,4 +214,6 @@ const App = () => {
 
 export default App;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container:{marginTop:20,alignItems:"center"},
+})
