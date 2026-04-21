@@ -175,6 +175,100 @@
 //     borderBottomWidth: 1,
 //   },
 // });
+// import React, { useState } from "react";
+// import {
+//   View,
+//   Text,
+//   TouchableOpacity,
+//   StyleSheet,
+// } from "react-native";
+
+// const App = () => {
+//   const [count, setCount] = useState(0);
+//   const [message, setMessage] = useState("");
+
+//   // 🔹 Increase
+//   const increase = () => {
+//     if (count >= 10) {
+//       setMessage("Max limit reached ❌");
+//       return;
+//     }
+//     setCount(count + 1);
+//     setMessage("");
+//   };
+
+//   // 🔹 Decrease
+//   const decrease = () => {
+//     if (count <= 0) {
+//       setMessage("Min limit reached ❌");
+//       return;
+//     }
+//     setCount(count - 1);
+//     setMessage("");
+//   };
+
+//   return (
+//     <View style={styles.container}>
+//       <Text style={styles.title}>Counter App</Text>
+
+//       {/* Count Display */}
+//       <Text style={styles.count}>{count}</Text>
+
+//       {/* Buttons */}
+//       <View style={styles.btnContainer}>
+//         <TouchableOpacity style={styles.button} onPress={decrease}>
+//           <Text style={styles.btnText}>-</Text>
+//         </TouchableOpacity>
+
+//         <TouchableOpacity style={styles.button} onPress={increase}>
+//           <Text style={styles.btnText}>+</Text>
+//         </TouchableOpacity>
+//       </View>
+
+//       {/* Message */}
+//       {message !== "" && <Text style={styles.message}>{message}</Text>}
+//     </View>
+//   );
+// };
+
+// export default App;
+
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     justifyContent: "center",
+//     alignItems: "center",
+//   },
+//   title: {
+//     fontSize: 24,
+//     fontWeight: "bold",
+//     marginBottom: 20,
+//   },
+//   count: {
+//     fontSize: 40,
+//     marginBottom: 20,
+//   },
+//   btnContainer: {
+//     flexDirection: "row",
+//     gap: 20,
+//   },
+//   button: {
+//     backgroundColor: "blue",
+//     padding: 15,
+//     borderRadius: 10,
+//   },
+//   btnText: {
+//     color: "#fff",
+//     fontSize: 20,
+//     fontWeight: "bold",
+//   },
+//   message: {
+//     marginTop: 20,
+//     color: "red",
+//     fontSize: 16,
+//   },
+// });
+
 import React, { useState } from "react";
 import {
   View,
@@ -184,49 +278,32 @@ import {
 } from "react-native";
 
 const App = () => {
-  const [count, setCount] = useState(0);
-  const [message, setMessage] = useState("");
+  const [darkMode, setDarkMode] = useState(false);
 
-  // 🔹 Increase
-  const increase = () => {
-    if (count >= 10) {
-      setMessage("Max limit reached ❌");
-      return;
-    }
-    setCount(count + 1);
-    setMessage("");
-  };
-
-  // 🔹 Decrease
-  const decrease = () => {
-    if (count <= 0) {
-      setMessage("Min limit reached ❌");
-      return;
-    }
-    setCount(count - 1);
-    setMessage("");
+  // 🔹 Toggle Function
+  const toggleTheme = () => {
+    setDarkMode(!darkMode);
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Counter App</Text>
+    <View
+      style={[
+        styles.container,
+        { backgroundColor: darkMode ? "black" : "white" },
+      ]}
+    >
+      <Text
+        style={[
+          styles.title,
+          { color: darkMode ? "white" : "black" },
+        ]}
+      >
+        {darkMode ? "Dark Mode 🌙" : "Light Mode ☀️"}
+      </Text>
 
-      {/* Count Display */}
-      <Text style={styles.count}>{count}</Text>
-
-      {/* Buttons */}
-      <View style={styles.btnContainer}>
-        <TouchableOpacity style={styles.button} onPress={decrease}>
-          <Text style={styles.btnText}>-</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.button} onPress={increase}>
-          <Text style={styles.btnText}>+</Text>
-        </TouchableOpacity>
-      </View>
-
-      {/* Message */}
-      {message !== "" && <Text style={styles.message}>{message}</Text>}
+      <TouchableOpacity style={styles.button} onPress={toggleTheme}>
+        <Text style={styles.btnText}>Toggle Theme</Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -241,16 +318,8 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 24,
+    marginBottom: 20,
     fontWeight: "bold",
-    marginBottom: 20,
-  },
-  count: {
-    fontSize: 40,
-    marginBottom: 20,
-  },
-  btnContainer: {
-    flexDirection: "row",
-    gap: 20,
   },
   button: {
     backgroundColor: "blue",
@@ -259,12 +328,6 @@ const styles = StyleSheet.create({
   },
   btnText: {
     color: "#fff",
-    fontSize: 20,
     fontWeight: "bold",
-  },
-  message: {
-    marginTop: 20,
-    color: "red",
-    fontSize: 16,
   },
 });
