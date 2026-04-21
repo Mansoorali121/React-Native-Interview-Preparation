@@ -115,63 +115,79 @@
 //   dleetetext: { color: '#fff', fontWeight: 'bold' },
 // });
 
-import { FlatList, StyleSheet, Text, TextInput, View } from 'react-native';
-import React, { useState } from 'react';
+// import { FlatList, StyleSheet, Text, TextInput, View } from 'react-native';
+// import React, { useState } from 'react';
+
+// const App = () => {
+//   const [search, setSearch] = useState('');
+
+//   // Static Data
+//   const data = [
+//     { id: 1, name: 'Mansoor' },
+//     { id: 2, name: 'Ali' },
+//     { id: 3, name: 'Ahmed' },
+//     { id: 4, name: 'Asad' },
+//     { id: 5, name: 'Hassan' },
+//   ];
+
+//   // Filter Logic
+//   const filteredData = data.filter(item => {
+//     item.name.toLowerCase().includes(search.toLowerCase());
+//   });
+
+//  return (
+//     <View style={styles.container}>
+//       <Text style={styles.title}>Search Filter App</Text>
+
+//       {/* 🔹 Search Input */}
+//       <TextInput
+//         style={styles.input}
+//         placeholder="Search name..."
+//         value={search}
+//         onChangeText={setSearch}
+//       />
+
+//       {/* 🔹 List */}
+//       <FlatList
+//         data={filteredData}
+//         renderItem={({ item }) => (
+//           <Text style={styles.item}>{item.name}</Text>
+//         )}
+//       />
+//     </View>
+//   );
+// };
+
+// export default App;
+
+// const styles = StyleSheet.create({
+//   container: { flex: 1, padding: 20 },
+//   title: { fontSize: 22, fontWeight: "bold", marginBottom: 20 },
+//   input: {
+//     borderWidth: 1,
+//     padding: 10,
+//     borderRadius: 5,
+//     marginBottom: 20,
+//   },
+//   item: {
+//     fontSize: 18,
+//     padding: 10,
+//     borderBottomWidth: 1,
+//   },
+// });
+
+
+import { StyleSheet, Text, View } from 'react-native'
+import React from 'react'
 
 const App = () => {
-  const [search, setSearch] = useState('');
-
-  // Static Data
-  const data = [
-    { id: 1, name: 'Mansoor' },
-    { id: 2, name: 'Ali' },
-    { id: 3, name: 'Ahmed' },
-    { id: 4, name: 'Asad' },
-    { id: 5, name: 'Hassan' },
-  ];
-
-  // Filter Logic
-  const filteredData = data.filter(item => {
-    item.name.toLowerCase().includes(search.toLowerCase());
-  });
-
- return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Search Filter App</Text>
-
-      {/* 🔹 Search Input */}
-      <TextInput
-        style={styles.input}
-        placeholder="Search name..."
-        value={search}
-        onChangeText={setSearch}
-      />
-
-      {/* 🔹 List */}
-      <FlatList
-        data={filteredData}
-        renderItem={({ item }) => (
-          <Text style={styles.item}>{item.name}</Text>
-        )}
-      />
+  return (
+    <View>
+      <Text>Counter With Limit </Text>
     </View>
-  );
-};
+  )
+}
 
 export default App;
 
-const styles = StyleSheet.create({
-  container: { flex: 1, padding: 20 },
-  title: { fontSize: 22, fontWeight: "bold", marginBottom: 20 },
-  input: {
-    borderWidth: 1,
-    padding: 10,
-    borderRadius: 5,
-    marginBottom: 20,
-  },
-  item: {
-    fontSize: 18,
-    padding: 10,
-    borderBottomWidth: 1,
-  },
-});
+const styles = StyleSheet.create({})
