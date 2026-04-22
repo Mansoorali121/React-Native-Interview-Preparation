@@ -269,65 +269,18 @@
 //   },
 // });
 
-import React, { useState } from "react";
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  StyleSheet,
-} from "react-native";
+
+import { StyleSheet, Text, View } from 'react-native'
+import React from 'react'
 
 const App = () => {
-  const [darkMode, setDarkMode] = useState(false);
-
-  // 🔹 Toggle Function
-  const toggleTheme = () => {
-    setDarkMode(!darkMode);
-  };
-
   return (
-    <View
-      style={[
-        styles.container,
-        { backgroundColor: darkMode ? "black" : "white" },
-      ]}
-    >
-      <Text
-        style={[
-          styles.title,
-          { color: darkMode ? "white" : "black" },
-        ]}
-      >
-        {darkMode ? "Dark Mode 🌙" : "Light Mode ☀️"}
-      </Text>
-
-      <TouchableOpacity style={styles.button} onPress={toggleTheme}>
-        <Text style={styles.btnText}>Toggle Theme</Text>
-      </TouchableOpacity>
+    <View>
+      <Text>API Fetch App </Text>
     </View>
-  );
-};
+  )
+}
 
 export default App;
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  title: {
-    fontSize: 24,
-    marginBottom: 20,
-    fontWeight: "bold",
-  },
-  button: {
-    backgroundColor: "blue",
-    padding: 15,
-    borderRadius: 10,
-  },
-  btnText: {
-    color: "#fff",
-    fontWeight: "bold",
-  },
-});
+const styles = StyleSheet.create({})
