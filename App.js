@@ -269,111 +269,129 @@
 //   },
 // });
 
-import {
-  ActivityIndicator,
-  FlatList,
-  StyleSheet,
-  Text,
-  View,
-  RefreshControl,
-} from 'react-native';
-import React, { useEffect, useState } from 'react';
+// import {
+//   ActivityIndicator,
+//   FlatList,
+//   StyleSheet,
+//   Text,
+//   View,
+//   RefreshControl,
+// } from 'react-native';
+// import React, { useEffect, useState } from 'react';
+
+// const App = () => {
+//   const [data, setData] = useState([]);
+//   const [loading, setLoading] = useState(true);
+//   const [refreshing, setRefreshing] = useState(false);
+//   const [error, setError] = useState('');
+
+//   // API FETCH
+//   const FetchData = async () => {
+//     try {
+//       setError('');
+//       const response = await fetch(
+//         'https://jsonplaceholder.typicode.com/users',
+//       );
+
+//       if (!response.ok) {
+//         throw new Error('Something went wrong!');
+//       }
+
+//       const json = await response.json();
+//       setData(json);
+//     } catch (err) {
+//       console.log('Error:', err);
+//       setError('Failed to load data');
+//     } finally {
+//       setLoading(false);
+//       setRefreshing(false);
+//     }
+//   };
+
+//   // Initial Load
+//   useEffect(() => {
+//     FetchData();
+//   }, []);
+
+//   // Pull to Refresh
+//   const onRefresh = () => {
+//     setRefreshing(true);
+//     FetchData();
+//   };
+
+//   return (
+//     <View style={styles.container}>
+//       <Text style={styles.title}>API Fetch App</Text>
+
+//       {loading ? (
+//         <ActivityIndicator size="large" color="blue" />
+//       ) : error ? (
+//         <Text style={styles.error}>{error}</Text>
+//       ) : (
+//         <FlatList
+//           data={data}
+//           showsVerticalScrollIndicator={false}
+//           keyExtractor={item => item.id.toString()}
+//           refreshControl={
+//             <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+//           }
+//           renderItem={({ item }) => (
+//             <View style={styles.item}>
+//               <Text style={styles.name}>{item.name}</Text>
+//               <Text>{item.email}</Text>
+//             </View>
+//           )}
+//         />
+//       )}
+//     </View>
+//   );
+// };
+
+// export default App;
+
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     marginTop: 20,
+//     paddingHorizontal: 15,
+//   },
+//   title: {
+//     fontSize: 22,
+//     fontWeight: 'bold',
+//     marginBottom: 15,
+//     textAlign: 'center',
+//   },
+//   item: {
+//     padding: 15,
+//     borderBottomWidth: 1,
+//     marginBottom: 10,
+//     borderRadius: 8,
+//     backgroundColor: '#f2f2f2',
+//     gap:20
+//   },
+//   name: {
+//     fontSize: 18,
+//     fontWeight: 'bold',
+//   },
+//   error: {
+//     color: 'red',
+//     textAlign: 'center',
+//     marginTop: 20,
+//   },
+// });
+
+
+import { StyleSheet, Text, View } from 'react-native'
+import React from 'react'
 
 const App = () => {
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [refreshing, setRefreshing] = useState(false);
-  const [error, setError] = useState('');
-
-  // API FETCH
-  const FetchData = async () => {
-    try {
-      setError('');
-      const response = await fetch(
-        'https://jsonplaceholder.typicode.com/users',
-      );
-
-      if (!response.ok) {
-        throw new Error('Something went wrong!');
-      }
-
-      const json = await response.json();
-      setData(json);
-    } catch (err) {
-      console.log('Error:', err);
-      setError('Failed to load data');
-    } finally {
-      setLoading(false);
-      setRefreshing(false);
-    }
-  };
-
-  // Initial Load
-  useEffect(() => {
-    FetchData();
-  }, []);
-
-  // Pull to Refresh
-  const onRefresh = () => {
-    setRefreshing(true);
-    FetchData();
-  };
-
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>API Fetch App</Text>
-
-      {loading ? (
-        <ActivityIndicator size="large" color="blue" />
-      ) : error ? (
-        <Text style={styles.error}>{error}</Text>
-      ) : (
-        <FlatList
-          data={data}
-          keyExtractor={item => item.id.toString()}
-          refreshControl={
-            <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
-          }
-          renderItem={({ item }) => (
-            <View style={styles.item}>
-              <Text style={styles.name}>{item.name}</Text>
-              <Text>{item.email}</Text>
-            </View>
-          )}
-        />
-      )}
+    <View>
+      <Text>Login Form Validation App </Text>
     </View>
-  );
-};
+  )
+}
 
 export default App;
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginTop: 20,
-    paddingHorizontal: 15,
-  },
-  title: {
-    fontSize: 22,
-    fontWeight: 'bold',
-    marginBottom: 15,
-    textAlign: 'center',
-  },
-  item: {
-    padding: 15,
-    borderBottomWidth: 1,
-    marginBottom: 10,
-    borderRadius: 8,
-    backgroundColor: '#f2f2f2',
-  },
-  name: {
-    fontSize: 18,
-    fontWeight: 'bold',
-  },
-  error: {
-    color: 'red',
-    textAlign: 'center',
-    marginTop: 20,
-  },
-});
+const styles = StyleSheet.create({})
