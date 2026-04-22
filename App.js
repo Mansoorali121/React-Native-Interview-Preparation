@@ -395,6 +395,29 @@ const App = () => {
   const [message, setMessage] = useState('');
 
   // Handle Login Logic
+  const handleLogin = () => {
+    const trimEmail = email.trim();
+    const trimPassword = password.trim();
+
+    if (trimEmail === '' || trimPassword === '') {
+      setMessage('All fields are required ');
+      return;
+    }
+    // Email validation
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimEmail)) {
+      setMessage('Invalid email ❌');
+      return;
+    }
+    //  Password validation
+    if (trimPassword.length < 6) {
+      setMessage('Password must be at least 6 characters ');
+      return;
+    }
+    //  Success
+    setMessage('Login Successfull');
+    setEmail('');
+    setPassword('');
+  };
 
   return (
     <View style={styles.container}>
@@ -412,7 +435,11 @@ const App = () => {
           value={password}
           onChangeText={setPassword}
         />
-        <TouchableOpacity style={styles.button} activeOpacity={0.6}>
+        <TouchableOpacity
+          style={styles.button}
+          activeOpacity={0.6}
+          onPress={handleLogin}
+        >
           <Text style={styles.btntext}>Login </Text>
         </TouchableOpacity>
         {message !== '' && <Text style={styles.message}>{message}</Text>}
