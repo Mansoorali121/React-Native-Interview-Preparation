@@ -380,18 +380,66 @@
 //   },
 // });
 
-
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import {
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from 'react-native';
+import React, { useState } from 'react';
 
 const App = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [message, setMessage] = useState('');
+
+  // Handle Login Logic
+
   return (
-    <View>
-      <Text>Login Form Validation App </Text>
+    <View style={styles.container}>
+      <Text style={styles.title}>Login Form Validation App </Text>
+      <View style={styles.formcontainer}>
+        <TextInput
+          placeholder="Enter email"
+          style={styles.input}
+          value={email}
+          onChangeText={setEmail}
+        />
+        <TextInput
+          placeholder="Enter password"
+          style={styles.input}
+          value={password}
+          onChangeText={setPassword}
+        />
+        <TouchableOpacity style={styles.button} activeOpacity={0.6}>
+          <Text style={styles.btntext}>Login </Text>
+        </TouchableOpacity>
+        {message !== '' && <Text style={styles.message}>{message}</Text>}
+      </View>
     </View>
-  )
-}
+  );
+};
 
 export default App;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    marginTop: 20,
+    marginHorizontal: 20,
+  },
+  title: { marginTop: 20, fontSize: 20, fontWeight: 'bold' },
+  formcontainer: { gap: 10, marginHorizontal: 20, marginTop: 20 },
+  input: { borderWidth: 1, width: 220, marginTop: 20, borderRadius: 5 },
+  button: {
+    backgroundColor: 'blue',
+    padding: 15,
+    marginTop: 20,
+    alignItems: 'center',
+    borderRadius: 10,
+  },
+  btntext: { color: '#fff', fontWeight: 'bold' },
+  message: { marginTop: 20, textAlign: 'center', color: 'red', fontSize: 16 },
+});
