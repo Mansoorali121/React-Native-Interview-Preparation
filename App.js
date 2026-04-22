@@ -269,18 +269,62 @@
 //   },
 // });
 
-
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import {
+  ActivityIndicator,
+  Alert,
+  FlatList,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
+import React, { useState } from 'react';
 
 const App = () => {
+  const [data, setData] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState('');
+
+  // API FETCH
+  const FetchData = async () => {
+    try {
+      const response = await fetch(
+        'https://jsonplaceholder.typicode.com/users',
+      );
+      const json = await response.json();
+      setData(json);
+    } catch (error) {
+      console.log('Error', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <View>
-      <Text>API Fetch App </Text>
+    <View style={styles.container}>
+      <Text style={styles.title}>API Fetch App </Text>
+      {loading ? (
+        <ActivityIndicator size="large" color="blue" />
+      ) : (
+        <FlatList
+          data={data}
+          keyExtractor={item => item.id.toString()}
+          renderItem={({ item }) => (
+            <View style={styles.item}>
+              <Text style={styles.name}></Text>
+              <Text>{item.email}</Text>
+            </View>
+          )}
+        />
+      )}
     </View>
-  )
-}
+  );
+};
 
 export default App;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container: { flex: 1, marginTop: 20, alignItems: 'center' },
+  title: { fontSize: 20, fontWeight: 'bold', marginBottom: 20 },
+  item: { padding: 10, borderBottomWidth: 1, marginBottom: 19 },
+  name: { fontSize: 18, fontWeight: 'bold' },
+});
