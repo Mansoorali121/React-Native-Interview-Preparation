@@ -424,7 +424,7 @@ const App = () => {
       <Text style={styles.title}>Login Form Validation App </Text>
       <View style={styles.formcontainer}>
         <TextInput
-          placeholder="Enter email"
+          placeholder="Enter email here"
           style={styles.input}
           value={email}
           onChangeText={setEmail}
