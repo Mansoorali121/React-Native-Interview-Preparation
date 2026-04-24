@@ -473,17 +473,89 @@
 
 
 
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React, { useState } from "react";
+import {
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  StyleSheet,
+} from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const App = () => {
+  const [name, setName] = useState("");
+  const [storedName, setStoredName] = useState("");
+
+  // 🔹 Save Data
+  const saveData = async () => {
+    try {
+      await AsyncStorage.setItem("userName", name);
+      alert("Data saved ✅");
+    } catch (error) {
+      console.log("Error saving data", error);
+    }
+  };
+
+  // 🔹 Get Data
+  // const getData = async () => {
+  //   try {
+  //     const value = await AsyncStorage.getItem("userName");
+  //     if (value !== null) {
+  //       setStoredName(value);
+  //     }
+  //   } catch (error) {
+  //     console.log("Error getting data", error);
+  //   }
+  // };
+
   return (
-    <View>
-      <Text>React Native Async Storage ( Local Storage ) </Text>
+    <View style={styles.container}>
+      <Text style={styles.title}>AsyncStorage App</Text>
+
+      <TextInput
+        style={styles.input}
+        placeholder="Enter name"
+        value={name}
+        onChangeText={setName}
+      />
+
+      {/* Save Button */}
+      <TouchableOpacity style={styles.button} onPress={saveData}>
+        <Text style={styles.btnText}>Save</Text>
+      </TouchableOpacity>
+
+      {/* Get Button */}
+      <TouchableOpacity style={styles.button} onPress={getData}>
+        <Text style={styles.btnText}>Get Data</Text>
+      </TouchableOpacity>
+
+      Show Data
+      <Text style={styles.result}>
+        Saved Name: {storedName}
+      </Text>
     </View>
-  )
-}
+  );
+};
 
 export default App;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container: { flex: 1, padding: 20, marginTop: 30 },
+  title: { fontSize: 22, fontWeight: "bold", marginBottom: 20 },
+  input: {
+    borderWidth: 1,
+    padding: 10,
+    marginBottom: 15,
+    borderRadius: 5,
+  },
+  button: {
+    backgroundColor: "green",
+    padding: 12,
+    marginBottom: 10,
+    alignItems: "center",
+    borderRadius: 8,
+  },
+  btnText: { color: "#fff", fontWeight: "bold" },
+  result: { marginTop: 20, fontSize: 18 },
+});
