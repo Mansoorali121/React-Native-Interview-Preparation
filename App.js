@@ -498,16 +498,16 @@ const App = () => {
   };
 
   // 🔹 Get Data
-  // const getData = async () => {
-  //   try {
-  //     const value = await AsyncStorage.getItem("userName");
-  //     if (value !== null) {
-  //       setStoredName(value);
-  //     }
-  //   } catch (error) {
-  //     console.log("Error getting data", error);
-  //   }
-  // };
+  const getData = async () => {
+    try {
+      const value = await AsyncStorage.getItem("userName");
+      if (value !== null) {
+        setStoredName(value);
+      }
+    } catch (error) {
+      console.log("Error getting data", error);
+    }
+  };
 
   return (
     <View style={styles.container}>
