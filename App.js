@@ -557,5 +557,5 @@ const styles = StyleSheet.create({
     borderRadius: 8,
   },
   btnText: { color: "#fff", fontWeight: "bold" },
-  result: { marginTop: 20, fontSize: 18 },
+  result: { marginTop: 20, fontSize: 18, color:"rec" },
 });
