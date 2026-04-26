@@ -40,17 +40,17 @@ const App = () => {
       >
         <Text style={styles.btntext}>Add</Text>
       </TouchableOpacity>
-      {/* <FlatList
+      <FlatList
         data={list}
         keyExtractor={item => item.id}
         renderItem={({ item }) => {
           return (
             <View>
-              <Text>{item.name}</Text>
+              <Text style={styles.item}>{item.name}</Text>
             </View>
           );
         }}
-      /> */}
+      />
     </View>
   );
 };
@@ -81,4 +81,9 @@ const styles = StyleSheet.create({
     borderRadius: 12,
   },
   btntext: { color: 'white', fontWeight: 'bold' },
+    item: {
+    fontSize: 18,
+    marginTop: 10,
+    
+  },
 });
