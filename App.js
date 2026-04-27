@@ -91,6 +91,101 @@
 
 
 
+// import React, { useEffect, useState } from "react";
+// import {
+//   View,
+//   Text,
+//   TextInput,
+//   TouchableOpacity,
+//   FlatList,
+//   StyleSheet,
+// } from "react-native";
+// import SQLite from "react-native-sqlite-storage";
+
+// // 🔹 Open Database
+// const db = SQLite.openDatabase(
+//   { name: "TestDB.db", location: "default" },
+//   () => console.log("Database opened"),
+//   error => console.log("Error:", error)
+// );
+
+// const App = () => {
+//   const [name, setName] = useState("");
+//   const [list, setList] = useState([]);
+
+//   // 🔹 Create Table (IMPORTANT 🔥)
+//   useEffect(() => {
+//     db.transaction(tx => {
+//       tx.executeSql(
+//         "CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT);",
+//         [],
+//         () => console.log("Table created"),
+//         error => console.log("Error creating table", error)
+//       );
+//     });
+//   }, []);
+
+//   // 🔹 Temporary Add (still local state)
+//   const addUser = () => {
+//     if (name.trim() === "") return;
+
+//     const newUser = {
+//       id: Date.now().toString(),
+//       name: name,
+//     };
+
+//     setList([...list, newUser]);
+//     setName("");
+//   };
+
+//   return (
+//     <View style={styles.container}>
+//       <Text style={styles.title}>SQLite App (Step 2)</Text>
+
+//       <TextInput
+//         placeholder="Enter name"
+//         value={name}
+//         onChangeText={setName}
+//         style={styles.input}
+//       />
+
+//       <TouchableOpacity style={styles.button} onPress={addUser}>
+//         <Text style={styles.btnText}>Add</Text>
+//       </TouchableOpacity>
+
+//       <FlatList
+//         data={list}
+//         keyExtractor={(item) => item.id}
+//         renderItem={({ item }) => (
+//           <Text style={styles.item}>{item.name}</Text>
+//         )}
+//       />
+//     </View>
+//   );
+// };
+
+// export default App;
+
+// const styles = StyleSheet.create({
+//   container: { flex: 1, padding: 20 },
+//   title: { fontSize: 22, fontWeight: "bold", marginBottom: 20 },
+//   input: {
+//     borderWidth: 1,
+//     padding: 10,
+//     marginBottom: 10,
+//   },
+//   button: {
+//     backgroundColor: "blue",
+//     padding: 10,
+//     alignItems: "center",
+//   },
+//   btnText: { color: "#fff" },
+//   item: {
+//     fontSize: 18,
+//     marginTop: 15,
+//   },
+// });
+
 import React, { useEffect, useState } from "react";
 import {
   View,
@@ -113,34 +208,36 @@ const App = () => {
   const [name, setName] = useState("");
   const [list, setList] = useState([]);
 
-  // 🔹 Create Table (IMPORTANT 🔥)
+  // 🔹 Create Table
   useEffect(() => {
     db.transaction(tx => {
       tx.executeSql(
-        "CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT);",
-        [],
-        () => console.log("Table created"),
-        error => console.log("Error creating table", error)
+        "CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT);"
       );
     });
   }, []);
 
-  // 🔹 Temporary Add (still local state)
+  // 🔥 INSERT INTO DATABASE
   const addUser = () => {
     if (name.trim() === "") return;
 
-    const newUser = {
-      id: Date.now().toString(),
-      name: name,
-    };
+    db.transaction(tx => {
+      tx.executeSql(
+        "INSERT INTO users (name) VALUES (?)",
+        [name],
+        (tx, results) => {
+          console.log("User added to DB ✅");
+        },
+        error => console.log("Insert error", error)
+      );
+    });
 
-    setList([...list, newUser]);
     setName("");
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>SQLite App (Step 2)</Text>
+      <Text style={styles.title}>SQLite App (Step 3)</Text>
 
       <TextInput
         placeholder="Enter name"
@@ -153,13 +250,9 @@ const App = () => {
         <Text style={styles.btnText}>Add</Text>
       </TouchableOpacity>
 
-      <FlatList
-        data={list}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item }) => (
-          <Text style={styles.item}>{item.name}</Text>
-        )}
-      />
+      <Text style={{ marginTop: 20 }}>
+        👉 Data ab database me save ho raha hai
+      </Text>
     </View>
   );
 };
@@ -175,13 +268,9 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   button: {
-    backgroundColor: "blue",
+    backgroundColor: "green",
     padding: 10,
     alignItems: "center",
   },
   btnText: { color: "#fff" },
-  item: {
-    fontSize: 18,
-    marginTop: 15,
-  },
 });
