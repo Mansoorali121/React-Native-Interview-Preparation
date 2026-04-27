@@ -182,6 +182,6 @@ const styles = StyleSheet.create({
   btnText: { color: "#fff" },
   item: {
     fontSize: 18,
-    marginTop: 10,
+    marginTop: 15,
   },
 });
