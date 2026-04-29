@@ -1,9 +1,9 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { FlatList, StyleSheet, Text, View } from 'react-native';
 import React, { useState } from 'react';
 import axios from 'axios';
 
 const App = () => {
-  const[data, setData] = useState([]);
+  const [data, setData] = useState([]);
   // Third Party API
   const getBooks = async () => {
     try {
@@ -11,11 +11,15 @@ const App = () => {
         'https://69609023e7aa517cb79661a7.mockapi.io/Books',
       );
       const result = response.data;
+      console.log('Books ', response.data);
       setData(result);
     } catch (error) {
       console.error('Error fetching books:', error);
     }
   };
+  // Function to handle button Press
+  getBooks();
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Third party APIS </Text>
@@ -24,7 +28,19 @@ const App = () => {
         fetch it on screen{' '}
       </Text>
 
-      <View style={styles.butoncontainer}></View>
+      <View style={styles.butoncontainer}>
+        <FlatList
+          data={data}
+          keyExtractor={item => item.id}
+          renderItem={({ item }) => {
+            return (
+              <View>
+                <Text>{item.author}</Text>
+              </View>
+            );
+          }}
+        />
+      </View>
     </View>
   );
 };
