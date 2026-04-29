@@ -30,11 +30,12 @@ const App = () => {
 
       <View style={styles.butoncontainer}>
         <FlatList
+          showsVerticalScrollIndicator={false}
           data={data}
           keyExtractor={item => item.id}
           renderItem={({ item }) => {
             return (
-              <View>
+              <View style={styles.itemcontainer}>
                 <Text>{item.author}</Text>
               </View>
             );
@@ -61,5 +62,11 @@ const styles = StyleSheet.create({
     color: 'red',
     fontFamily: 'Arial',
   },
-  butoncontainer: {},
+  butoncontainer: { paddingHorizontal: 20, marginTop: 20 },
+  itemcontainer: {
+    backgroundColor: 'lightgray',
+    padding: 10,
+    marginBottom: 10,
+    borderRadius: 5,
+  },
 });
