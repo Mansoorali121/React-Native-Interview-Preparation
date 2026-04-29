@@ -5,6 +5,7 @@ const App = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Third party APIS  </Text>
+      <Text>Get Request to Fetch Data </Text>
     </View>
   );
 };
