@@ -59,11 +59,21 @@ const App = () => {
         Get Request to Fetch Data {'\n '}Get request is used to load data and
         fetch it on screen{' '}
       </Text>
-   <View style={{gap:20}}>
-       <Button title="Add Books" onPress={addBooks} />
-            <Button title="Delete Books" onPress={DeleteBooks} />
-   </View>
-
+      <View style={{ gap: 20 }}>
+        <Button title="Add Books" onPress={addBooks} />
+        <Button title="Delete Books" onPress={DeleteBooks} />
+      </View>
+      <Text
+        style={{
+          marginTop: 20,
+          fontSize: 25,
+          color: 'red',
+          marginBottom: 20,
+          fontWeight: 'bold',
+        }}
+      >
+        Put Request Now{' '}
+      </Text>
 
       <View style={styles.butoncontainer}>
         <FlatList
