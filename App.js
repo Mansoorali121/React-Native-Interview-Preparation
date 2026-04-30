@@ -44,11 +44,25 @@ const App = () => {
   //  Delete Book
   const DeleteBooks = async () => {
     try {
-      const response = await axios.delete(`${URL}/12`);
+      const response = await axios.delete(`${URL}/11`);
       Alert.alert('Book deleted', 'Book has been deleted successfully');
-      setData(data.filter(item => item.id !== 13));
+      setData(data.filter(item => item.id !== 11));
     } catch (error) {
       console.error('Error deleting book:', error);
+    }
+  };
+  // Put request to Edit Book
+  const EditBook = async () => {
+    try {
+      const response = await axios.put(`${URL}/11`, {
+        author: 'Mansoor Sahito',
+        name_of_book: 'React Native in Urdu',
+        cover: 'https://picsum.photos/seed/fXytBvu5g5/1509/3939',
+      });
+      Alert.alert('Book Edited', 'Book has been edited Successfully');
+      setData(data.map(item => (item.id === 11 ? response.data : item)));
+    } catch (error) {
+      console.log('Error Editing Book', error);
     }
   };
 
@@ -62,6 +76,7 @@ const App = () => {
       <View style={{ gap: 20 }}>
         <Button title="Add Books" onPress={addBooks} />
         <Button title="Delete Books" onPress={DeleteBooks} />
+        <Button title="Edit Book" onPress={EditBook} />
       </View>
       <Text
         style={{
