@@ -62,11 +62,11 @@ const styles = StyleSheet.create({
     color: 'red',
     fontFamily: 'Arial',
   },
-  butoncontainer: { paddingHorizontal: 20, marginTop: 20 },
+  butoncontainer: { paddingHorizontal: 20, marginTop: 10 },
   itemcontainer: {
     backgroundColor: 'lightgray',
     padding: 10,
     marginBottom: 10,
-    borderRadius: 5,
+    borderRadius: 6,
   },
 });
