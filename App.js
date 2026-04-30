@@ -41,6 +41,17 @@ const App = () => {
     }
   };
 
+  //  Delete Book
+  const DeleteBooks = async () => {
+    try {
+      const response = await axios.delete(`${URL}/12`);
+      Alert.alert('Book deleted', 'Book has been deleted successfully');
+      setData(data.filter(item => item.id !== 13));
+    } catch (error) {
+      console.error('Error deleting book:', error);
+    }
+  };
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Third party APIS </Text>
@@ -48,7 +59,11 @@ const App = () => {
         Get Request to Fetch Data {'\n '}Get request is used to load data and
         fetch it on screen{' '}
       </Text>
-      <Button title="Add Books" onPress={addBooks} />
+   <View style={{gap:20}}>
+       <Button title="Add Books" onPress={addBooks} />
+            <Button title="Delete Books" onPress={DeleteBooks} />
+   </View>
+
 
       <View style={styles.butoncontainer}>
         <FlatList
