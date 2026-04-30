@@ -4,12 +4,12 @@ import axios from 'axios';
 
 const App = () => {
   const [data, setData] = useState([]);
+
+  const URL = "https://69609023e7aa517cb79661a7.mockapi.io/Books";
   // Third Party API
   const getBooks = async () => {
     try {
-      const response = await axios.get(
-        'https://69609023e7aa517cb79661a7.mockapi.io/Books',
-      );
+      const response = await axios.get(`${URL}`);
       const result = response.data;
       console.log('Books ', response.data);
       setData(result);
@@ -24,7 +24,7 @@ const App = () => {
   const addBooks = async () => {
     try {
       const response = await axios.post(
-        'https://69609023e7aa517cb79661a7.mockapi.io/Books',
+        `${URL}`,
         {
           author: 'Mansoor',
           name_of_book: 'React Native in Sindhi',
