@@ -1,5 +1,5 @@
-import { FlatList, StyleSheet, Text, View } from 'react-native';
-import React, { useState } from 'react';
+import { Alert, Button, FlatList, StyleSheet, Text, View } from 'react-native';
+import React, { memo, useState } from 'react';
 import axios from 'axios';
 
 const App = () => {
@@ -20,6 +20,24 @@ const App = () => {
   // Function to handle button Press
   getBooks();
 
+  //  Add Books
+  const addBooks = async () => {
+    try {
+      const response = await axios.post(
+        'https://69609023e7aa517cb79661a7.mockapi.io/Books',
+        {
+          author: 'Mansoor',
+          name_of_book: 'React Native in Sindhi',
+          cover: 'https://picsum.photos/seed/fXytBvu5g5/1509/3939',
+        },
+        Alert.alert("Book Added","Book has been added successfully")
+      );
+      setData([...data, response.data]);
+    } catch (error) {
+      console.log('Error adding Books', error);
+    }
+  };
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Third party APIS </Text>
@@ -27,6 +45,7 @@ const App = () => {
         Get Request to Fetch Data {'\n '}Get request is used to load data and
         fetch it on screen{' '}
       </Text>
+<Button  title="Add Books" onPress={addBooks}/>
 
       <View style={styles.butoncontainer}>
         <FlatList
@@ -41,6 +60,7 @@ const App = () => {
             );
           }}
         />
+
       </View>
     </View>
   );
