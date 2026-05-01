@@ -76,7 +76,7 @@ const App = () => {
       <View style={{ gap: 20 }}>
         <Button title="Add Books" onPress={addBooks} />
         <Button title="Delete Books" onPress={DeleteBooks} />
-        <Button title="Edit Books" onPress={EditBook} />
+        <Button title="Update Books" onPress={EditBook} />
       </View>
       <Text
         style={{
