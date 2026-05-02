@@ -5,10 +5,10 @@ const Book = ({ author, nameOfBook, price, coverURL, categoryColor }) => {
   return (
     <View style={styles.container}>
       <View style={[styles.coloredSquare, { backgroundColor: 'red' }]}>
-        <Image source={{ uri: coberURL }} style={styles.image} />
+        <Image source={{ uri: coverURL }} style={styles.image} />
       </View>
       <Text>{author}</Text>
-      <Text>{nameeOfBook}</Text>
+      <Text>{nameOfBook}</Text>
       <Text>{price}$</Text>
     </View>
   );
