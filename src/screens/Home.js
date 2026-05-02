@@ -10,10 +10,44 @@ const Home = () => {
       coverURL: 'https://loremflickr.com/2850/117?lock=1510699992919947',
       categoryColor: 'red',
     },
+    {
+      author: 'Vilson',
+      nameOfBook: 'The Alchemist',
+      price: 10,
+      coverURL: 'https://loremflickr.com/2850/117?lock=1510699992919947',
+      categoryColor: 'red',
+    },{
+      author: 'Vilson',
+      nameOfBook: 'The Alchemist',
+      price: 10,
+      coverURL: 'https://loremflickr.com/2850/117?lock=1510699992919947',
+      categoryColor: 'red',
+    },{
+      author: 'Vilson',
+      nameOfBook: 'The Alchemist',
+      price: 10,
+      coverURL: 'https://loremflickr.com/2850/117?lock=1510699992919947',
+      categoryColor: 'red',
+    },{
+      author: 'Vilson',
+      nameOfBook: 'The Alchemist',
+      price: 10,
+      coverURL: 'https://loremflickr.com/2850/117?lock=1510699992919947',
+      categoryColor: 'red',
+    },{
+      author: 'Vilson',
+      nameOfBook: 'The Alchemist',
+      price: 10,
+      coverURL: 'https://loremflickr.com/2850/117?lock=1510699992919947',
+      categoryColor: 'red',
+    },
   ];
   return (
     <View>
       <FlatList
+      numColumns={2}
+      columnWrapperStyle={{justifyContent:'space-between', gap:10}}
+      showsVerticalScrollIndicator={false}
         data={Tempdata}
         keyExtractor={(_, index) => index.toString()}
         renderItem={({ item }) => <Book {...item} />}
