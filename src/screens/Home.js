@@ -21,6 +21,10 @@ const Home = () => {
   useEffect(() => {
     getListofBooks();
   }, []);
+  // Delete Book
+  const onDeletehandler = () => {
+    
+  }
   return (
     <View>
       <FlatList
@@ -30,7 +34,9 @@ const Home = () => {
         data={data}
         keyExtractor={(_, index) => index.toString()}
         renderItem={({ item }) => (
-          <Book author={item.author} nameOfBook={item.nameOfBook}  coverURL={item.coverURL}/>
+          <Book author={item.author} nameOfBook={item.nameOfBook}  coverURL={item.coverURL}
+          onDeletepress={onDeletehandler}
+          />
         )}
       />
     </View>

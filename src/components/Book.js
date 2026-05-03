@@ -1,13 +1,24 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React from 'react';
 
-const Book = ({ author, nameOfBook, price, coverURL, categoryColor }) => {
+const Book = ({
+  author,
+  nameOfBook,
+  price,
+  coverURL,
+  categoryColor,
+  onDeletepress,
+}) => {
   return (
     <View style={styles.container}>
       <View style={[styles.coloredSquare, { backgroundColor: 'red' }]}>
         <Image source={{ uri: coverURL }} style={styles.image} />
       </View>
-      <TouchableOpacity style={styles.button} activeOpacity={0.7}>
+      <TouchableOpacity
+        style={styles.button}
+        activeOpacity={0.7}
+        onPress={onDeletepress}
+      >
         <Text style={styles.delete}>Delete </Text>
       </TouchableOpacity>
       <Text>{author}</Text>
