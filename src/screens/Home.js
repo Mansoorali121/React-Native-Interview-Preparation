@@ -4,7 +4,6 @@ import Book from '../components/Book';
 import axios from 'axios';
 const Home = () => {
   const [data, setData] = useState([]);
- 
 
   //  Get List of Books from API
   const getListofBooks = async () => {
@@ -12,6 +11,7 @@ const Home = () => {
       const response = await axios.get(
         '  https://69609023e7aa517cb79661a7.mockapi.io/Books',
       );
+      Alert.alert('Book deleted', 'Book has been deleted successfully');
       setData(response.data);
       Alert.alert('Books Fetched', 'Books have been fetched successfully');
     } catch (error) {
@@ -22,9 +22,17 @@ const Home = () => {
     getListofBooks();
   }, []);
   // Delete Book
-  const onDeletehandler = () => {
-    
-  }
+
+  const onDeletehandler = async bookId => {
+    try {
+      const response = await axios.delete(
+        `https://69609023e7aa517cb79661a7.mockapi.io/Books/${bookId}`,
+      );
+      setData(response.data);
+    } catch (error) {
+      console.log('Error', error);
+    }
+  };
   return (
     <View>
       <FlatList
@@ -34,8 +42,11 @@ const Home = () => {
         data={data}
         keyExtractor={(_, index) => index.toString()}
         renderItem={({ item }) => (
-          <Book author={item.author} nameOfBook={item.nameOfBook}  coverURL={item.coverURL}
-          onDeletepress={onDeletehandler}
+          <Book
+            author={item.author}
+            nameOfBook={item.nameOfBook}
+            coverURL={item.coverURL}
+            onDeletepress={() => onDeletehandler(item.id)}
           />
         )}
       />
