@@ -4,68 +4,7 @@ import Book from '../components/Book';
 import axios from 'axios';
 const Home = () => {
   const [data, setData] = useState([]);
-  const Tempdata = [
-    {
-      author: 'Vilson',
-      nameOfBook: 'The Alchemist',
-      price: 10,
-      coverURL:
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqjZoCvw3Ry2Xcl2C2Dot728vyEx1idSxCvlwCO5t3_w&s&ec=121657078',
-      categoryColor: 'red',
-    },
-    {
-      author: 'Vilson',
-      nameOfBook: 'The Alchemist',
-      price: 10,
-      coverURL:
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqjZoCvw3Ry2Xcl2C2Dot728vyEx1idSxCvlwCO5t3_w&s&ec=121657078',
-      categoryColor: 'red',
-    },
-    {
-      author: 'Vilson',
-      nameOfBook: 'The Alchemist',
-      price: 10,
-      coverURL: 'https://.com/2850/117?lock=1510699992919947',
-      categoryColor: 'red',
-    },
-    {
-      author: 'Vilson',
-      nameOfBook: 'The Alchemist',
-      price: 10,
-      coverURL: 'https://loremflickr.com/2850/117?lock=1510699992919947',
-      categoryColor: 'red',
-    },
-    {
-      author: 'Vilson',
-      nameOfBook: 'The Alchemist',
-      price: 10,
-      coverURL: 'https://loremflickr.com/2850/117?lock=1510699992919947',
-      categoryColor: 'red',
-    },
-    {
-      author: 'Vilson',
-      nameOfBook: 'The Alchemist',
-      price: 10,
-      coverURL:
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqjZoCvw3Ry2Xcl2C2Dot728vyEx1idSxCvlwCO5t3_w&s&ec=121657078',
-      categoryColor: 'red',
-    },
-    {
-      author: 'Vilson',
-      nameOfBook: 'The Alchemist',
-      price: 10,
-      coverURL: 'https://loremflickr.com/2850/117?lock=1510699992919947',
-      categoryColor: 'red',
-    },
-    {
-      author: 'Vilson',
-      nameOfBook: 'The Alchemist',
-      price: 10,
-      coverURL:
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqjZoCvw3Ry2Xcl2C2Dot728vyEx1idSxCvlwCO5t3_w&s&ec=121657078',
-      categoryColor: 'red',
-    },
-  ];
+ 
 
   //  Get List of Books from API
   const getListofBooks = async () => {
