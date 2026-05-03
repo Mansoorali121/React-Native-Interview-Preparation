@@ -94,7 +94,6 @@ const Home = () => {
           <Book author={item.author} nameOfBook={item.nameOfBook}  coverURL={item.coverURL}/>
         )}
       />
-      <Text>Data ia loading </Text>
     </View>
   );
 };
