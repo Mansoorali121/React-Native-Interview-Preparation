@@ -2,6 +2,7 @@ import { Alert, FlatList, StyleSheet, Text, View } from 'react-native';
 import React, { memo, useEffect, useState } from 'react';
 import Book from '../components/Book';
 import axios from 'axios';
+import Addbutton from '../components/Addbutton';
 const Home = () => {
   const [data, setData] = useState([]);
 
@@ -50,6 +51,7 @@ const Home = () => {
           />
         )}
       />
+      <Addbutton onAddpress={() => Alert.alert('Button Pressed...!')} />
     </View>
   );
 };

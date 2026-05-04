@@ -2,9 +2,9 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React from 'react';
 import { colors } from '../style/colors';
 
-const Addbutton = () => {
+const Addbutton = ({onAddpress}) => {
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={onAddpress}>
       <Image source={require('../assets/add.png')} style={styles.image} />
     </TouchableOpacity>
   );
@@ -13,7 +13,7 @@ const Addbutton = () => {
 export default Addbutton;
 
 const styles = StyleSheet.create({
-  image: { height: 20, width: 20 },
+  image: { height: 45, width: 45, tintColor:colors.white },
   container: {
     position: 'absolute',
     bottom: 50,
