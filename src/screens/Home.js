@@ -28,7 +28,7 @@ const Home = () => {
       const response = await axios.delete(
         `https://69609023e7aa517cb79661a7.mockapi.io/Books/${bookId}`,
       );
-      setData(response.data);
+      getListofBooks();
     } catch (error) {
       console.log('Error', error);
     }
