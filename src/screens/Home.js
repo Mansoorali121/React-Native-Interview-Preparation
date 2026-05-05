@@ -3,6 +3,7 @@ import React, { memo, useEffect, useState } from 'react';
 import Book from '../components/Book';
 import axios from 'axios';
 import Addbutton from '../components/Addbutton';
+import AddorEditBook from "../screens/AddorEditbook";
 const Home = () => {
   const [data, setData] = useState([]);
 
@@ -52,6 +53,7 @@ const Home = () => {
         )}
       />
       <Addbutton onAddpress={() => Alert.alert('Button Pressed...!')} />
+        <AddorEditBook />
     </View>
   );
 };

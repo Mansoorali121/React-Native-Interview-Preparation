@@ -11,9 +11,9 @@ const App = () => {
 
   return (
     <View style={styles.container}>
-      {/* <Home /> */}
-      <Maininput options={{value:value, onChangeText:(t)=> setValue(t)}} />
-        <Text>{value}</Text>
+      <Home />
+      {/* <Maininput options={{value:value, onChangeText:(t)=> setValue(t)}} />
+        <Text>{value}</Text> */}
     </View>
   );
 };
