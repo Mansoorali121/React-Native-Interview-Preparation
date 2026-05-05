@@ -1,14 +1,14 @@
 import { Alert, Button, FlatList, StyleSheet, Text, View } from 'react-native';
 import React, { memo, useEffect, useState } from 'react';
 import axios from 'axios';
-import Home from "./src/screens/Home";
+import Home from './src/screens/Home';
 
 const App = () => {
-  
+
 
   return (
     <View style={styles.container}>
-   <Home />
+      <Home />
     </View>
   );
 };
@@ -23,5 +23,4 @@ const styles = StyleSheet.create({
     marginBottom: 30,
     paddingHorizontal: 30,
   },
- 
 });
