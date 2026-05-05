@@ -5,12 +5,15 @@ import Home from './src/screens/Home';
 import Maininput from "./src/components/Maininput";
 
 const App = () => {
+  const [value,setValue] = useState("");
+
 
 
   return (
     <View style={styles.container}>
       {/* <Home /> */}
-      <Maininput />
+      <Maininput options={{value:value, onChangeText:(t)=> setValue(t)}} />
+        <Text>{value}</Text>
     </View>
   );
 };
