@@ -2,13 +2,15 @@ import { Alert, Button, FlatList, StyleSheet, Text, View } from 'react-native';
 import React, { memo, useEffect, useState } from 'react';
 import axios from 'axios';
 import Home from './src/screens/Home';
+import Maininput from "./src/components/Maininput";
 
 const App = () => {
 
 
   return (
     <View style={styles.container}>
-      <Home />
+      {/* <Home /> */}
+      <Maininput />
     </View>
   );
 };
