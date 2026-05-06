@@ -1,11 +1,11 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { Modal, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const AddorEditbook = () => {
+const AddorEditbook = ({visible}) => {
   return (
-    <View>
+    <Modal visible={visible} >
       <Text>AddorEditbook</Text>
-    </View>
+    </Modal>
   )
 }
 

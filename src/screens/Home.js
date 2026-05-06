@@ -35,6 +35,9 @@ const Home = () => {
       console.log('Error', error);
     }
   };
+  // Model Functionality
+  const [modalvisible, setModalVisible] = useState("");
+  
   return (
     <View>
       <FlatList
