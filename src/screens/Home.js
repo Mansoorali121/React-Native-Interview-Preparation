@@ -36,7 +36,7 @@ const Home = () => {
     }
   };
   // Model Functionality
-  const [modalvisible, setModalVisible] = useState("");
+  const [modalvisible, setModalVisible] = useState(false);
   
   return (
     <View>
