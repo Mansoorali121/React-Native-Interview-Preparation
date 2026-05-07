@@ -29,5 +29,5 @@ const styles = StyleSheet.create({
   work: { fontFamily: 'Outfit-ExtraLight' },
   name: { fontSize: s(15) },
   image: { height: s(45), width: s(45) },
-  profile: { marginTop: s(22) },
+  profile: { marginTop: s(12) },
 });
