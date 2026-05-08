@@ -11,6 +11,10 @@ const App = () => {
       <Header />
       <Subheader />
       <ScheduleCard />
+      <View style={styles.titles}>
+        <Text style={styles.tastsktext}>My Tasks </Text>
+        <Text style={styles.viewalltext}>View All </Text>
+      </View>
     </View>
   );
 };
@@ -19,4 +23,12 @@ export default App;
 
 const styles = StyleSheet.create({
   container: { marginTop: s(20), marginHorizontal: vs(20) },
+  titles: {
+    marginTop: s(10),
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  tastsktext:{fontSize:s(18),fontFamily:"Outfit-Medium"},
+    viewalltext:{fontSize:s(18),fontFamily:"Outfit-Medium", color:"blue"},
+
 });

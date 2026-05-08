@@ -52,6 +52,7 @@ const Scheduleicon = () => {
         <Text style={styles.subtaskstext}>Ongoing</Text>
         <Text style={styles.subtaskstext}>Tasks</Text>
       </View>
+     
     </View>
   );
 };
