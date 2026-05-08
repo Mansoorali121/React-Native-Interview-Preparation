@@ -1,5 +1,5 @@
 export enum colors  {
-    lightGray = "#F1F1F1",
+    lightGray = "#ffffffdc",
     grayText = "#e2dfdf",
     white = "#FFFFFF",
     blackText = "#121212",
