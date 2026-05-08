@@ -4,6 +4,7 @@ import { s, vs } from 'react-native-size-matters';
 import Header from './src/components/Header';
 import Subheader from './src/components/subheader';
 import ScheduleCard from './src/components/ScheduleCard';
+import Footertabs from "./src/components/Footertabs";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Text style={styles.tastsktext}>My Tasks </Text>
         <Text style={styles.viewalltext}>View All </Text>
       </View>
+      <Footertabs/>
     </View>
   );
 };
