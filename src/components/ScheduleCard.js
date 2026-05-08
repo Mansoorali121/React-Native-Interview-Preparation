@@ -2,8 +2,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import { colors } from '../style/colors';
 import { s, vs } from 'react-native-size-matters';
-import Scheduleicon from "./Scheduleicon";
-
+import Scheduleicon from './Scheduleicon';
 
 const ScheduleCard = () => {
   return (
@@ -11,11 +10,10 @@ const ScheduleCard = () => {
       {/* Card Margin */}
       <View style={styles.cardmargin}>
         <View style={styles.cont2}>
-          <Text>Overview</Text>
-          <Text>This Week </Text>
+          <Text style={styles.overview}>Overview</Text>
+          <Text style={styles.week}>This Week </Text>
         </View>
-              <Scheduleicon/>
-        
+        <Scheduleicon />
       </View>
     </View>
   );
@@ -36,4 +34,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   cardmargin: { marginHorizontal: vs(10) },
+  overview: { fontSize: s(14), fontFamily: 'Outfit-Black' },
+  week: { fontSize: 14, fontFamily: 'Outfit-Light' },
 });
