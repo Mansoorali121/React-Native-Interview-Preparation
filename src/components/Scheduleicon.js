@@ -59,7 +59,7 @@ const Scheduleicon = () => {
 export default Scheduleicon;
 
 const styles = StyleSheet.create({
-  container: { marginHorizontal: vs(12), marginTop: s(12) },
+  container: { marginHorizontal: vs(12), marginTop: s(12), gap:s(4) },
   image: { height: vs(18), width: s(18) },
   circle: {
     backgroundColor: '#ade0ff',
