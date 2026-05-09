@@ -6,7 +6,7 @@ import { s } from 'react-native-size-matters';
 const tabsArr = ["All","In Progress","Completed","Overdue"];
 
 const Active_Bg="#75563B";
-const Active_Text = "#FFFFFF";
+const Active_Text = "#FFFFF";
 
 const Footertabs = () => {
   return (
