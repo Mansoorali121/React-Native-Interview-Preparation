@@ -1,5 +1,5 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import { s, vs } from 'react-native-size-matters';
 
 // Tabs Array
@@ -9,11 +9,12 @@ const Active_Bg="#75563B";
 const Active_Text = "#FFFFF";
 
 const Footertabs = () => {
+  const [activetab,setActivetab] = useState("Completed");
   return (
     <View style={styles.container}>
       {
         tabsArr.map((tabName)=>{
-          return <TouchableOpacity style={styles.tabbutton}>
+          return <TouchableOpacity style={[styles.tabbutton,{}]}>
             <Text>{tabName}</Text>
 
           </TouchableOpacity>
@@ -31,7 +32,9 @@ const styles = StyleSheet.create({
         height:vs(48),
         flexDirection:"row",
         marginTop:s(10),
-        
+        alignItems:"center",
+        padding:s(4)
+
 
     },
     tabbutton:{height:vs(32),
