@@ -6,7 +6,7 @@ import { s, vs } from 'react-native-size-matters';
 const tabsArr = ['All', 'In Progress', 'Completed', 'Overdue'];
 
 const Active_Bg = '#6089bb';
-const Active_Text = 'red';
+const Active_Text = '#fff';
 
 const Footertabs = () => {
   const [activetab, setActivetab] = useState('Completed');
@@ -14,14 +14,15 @@ const Footertabs = () => {
     <View style={styles.container}>
       {tabsArr.map(tabName => {
         return (
-          <TouchableOpacity onPress={()=>setActivetab(tabName)}
+          <TouchableOpacity
+            onPress={() => setActivetab(tabName)}
             style={[
               styles.tabbutton,
               activetab === tabName && { backgroundColor: Active_Bg },
             ]}
           >
             <Text
-              style={[styles.text, activetab === tabName && { color: '#fff' }]}
+              style={[styles.text, activetab === tabName && { color: Active_Text }]}
             >
               {tabName}
             </Text>
@@ -51,5 +52,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  text: { color: 'black' },
+  text: { color: "black" },
 });
