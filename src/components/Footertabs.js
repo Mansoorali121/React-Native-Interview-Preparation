@@ -14,7 +14,7 @@ const Footertabs = () => {
     <View style={styles.container}>
       {tabsArr.map(tabName => {
         return (
-          <TouchableOpacity onPress={}
+          <TouchableOpacity onPress={()=>setActivetab(tabName)}
             style={[
               styles.tabbutton,
               activetab === tabName && { backgroundColor: Active_Bg },
