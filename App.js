@@ -18,7 +18,7 @@ const App = () => {
         <Text style={styles.viewalltext}>View All </Text>
       </View>
       <Footertabs />
-      <Footerlist />
+      {/* <Footerlist /> */}
             <Footerlist />
 
     </View>
