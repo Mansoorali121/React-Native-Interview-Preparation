@@ -19,6 +19,8 @@ const App = () => {
       </View>
       <Footertabs />
       <Footerlist />
+            <Footerlist />
+
     </View>
   );
 };

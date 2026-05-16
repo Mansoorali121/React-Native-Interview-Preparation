@@ -27,7 +27,7 @@ const Footerlist = () => {
 export default Footerlist;
 
 const styles = StyleSheet.create({
-  cont: { height: vs(100), width: '100%', top: vs(10) },
+  cont: { height: vs(90), width: '100%', top: vs(10) , backgroundColor:"#e4e7ea", borderRadius:s(10),marginBottom:s(5)},
   circle: {
     borderWidth: 2,
     borderColor: 'blue',
