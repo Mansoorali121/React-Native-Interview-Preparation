@@ -4,7 +4,8 @@ import { s, vs } from 'react-native-size-matters';
 import Header from './src/components/Header';
 import Subheader from './src/components/subheader';
 import ScheduleCard from './src/components/ScheduleCard';
-import Footertabs from "./src/components/Footertabs";
+import Footertabs from './src/components/Footertabs';
+import Footerlist from './src/components/Footerlist';
 
 const App = () => {
   return (
@@ -16,7 +17,8 @@ const App = () => {
         <Text style={styles.tastsktext}>My Tasks </Text>
         <Text style={styles.viewalltext}>View All </Text>
       </View>
-      <Footertabs/>
+      <Footertabs />
+      <Footerlist />
     </View>
   );
 };
@@ -30,7 +32,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
-  tastsktext:{fontSize:s(18),fontFamily:"Outfit-Medium"},
-    viewalltext:{fontSize:s(18),fontFamily:"Outfit-Medium", color:"blue"},
-
+  tastsktext: { fontSize: s(18), fontFamily: 'Outfit-Medium' },
+  viewalltext: { fontSize: s(18), fontFamily: 'Outfit-Medium', color: 'blue' },
 });
