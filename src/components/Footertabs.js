@@ -46,9 +46,9 @@ const styles = StyleSheet.create({
     padding: s(4),
   },
   tabbutton: {
-    height: vs(32),
+    height: vs(22),
     flex: 1,
-    borderRadius: s(8),
+    borderRadius: s(16),
     justifyContent: 'center',
     alignItems: 'center',
   },
