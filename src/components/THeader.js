@@ -28,7 +28,7 @@ export default THeader;
 const styles = StyleSheet.create({
   menuimage: { height: vs(30), width: s(30) },
   menubutton: {
-    height: vs(45),
+    height: vs(40),
     width: s(40),
     backgroundColor: '#edf8ff',
     justifyContent: 'center',
