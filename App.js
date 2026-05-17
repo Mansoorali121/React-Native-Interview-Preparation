@@ -2,7 +2,8 @@ import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import { s, vs } from 'react-native-size-matters';
 import THeader from './src/components/THeader';
-import Myinput from "./src/components/Myinput";
+import Myinput from './src/components/Myinput';
+import Status from './src/components/Status';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
           </Text>
         </View>
         <Myinput />
+        <Status />
       </View>
     </View>
   );
@@ -30,6 +32,6 @@ const styles = StyleSheet.create({
   },
   titlesscontainer: { marginTop: vs(25) },
   title: { fontSize: s(15), fontFamily: 'Outfit-Thin', color: 'gray' },
-  description: { fontSize: s(33), fontFamily: 'Outfit-Medium'},
-  descpt:{color:"#5959e19f", fontWeight:"bold"},
+  description: { fontSize: s(33), fontFamily: 'Outfit-Medium' },
+  descpt: { color: '#5959e19f', fontWeight: 'bold' },
 });
