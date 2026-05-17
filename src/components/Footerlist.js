@@ -9,13 +9,15 @@ const Footerlist = () => {
       title: 'Design New Home Screen',
       description: 'Create UI for the new dashboard',
       status: 'In Process',
-      backgroundColor: '',
+      date: "22 May",
     },
     {
       id: 2,
       title: 'Fix bug in authentication',
       description: 'Resolve issues in login flow',
       status: 'Completed',
+            date: "14 Aug",
+
     },
   ];
   return (
@@ -38,7 +40,8 @@ const Footerlist = () => {
                 <Text
                   style={[
                     styles.protext,
-                    item.id == 2 && { backgroundColor: 'orange' },
+                    item.id == 2 && { backgroundColor: 'orange' ,       color: 'white',
+},
                   ]}
                 >
                   {item.status}
@@ -49,7 +52,7 @@ const Footerlist = () => {
                   style={styles.image}
                   source={require('../assets/calendar.png')}
                 />
-                <Text style={styles.datetext}>20 May </Text>
+                <Text style={styles.datetext}>{item.date} </Text>
               </View>
             </View>
           </View>
