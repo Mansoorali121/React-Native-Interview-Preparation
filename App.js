@@ -2,6 +2,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import { s, vs } from 'react-native-size-matters';
 import THeader from './src/components/THeader';
+import Myinput from "./src/components/Myinput";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
             You have <Text style={styles.descpt}>49 tasks</Text> this month
           </Text>
         </View>
+        <Myinput />
       </View>
     </View>
   );
