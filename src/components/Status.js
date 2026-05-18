@@ -36,7 +36,7 @@ const Status = () => {
         </View>
       </View>
       <View style={styles.textscontainer}>
-        <Text style={styles.status}>To-Do</Text>
+        <Text style={styles.status}>ToDo</Text>
         <Text style={styles.status}>Progress</Text>
         <Text style={styles.status}>Done</Text>
       </View>
