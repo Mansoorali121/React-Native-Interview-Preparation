@@ -4,6 +4,7 @@ import { s, vs } from 'react-native-size-matters';
 import THeader from './src/components/THeader';
 import Myinput from './src/components/Myinput';
 import Status from './src/components/Status';
+import Taskcard from "./src/components/Taskcard";
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
           <Text style={styles.title1}>Todays Tasks</Text>
           <Text style={styles.title2}>See All</Text>
         </View>
+        <Taskcard />
       </View>
     </View>
   );
@@ -44,6 +46,6 @@ const styles = StyleSheet.create({
   title: { fontSize: s(15), fontFamily: 'Outfit-Thin', color: 'gray' },
   description: { fontSize: s(33), fontFamily: 'Outfit-Medium' },
   descpt: { color: '#5959e19f', fontWeight: 'bold' },
-  title1: { fontSize: s(25), fontFamily: 'Outfit-Medium' },
+  title1: { fontSize: s(25), fontFamily: 'Outfit-Medium' , marginBottom:s(10) },
   title2: { fontSize: s(15), fontFamily: 'Outfit-Regular', color: 'gray', marginBottom:s(10) },
 });
