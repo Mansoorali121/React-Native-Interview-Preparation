@@ -6,7 +6,7 @@ const Taskcard = () => {
   return (
     <View style={styles.container}>
   <View style={{flexDirection:"row",gap:s
-    (10)
+    (9)
   }}>
         <View style={styles.card}>
         <View style={{ marginHorizontal: s(10) }}>
