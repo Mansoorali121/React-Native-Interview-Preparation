@@ -5,12 +5,14 @@ import { s } from 'react-native-size-matters';
 const Taskcard = () => {
   const data = [
     {
+      id:"1",
       title: 'Team Meeting',
       desc: 'Group disucussion for the new product.',
       time: '10:00 AM ',
       progress: '48%',
     },
     {
+      id:"2",
       title: 'UI Design',
       desc: 'Make a homepage disucussion for the new product.',
       time: '10:00 AM ',
@@ -26,7 +28,8 @@ const Taskcard = () => {
         keyExtractor={item => item.id}
         renderItem={({ item }) => {
           return (
-            <View style={styles.card}>
+            <View style={{marginRight:s(15)}}>
+              <View style={[styles.card , item.id === "2" && {backgroundColor:"#ec4bbbdc"}]}>
               <View style={{ marginHorizontal: s(10) }}>
                 <Text style={styles.teamtext}>{item.title}</Text>
                 <Text style={styles.desc}>{item.desc}</Text>
@@ -48,6 +51,7 @@ const Taskcard = () => {
               </View>
               <View style={styles.line}></View>
             </View>
+              </View>
           );
         }}
       />
@@ -61,8 +65,8 @@ const styles = StyleSheet.create({
   container: { marginTop: s(10) },
   card: {
     backgroundColor: '#2c5da6',
-    height: s(210),
-    width: '62%',
+    height: s(220),
+    width: s(220),
     borderRadius: s(20),
   },
   teamtext: {
