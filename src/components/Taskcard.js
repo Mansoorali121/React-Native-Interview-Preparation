@@ -1,58 +1,56 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { FlatList, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import { s } from 'react-native-size-matters';
 
 const Taskcard = () => {
+  const data = [
+    {
+      title: 'Team Meeting',
+      desc: 'Group disucussion for the new product.',
+      time: '10:00 AM ',
+      progress: '48%',
+    },
+    {
+      title: 'UI Design',
+      desc: 'Make a homepage disucussion for the new product.',
+      time: '10:00 AM ',
+      progress: '48%',
+    },
+  ];
   return (
     <View style={styles.container}>
-  <View style={{flexDirection:"row",gap:s
-    (9)
-  }}>
-        <View style={styles.card}>
-        <View style={{ marginHorizontal: s(10) }}>
-          <Text style={styles.teamtext}>Team Meeting</Text>
-          <Text style={styles.desc}>
-            Group disucussion for the new product.
-          </Text>
-          <Text style={styles.time}>10:00 AM </Text>
-          <View
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              marginTop: s(6),
-            }}
-          >
-            <Text style={[styles.time, { fontWeight: 'bold' }]}>Progress</Text>
-            <Text style={[styles.time, { fontWeight: 'bold' }]}>48% </Text>
-          </View>
-        </View>
-        <View
-          style={styles.line}
-        ></View>
-      </View>
-          <View style={[styles.card,{backgroundColor:"#de5959"}]}>
-        <View style={{ marginHorizontal: s(10) }}>
-          <Text style={styles.teamtext}>UI Design</Text>
-          <Text style={styles.desc}>
-            Make a homepage disucussion for the new product.
-          </Text>
-          <Text style={styles.time}>10:00 AM </Text>
-          <View
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              marginTop: s(6),
-            }}
-          >
-            <Text style={[styles.time, { fontWeight: 'bold' }]}>Progress</Text>
-            <Text style={[styles.time, { fontWeight: 'bold' }]}>48% </Text>
-          </View>
-        </View>
-        <View
-          style={styles.line}
-        ></View>
-      </View>
-  </View>
+      <FlatList
+        data={data}
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        keyExtractor={item => item.id}
+        renderItem={({ item }) => {
+          return (
+            <View style={styles.card}>
+              <View style={{ marginHorizontal: s(10) }}>
+                <Text style={styles.teamtext}>{item.title}</Text>
+                <Text style={styles.desc}>{item.desc}</Text>
+                <Text style={styles.time}>{item.time}</Text>
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                    marginTop: s(6),
+                  }}
+                >
+                  <Text style={[styles.time, { fontWeight: 'bold' }]}>
+                    Progress
+                  </Text>
+                  <Text style={[styles.time, { fontWeight: 'bold' }]}>
+                    {item.progress}
+                  </Text>
+                </View>
+              </View>
+              <View style={styles.line}></View>
+            </View>
+          );
+        }}
+      />
     </View>
   );
 };
@@ -64,7 +62,7 @@ const styles = StyleSheet.create({
   card: {
     backgroundColor: '#2c5da6',
     height: s(210),
-    width: '65%',
+    width: '62%',
     borderRadius: s(20),
   },
   teamtext: {
@@ -87,11 +85,11 @@ const styles = StyleSheet.create({
     fontFamily: 'Outfit-Regular',
     marginBottom: s(10),
   },
-  line:{
-            backgroundColor: '#fff',
-            height: s(10),
-            width: '90%',
-            borderRadius: s(20),
-            alignSelf: 'center',
-          }
+  line: {
+    backgroundColor: '#fff',
+    height: s(10),
+    width: '90%',
+    borderRadius: s(20),
+    alignSelf: 'center',
+  },
 });
