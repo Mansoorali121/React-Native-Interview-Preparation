@@ -5,12 +5,14 @@ import THeader from './src/components/THeader';
 import Myinput from './src/components/Myinput';
 import Status from './src/components/Status';
 import Taskcard from "./src/components/Taskcard";
+import Tasks from "./src/screens/Tasks";
 
 const App = () => {
   return (
     <View style={{ backgroundColor: '#fff', flex: 1 }}>
       <View style={styles.container}>
-        <THeader />
+        <Tasks />
+        {/* <THeader />
         <View style={styles.titlesscontainer}>
           <Text style={styles.title}>Good Morning, Rifat!</Text>
           <Text style={styles.description}>
@@ -29,7 +31,7 @@ const App = () => {
           <Text style={styles.title1}>Todays Tasks</Text>
           <Text style={styles.title2}>See All</Text>
         </View>
-        <Taskcard />
+        <Taskcard /> */}
       </View>
     </View>
   );

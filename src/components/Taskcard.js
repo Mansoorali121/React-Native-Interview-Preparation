@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
   container: { marginTop: s(10) },
   card: {
     backgroundColor: '#2c5da6',
-    height: s(220),
+    height: s(210),
     width: s(220),
     borderRadius: s(20),
   },
