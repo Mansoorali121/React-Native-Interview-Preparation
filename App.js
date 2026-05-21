@@ -42,7 +42,7 @@ export default App;
 const styles = StyleSheet.create({
   container: {
     marginTop: s(20),
-    marginHorizontal: vs(20),
+    marginHorizontal: vs(21),
   },
   titlesscontainer: { marginTop: vs(25) },
   title: { fontSize: s(15), fontFamily: 'Outfit-Thin', color: 'gray' },
