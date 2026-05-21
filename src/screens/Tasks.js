@@ -4,7 +4,8 @@ import React from 'react'
 const Tasks = () => {
   return (
     <View>
-      <Text>Tasks</Text>
+      <Text>Back Arrow</Text>
+      <Text>Add Button</Text>
     </View>
   )
 }
