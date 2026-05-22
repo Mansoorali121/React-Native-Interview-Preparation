@@ -1,15 +1,16 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import Backarrow from '../components/Backarrow';
 
 const Tasks = () => {
   return (
     <View>
-      <Text>Back Arrow</Text>
+      <Backarrow />
       <Text>Add Button</Text>
     </View>
-  )
-}
+  );
+};
 
 export default Tasks;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});
