@@ -17,7 +17,7 @@ const Tasksheader = () => {
 export default Tasksheader;
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#fff' },
+  container: {  backgroundColor: '#fff' },
   headeritems: {
     flexDirection: 'row',
     justifyContent: 'space-between',

@@ -3,12 +3,13 @@ import React from 'react';
 import Backarrow from '../components/Backarrow';
 import Addbutton from '../components/Addbutton';
 import { s } from 'react-native-size-matters';
-import Tasksheader from "../components/Tasksheader";
+import Tasksheader from '../components/Tasksheader';
+import Daysname from '../components/Daysname';
 const Tasks = () => {
   return (
     <View style={styles.container}>
       <Tasksheader />
-     
+      <Daysname />
     </View>
   );
 };
@@ -16,6 +17,5 @@ const Tasks = () => {
 export default Tasks;
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#fff', },
- 
+  container: { flex: 1, backgroundColor: '#fff' },
 });
