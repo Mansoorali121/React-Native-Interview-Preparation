@@ -4,12 +4,13 @@ import Backarrow from '../components/Backarrow';
 import Addbutton from '../components/Addbutton';
 import { s } from 'react-native-size-matters';
 import Tasksheader from '../components/Tasksheader';
-import Daysname from '../components/Daysname';
+import Daysname from "../components/Daysname";
 const Tasks = () => {
   return (
     <View style={styles.container}>
       <Tasksheader />
       <Daysname />
+      <Text>Hello World </Text>
     </View>
   );
 };
