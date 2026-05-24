@@ -4,14 +4,19 @@ import { s, vs } from 'react-native-size-matters';
 import THeader from './src/components/THeader';
 import Myinput from './src/components/Myinput';
 import Status from './src/components/Status';
-import Taskcard from "./src/components/Taskcard";
-import Tasks from "./src/screens/Tasks";
+import Taskcard from './src/components/Taskcard';
+import Tasks from './src/screens/Tasks';
+import Daysname from './src/components/Daysname';
+import Taskscard from './src/components/Taskscard';
 
 const App = () => {
   return (
     <View style={{ backgroundColor: '#fff', flex: 1 }}>
       <View style={styles.container}>
         <Tasks />
+        <Daysname />
+        <Taskscard />
+
         {/* <THeader />
         <View style={styles.titlesscontainer}>
           <Text style={styles.title}>Good Morning, Rifat!</Text>
@@ -48,6 +53,11 @@ const styles = StyleSheet.create({
   title: { fontSize: s(15), fontFamily: 'Outfit-Thin', color: 'gray' },
   description: { fontSize: s(33), fontFamily: 'Outfit-Medium' },
   descpt: { color: '#5959e19f', fontWeight: 'bold' },
-  title1: { fontSize: s(25), fontFamily: 'Outfit-Medium' , marginBottom:s(10) },
-  title2: { fontSize: s(15), fontFamily: 'Outfit-Regular', color: 'gray', marginBottom:s(10) },
+  title1: { fontSize: s(25), fontFamily: 'Outfit-Medium', marginBottom: s(10) },
+  title2: {
+    fontSize: s(15),
+    fontFamily: 'Outfit-Regular',
+    color: 'gray',
+    marginBottom: s(10),
+  },
 });

@@ -30,8 +30,8 @@ const Daysname = () => {
 export default Daysname;
 
 const styles = StyleSheet.create({
-  container: { marginTop: s(15) },
-  dayscontainer: { flexDirection: 'row', justifyContent: 'space-around' },
+  container: { marginTop: s(69) },
+  dayscontainer: { flexDirection: 'row', justifyContent: 'space-around' ,},
   day: { fontSize: s(15), fontFamily: 'Outfit-Light' },
   date: { fontSize: s(13), fontFamily: 'Outfit-Light' },
   datecontainer: {
