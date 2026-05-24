@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
   cont: {
     marginTop: s(10),
     width: '90%',
-    height: vs(120),
+    height: vs(100),
     // backgroundColor: '#fc569e',
     marginHorizontal: s(30),
     borderRadius: s(20),

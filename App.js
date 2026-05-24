@@ -22,14 +22,14 @@ const App = () => {
     id: 2,
     title: 'UI Design',
     time: '1:00 PM',
-    description: 'Design mobile screens',
+    description: 'Design mobile screens Make some ideation from skretch ',
     color: '#36817c',
   },
   {
     id: 3,
     title: 'Meeting',
     time: '3:00 PM',
-    description: 'Client discussion',
+    description: 'Client discussion  Make some ideation from skretch ',
     color: '#6e741c',
   },
     {
@@ -39,6 +39,13 @@ const App = () => {
     description: 'Client discussion about backend development',
     color: '#1e482f',
   },
+  {
+    id: 5,
+    title: 'Code Review',
+    time: '4:00 PM',
+    description: 'Client discussion about backend development',
+    color: '#124b7d',
+  },
 ];
   
   return (
@@ -47,6 +54,7 @@ const App = () => {
         <Tasks />
         <Daysname />
         {/* <Taskscard /> */}
+        showVerticalScrollIndicator = {false}
         <FlatList data={data} keyExtractor={(item)=>item.id}
         renderItem={({item})=>(
           <Taskscard {...item}  />
