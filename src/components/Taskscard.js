@@ -2,17 +2,17 @@ import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import { s, vs } from 'react-native-size-matters';
 
-const Taskscard = () => {
+const Taskscard = ({title,time,description, color}) => {
   return (
-    <View style={styles.cont}>
+    <View style={[styles.cont, {backgroundColor:color}]}>
       <View style={{ marginHorizontal: s(20) }}>
         <View style={styles.card}>
-          <Text style={styles.cardtitle}>Wirefarming </Text>
-          <Text style={styles.cardtitle}>12:00 PM</Text>
+          <Text style={styles.cardtitle}>{title}</Text>
+          <Text style={styles.cardtitle}>{time}</Text>
         </View>
         <Text style={styles.cardescrip}>
           {' '}
-          Make some ideation from sketch and wireframes
+          {description}
         </Text>
       </View>
     </View>
@@ -25,8 +25,8 @@ const styles = StyleSheet.create({
   cont: {
     marginTop: s(10),
     width: '90%',
-    height: vs(130),
-    backgroundColor: '#fc569e',
+    height: vs(120),
+    // backgroundColor: '#fc569e',
     marginHorizontal: s(30),
     borderRadius: s(20),
   },
@@ -44,7 +44,6 @@ const styles = StyleSheet.create({
     fontSize: s(15),
     fontWeight: '300',
     color: '#ffffffba',
-    marginTop:s
-    (10)
+    marginTop: s(10),
   },
 });

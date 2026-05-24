@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { FlatList, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import { s, vs } from 'react-native-size-matters';
 import THeader from './src/components/THeader';
@@ -10,12 +10,48 @@ import Daysname from './src/components/Daysname';
 import Taskscard from './src/components/Taskscard';
 
 const App = () => {
+ const data = [
+  {
+    id: 1,
+    title: 'Wirefarming',
+    time: '12:00 PM',
+    description: 'Make some ideation from skretch and wireframes',
+    color: '#fc569e',
+  },
+  {
+    id: 2,
+    title: 'UI Design',
+    time: '1:00 PM',
+    description: 'Design mobile screens',
+    color: '#36817c',
+  },
+  {
+    id: 3,
+    title: 'Meeting',
+    time: '3:00 PM',
+    description: 'Client discussion',
+    color: '#6e741c',
+  },
+    {
+    id: 4,
+    title: 'Backend',
+    time: '5:00 PM',
+    description: 'Client discussion about backend development',
+    color: '#1e482f',
+  },
+];
+  
   return (
     <View style={{ backgroundColor: '#fff', flex: 1 }}>
       <View style={styles.container}>
         <Tasks />
         <Daysname />
-        <Taskscard />
+        {/* <Taskscard /> */}
+        <FlatList data={data} keyExtractor={(item)=>item.id}
+        renderItem={({item})=>(
+          <Taskscard {...item}  />
+  )}
+        />
 
         {/* <THeader />
         <View style={styles.titlesscontainer}>
