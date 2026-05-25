@@ -110,11 +110,14 @@ import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import T2header from './src/components/T2header';
 import { s } from 'react-native-size-matters';
+import T2text from './src/components/T2text';
+
 
 const App = () => {
   return (
     <View style={styles.container}>
       <T2header />
+      <T2text />
     </View>
   );
 };
