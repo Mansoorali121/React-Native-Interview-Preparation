@@ -118,13 +118,18 @@ import T2tabs from "./src/components/T2tabs";
 const App = () => {
   return (
     <View style={styles.container}>
-      <T2header />
+      <View style={{marginHorizontal:s
+        (20),
+        backgroundColor:"#fff"
+      }}>
+        <T2header />
       <T2text />
       <View style={styles.buttonscontainer}>
         <Searchbutton />
       <Filterbutton />
       </View>
       <T2tabs />
+      </View>
     </View>
   );
 };
@@ -132,7 +137,7 @@ const App = () => {
 export default App;
 
 const styles = StyleSheet.create({
-  container: { backgroundColor: '#fff', flex: 1, marginHorizontal: s(20) },
+  container: { backgroundColor: '#fff', flex: 1, },
   buttonscontainer:{flexDirection:"row", alignItems:"center", justifyContent:"space-between", gap:s
     (3)
   },
