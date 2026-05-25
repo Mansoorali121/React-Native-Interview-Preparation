@@ -41,7 +41,7 @@ const COLORS = {
 
   // Gradient
   gradientStart: '#3F51F7',
-  gradientEnd: '#5A62F7',
+  gradientEnd: '#4f54b3',
 };
 
 export default COLORS;

@@ -111,13 +111,18 @@ import React from 'react';
 import T2header from './src/components/T2header';
 import { s } from 'react-native-size-matters';
 import T2text from './src/components/T2text';
-
+import Searchbutton from './src/components/Searchbutton';
+import Filterbutton from './src/components/Filterbutton';
 
 const App = () => {
   return (
     <View style={styles.container}>
       <T2header />
       <T2text />
+      <View style={styles.buttonscontainer}>
+        <Searchbutton />
+      <Filterbutton />
+      </View>
     </View>
   );
 };
@@ -125,7 +130,8 @@ const App = () => {
 export default App;
 
 const styles = StyleSheet.create({
-  container: { backgroundColor: '#fff', flex: 1, marginHorizontal:s
-    (20)
-   },
+  container: { backgroundColor: '#fff', flex: 1, marginHorizontal: s(20) },
+  buttonscontainer:{flexDirection:"row", alignItems:"center", justifyContent:"space-between", gap:s
+    (3)
+  },
 });

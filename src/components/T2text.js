@@ -15,6 +15,6 @@ export default T2text;
 
 const styles = StyleSheet.create({
   container: { marginTop: s(30) },
-  mainheader: { fontSize: s(30), fontFamily: 'Outfit-Medium' },
+  mainheader: { fontSize: s(30), fontFamily: 'Outfit-Medium', fontweight:'bold' },
   subheader: { fontSize: s(12), fontFamily: 'Outfit-Regular' },
 });

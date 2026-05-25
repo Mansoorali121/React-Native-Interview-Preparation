@@ -23,19 +23,22 @@ const styles = StyleSheet.create({
     width: s(50),
     height: vs(50),
     borderRadius: s(25),
-    backgroundColor: colors.secondaryLight,
+    backgroundColor: colors.gradientEnd,
     justifyContent: 'center',
     alignItems: 'center',
   },
   menu: {
     width: s(24),
     height: vs(24),
+    tintColor: colors.secondaryLight,
   },
   logo: {
     width: s(50),
     height: vs(50),
   },
-  container: { flexDirection: 'row', justifyContent: 'space-between', marginTop:vs
-    (15)
-   },
+  container: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: vs(15),
+  },
 });
