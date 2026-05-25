@@ -113,6 +113,7 @@ import { s } from 'react-native-size-matters';
 import T2text from './src/components/T2text';
 import Searchbutton from './src/components/Searchbutton';
 import Filterbutton from './src/components/Filterbutton';
+import T2tabs from "./src/components/T2tabs";
 
 const App = () => {
   return (
@@ -123,6 +124,7 @@ const App = () => {
         <Searchbutton />
       <Filterbutton />
       </View>
+      <T2tabs />
     </View>
   );
 };
