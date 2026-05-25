@@ -106,21 +106,14 @@
 //   },
 // });
 
-import { Button, StyleSheet, Text, View } from 'react-native';
-import React, { useState } from 'react';
-import { s } from 'react-native-size-matters';
+import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import T2header from './src/components/T2header';
 
 const App = () => {
-  const [value, setValue] = useState(0);
-  const [disable, setDiable] = useState(false);
-
   return (
     <View style={styles.container}>
-      <Button title="Increment" onPress={() => setValue(value + 1)} />
-      <Text  style={{ fontSize: s(20), marginTop: s(30) }}>{value}</Text>
-      <Button  title="Decrement" onPress={() => { if (value > 0 ){
-        setValue(value - 1)
-      }}} />
+      <T2header />
     </View>
   );
 };
@@ -128,5 +121,5 @@ const App = () => {
 export default App;
 
 const styles = StyleSheet.create({
-  container: { flex: 1, alignItems: 'center', marginTop: s(80), gap: s(50) },
+  container: { backgroundColor: '#fff', flex: 1 },
 });
