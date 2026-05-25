@@ -109,6 +109,7 @@
 import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import T2header from './src/components/T2header';
+import { s } from 'react-native-size-matters';
 
 const App = () => {
   return (
@@ -121,5 +122,7 @@ const App = () => {
 export default App;
 
 const styles = StyleSheet.create({
-  container: { backgroundColor: '#fff', flex: 1 },
+  container: { backgroundColor: '#fff', flex: 1, marginHorizontal:s
+    (20)
+   },
 });
