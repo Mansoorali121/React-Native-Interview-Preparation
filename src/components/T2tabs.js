@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
   },
 
   activeTab: {
-    backgroundColor: colors.gradientEnd,
+    backgroundColor: colors.primary,
   },
   tabtext: {
   color: colors.black,
