@@ -37,12 +37,12 @@ const styles = StyleSheet.create({
   tab: {
     backgroundColor: colors.inactiveIcon,
     paddingVertical: s(10),
-    paddingHorizontal: s(20),
+    paddingHorizontal: s(21),
     borderRadius: s(10),
   },
 
   activeTab: {
-    backgroundColor: colors.activeIcon,
+    backgroundColor: colors.gradientEnd,
   },
   tabtext: {
   color: colors.black,
