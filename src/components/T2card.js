@@ -1,11 +1,34 @@
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { FlatList, Image, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import { s, vs } from 'react-native-size-matters';
 import colors from '../style/colors';
 
 const T2card = () => {
+  const cardData = [
+    {
+      id: '1',
+      name: 'Project B',
+      course: 'Front End Development',
+      date: 'September   2020',
+    },
+    {
+      id: '2',
+      name: 'Project C',
+      course: 'Graphic Design',
+      date: 'October 2020',
+    },
+  ];
   return (
-    <View style={styles.cont}>
+   <FlatList
+   data={cardData}
+   horizontal
+  showsHorizontalScrollIndicator={false}
+    ItemSeparatorComponent={() => <View style={{ width: s(15) }} />}
+
+   keyExtractor={(item) => item.id}
+   renderItem={({item})=>{
+    return (
+      <View style={styles.cont}>
       <View style={{ marginHorizontal: s(20) }}>
         <View style={styles.cardheader}>
           <View style={styles.circle}>
@@ -22,8 +45,12 @@ const T2card = () => {
         </View>
       </View>
     </View>
+    )
+   }}
+   />
   );
 };
+ 
 
 export default T2card;
 
