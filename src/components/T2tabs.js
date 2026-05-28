@@ -4,7 +4,7 @@ import { s } from 'react-native-size-matters';
 import colors from "../style/colors";
 
 const T2tabs = () => {
-  const tabs = ['My Task', 'Projects', 'Notes', "Files"];
+  const tabs = ['My Task', 'Projects', 'Notes'];
 
   const [activeTab, setActiveTab] = useState('Notes');
 

@@ -113,22 +113,21 @@ import { s } from 'react-native-size-matters';
 import T2text from './src/components/T2text';
 import Searchbutton from './src/components/Searchbutton';
 import Filterbutton from './src/components/Filterbutton';
-import T2tabs from "./src/components/T2tabs";
+import T2tabs from './src/components/T2tabs';
+import T2card from './src/components/T2card';
 
 const App = () => {
   return (
     <View style={styles.container}>
-      <View style={{marginHorizontal:s
-        (20),
-        backgroundColor:"#fff"
-      }}>
+      <View style={{ marginHorizontal: s(20), backgroundColor: '#fff' }}>
         <T2header />
-      <T2text />
-      <View style={styles.buttonscontainer}>
-        <Searchbutton />
-      <Filterbutton />
-      </View>
-      <T2tabs />
+        <T2text />
+        <View style={styles.buttonscontainer}>
+          <Searchbutton />
+          <Filterbutton />
+        </View>
+        <T2tabs />
+        <T2card />
       </View>
     </View>
   );
@@ -137,8 +136,11 @@ const App = () => {
 export default App;
 
 const styles = StyleSheet.create({
-  container: { backgroundColor: '#fff', flex: 1, },
-  buttonscontainer:{flexDirection:"row", alignItems:"center", justifyContent:"space-between", gap:s
-    (3)
+  container: { backgroundColor: '#fff', flex: 1 },
+  buttonscontainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    gap: s(3),
   },
 });
