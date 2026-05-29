@@ -115,6 +115,7 @@ import Searchbutton from './src/components/Searchbutton';
 import Filterbutton from './src/components/Filterbutton';
 import T2tabs from './src/components/T2tabs';
 import T2card from './src/components/T2card';
+import T2footer from "./src/components/T2footer";
 
 const App = () => {
   return (
@@ -128,6 +129,7 @@ const App = () => {
         </View>
         <T2tabs />
         <T2card />
+        <T2footer />
       </View>
     </View>
   );

@@ -24,16 +24,16 @@ const COLORS = {
   border: '#E2E8F5',
 
   // Blue Cards
-  blueCard: '#4D90FF',
+  blueCard: '#36588d',
   blueCardLight: '#6FAEFF',
 
   // Tags
   tagBackground: '#EEF2FA',
-  tagSelectedBg: '#FFE5F1',
+  tagSelectedBg: '#faf9f9e1',
   tagSelectedText: '#FF5FA2',
 
   // Icons
-  activeIcon: '#4B5CFF',
+  activeIcon: '#3e489f',
   inactiveIcon: '#C3CADB',
 
   // Shadow

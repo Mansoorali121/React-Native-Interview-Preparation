@@ -37,11 +37,11 @@ const T2card = () => {
               style={styles.img}
             />
           </View>
-          <Text style={styles.projecttext}>Project B</Text>
+          <Text style={styles.projecttext}>{item.name}</Text>
         </View>
         <View style={styles.footertext}>
-          <Text style={styles.developmenttext}>Front End Development </Text>
-          <Text style={styles.datetext}>September 2020</Text>
+          <Text style={styles.developmenttext}>{item.course} </Text>
+          <Text style={styles.datetext}>{item.date}</Text>
         </View>
       </View>
     </View>
@@ -56,8 +56,8 @@ export default T2card;
 
 const styles = StyleSheet.create({
   cont: {
-    marginTop: s(30),
-    height: vs(210),
+    marginTop: s(20),
+    height: vs(190),
     width: s(190),
     borderRadius: s(24),
 
