@@ -20,7 +20,7 @@ export default T2footer;
 
 const styles = StyleSheet.create({
   cont: { marginTop: s(10) },
-  footertitle: { fontSize: s(15), fontFamily: 'Outfit-Bold' },
+  footertitle: { fontSize: s(16), fontFamily: 'Outfit-Bold' },
   card: {
     backgroundColor: colors.tagSelectedBg,
     height: vs(115),
