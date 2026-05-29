@@ -8,8 +8,34 @@ const T2footer = () => {
     <View style={styles.cont}>
       <Text style={styles.footertitle}>Process</Text>
       <View style={styles.card}>
-        <View style={styles.container}>
-          <Image source={require('../assets/notes.png')} style={styles.image} />
+        <View style={styles.cardcontainer}>
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+             
+            }}
+          >
+            <View style={styles.container}>
+              <Image
+                source={require('../assets/notes.png')}
+                style={styles.image}
+              />
+            </View>
+            <View style={{gap:s
+                (20)
+            }}>
+              <Text style={styles.projectname}>Project Name</Text>
+              <Text style={styles.date}>2 days ago </Text>
+            </View>
+            <View style={{ marginTop:vs
+    (15)}}>
+              <Image
+                source={require('../assets/moree.png')}
+                style={styles.imagee}
+              />
+            </View>
+          </View>
         </View>
       </View>
     </View>
@@ -36,5 +62,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: s(10),
+    marginTop:vs
+    (15)
   },
+  cardcontainer: { marginHorizontal: s(10), marginTop: s(10) },
+  imagee: { height: vs(24), width: s(24) },
+  projectname: {
+    fontSize: s(16),
+    fontWeight: 'bold',
+    fontFamily: 'Outfit-ExtraLight',
+  },
+  date: { fontSize: s(14), fontFamily: 'Outfit-Light' },
 });
