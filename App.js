@@ -151,12 +151,14 @@ import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import { s } from 'react-native-size-matters';
 import T3header from "./src/components/T3header";
+import T3text from "./src/components/T3text";
 
 const App = () => {
   return (
     <View style={styles.container}>
-      <View style={{ marginHorizontal: s(20), backgroundColor: '#fff' }}>
+      <View style={{ marginHorizontal: s(10), backgroundColor: '#fff' }}>
         <T3header />
+        <T3text />
       </View>
     </View>
   );

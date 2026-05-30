@@ -23,7 +23,7 @@ const T3header = () => {
 export default T3header;
 
 const styles = StyleSheet.create({
-  cont: { marginTop: vs(20) },
+  cont: { marginTop: vs(10) },
   image: { height: vs(28), width: s(28), fontFamily: 'Outfit-Black' },
   headercontainer: { flexDirection: 'row', justifyContent: 'space-between' },
   imagecircle: { padding: s(10), backgroundColor: "#f6fbff50", borderRadius: s(14) },
