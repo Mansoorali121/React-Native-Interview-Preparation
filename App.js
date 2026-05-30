@@ -150,8 +150,9 @@
 import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import { s } from 'react-native-size-matters';
-import T3header from "./src/components/T3header";
-import T3text from "./src/components/T3text";
+import T3header from './src/components/T3header';
+import T3text from './src/components/T3text';
+import Selecteditem from './src/components/Selecteditem';
 
 const App = () => {
   return (
@@ -159,6 +160,7 @@ const App = () => {
       <View style={{ marginHorizontal: s(10), backgroundColor: '#fff' }}>
         <T3header />
         <T3text />
+        <Selecteditem />
       </View>
     </View>
   );
