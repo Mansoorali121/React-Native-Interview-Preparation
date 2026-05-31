@@ -154,6 +154,8 @@ import T3header from './src/components/T3header';
 import T3text from './src/components/T3text';
 import Selecteditem from './src/components/Selecteditem';
 import T3cardheader from "./src/components/T3cardheader";
+import T3card from "./src/components/T3card";
+import T2footer from "./src/components/T2footer";
 
 const App = () => {
   return (
@@ -163,6 +165,7 @@ const App = () => {
         <T3text />
         <Selecteditem />
         <T3cardheader/>
+        <T3card />
       </View>
     </View>
   );
