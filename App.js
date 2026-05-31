@@ -153,6 +153,7 @@ import { s } from 'react-native-size-matters';
 import T3header from './src/components/T3header';
 import T3text from './src/components/T3text';
 import Selecteditem from './src/components/Selecteditem';
+import T3cardheader from "./src/components/T3cardheader";
 
 const App = () => {
   return (
@@ -161,6 +162,7 @@ const App = () => {
         <T3header />
         <T3text />
         <Selecteditem />
+        <T3cardheader/>
       </View>
     </View>
   );
