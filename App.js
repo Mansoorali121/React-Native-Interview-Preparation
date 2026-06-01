@@ -156,6 +156,7 @@ import Selecteditem from './src/components/Selecteditem';
 import T3cardheader from "./src/components/T3cardheader";
 import T3card from "./src/components/T3card";
 import T2footer from "./src/components/T2footer";
+import Roundedbtn from "./src/components/Roundedbtn";
 
 const App = () => {
   return (
@@ -166,6 +167,7 @@ const App = () => {
         <Selecteditem />
         <T3cardheader/>
         <T3card />
+        <Roundedbtn/>
       </View>
     </View>
   );
