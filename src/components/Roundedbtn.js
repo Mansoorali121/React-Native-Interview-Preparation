@@ -28,9 +28,9 @@ const styles = StyleSheet.create({
         (40),
         borderWidth:s
         (0.2),
-        borderColor:"#000",
+        borderColor:"blue",
     },
     image:{height:vs(30),width:vs(30),alignSelf:"center",justifyContent:"center",marginVertical:vs
-        (13)
+        (13), tintColor:"blue"
     },
 })

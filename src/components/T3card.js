@@ -18,14 +18,14 @@ const T3card = () => {
       title: 'Client Call',
       time: '12 pm to 1 pm',
     },
-    // {
-    //   id: '3',
-    //   img: require('../assets/notes.png'),
+  //   // {
+  //   //   id: '3',
+  //   //   img: require('../assets/notes.png'),
 
-    //   title: 'Team Meeting',
-    //   time: '2 pm to 3 pm',
-    // },
-  ];
+  //   //   title: 'Team Meeting',
+  //   //   time: '2 pm to 3 pm',
+  //   // },
+  // ];
   return (
     <FlatList
       data={data}
