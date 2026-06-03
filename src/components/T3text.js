@@ -3,11 +3,11 @@ import React from 'react';
 import { vs, s } from 'react-native-size-matters';
 import colors from "../style/colors";
 
-const T3text = () => {
+const T3text = ({title}) => {
   return (
     <View style={styles.cont}>
       <View style={styles.itemcontainer}>
-        <Text style={styles.date}>Sep 2020</Text>
+        <Text style={styles.date}>{title}</Text>
         <TouchableOpacity style={styles.circle}>
           <Image
             source={require('../assets/calendar.png')}
