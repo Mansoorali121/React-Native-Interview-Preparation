@@ -4,7 +4,8 @@ import T3header from '../components/T3header';
 import { s } from 'react-native-size-matters';
 import T3text from '../components/T3text';
 import T4text from '../components/T4text';
-import Categorycard from "../components/Categorycard";
+import Categorycard from '../components/Categorycard';
+import NewTaskbutton from '../components/NewTaskbutton';
 const Tasks3 = () => {
   return (
     <View style={styles.cont}>
@@ -20,6 +21,7 @@ const Tasks3 = () => {
         />
       </View>
       <Categorycard />
+      <NewTaskbutton />
     </View>
   );
 };
