@@ -16,12 +16,12 @@ export default T4text;
 
 const styles = StyleSheet.create({
   line: {
-    backgroundColor: 'blue',
+    backgroundColor: 'skyblue',
     height: vs(1),
     marginTop: vs(7),
     opacity: 0.2,
   },
-  cont: { marginHorizontal: s(20), marginTop: vs(15), gap: vs(5) },
-  title: { fontSize: s(15), color: 'gray', fontFamily: 'Outfit-Regular' },
-  description: { fontSize: s(16), fontFamily: 'Outfit-Medium' },
+  cont: { marginHorizontal: s(20), marginTop: vs(15) },
+  title: { fontSize: s(12), color: 'gray', fontFamily: 'Outfit-Regular' },
+  description: { fontSize: s(14), fontFamily: 'Outfit-Medium' },
 });
