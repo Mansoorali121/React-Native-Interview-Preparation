@@ -196,14 +196,18 @@
 //   container:{backgroundColor:"#fff",flex:1},
 // })
 
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 import React from 'react';
-import { s } from 'react-native-size-matters';
+import { s, vs } from 'react-native-size-matters';
 
 const App = () => {
   return (
     <View style={styles.container}>
       <View style={styles.halfcontainer}></View>
+        <Image
+    source={require('./src/assets/roasted.png')}
+    style={styles.foodImage}
+  />
       <View style={styles.halfcontainer2}></View>
     </View>
   );
@@ -234,4 +238,22 @@ const styles = StyleSheet.create({
 
     overflow: 'hidden',
   },
+ foodImage: {
+  width: s(420),
+  height: vs(420),
+  resizeMode: 'contain',
+
+  position: 'absolute',
+  top: '8%',
+  alignSelf: 'center',
+
+  shadowColor: '#e05219',
+  shadowOffset: {
+    width: 0,
+    height: 10,
+  },
+  shadowOpacity: 0.5,
+  shadowRadius: 20,
+  elevation: 15,
+},
 });
