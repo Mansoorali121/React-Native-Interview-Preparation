@@ -199,11 +199,14 @@
 import { StyleSheet, Text, View, Image } from 'react-native';
 import React from 'react';
 import { s, vs } from 'react-native-size-matters';
+import Bheader from "./src/components/Bheader";
 
 const App = () => {
   return (
     <View style={styles.container}>
-      <View style={styles.halfcontainer}></View>
+      <View style={styles.halfcontainer}>
+        <Bheader />
+      </View>
         <Image
     source={require('./src/assets/roasted.png')}
     style={styles.foodImage}
