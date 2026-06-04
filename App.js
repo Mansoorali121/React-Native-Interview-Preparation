@@ -179,8 +179,6 @@
 // //   container: { backgroundColor: '#fff', flex: 1 },
 // // });
 
-
-
 // import { StyleSheet, Text, View } from 'react-native'
 // import React from 'react'
 // import Tasks3 from "./src/screens/Tasks3";
@@ -198,21 +196,42 @@
 //   container:{backgroundColor:"#fff",flex:1},
 // })
 
-
-
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { s } from 'react-native-size-matters';
 
 const App = () => {
   return (
     <View style={styles.container}>
-      <Text>App</Text>
+      <View style={styles.halfcontainer}></View>
+      <View style={styles.halfcontainer2}></View>
     </View>
-  )
-}
+  );
+};
 
 export default App;
 
 const styles = StyleSheet.create({
-  container:{flex:1,backgroundColor:"#fff"},
-})
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+
+  halfcontainer: {
+    flex: 0.4,
+    backgroundColor: '#FF7A45',
+  },
+
+  halfcontainer2: {
+    flex: 0.6,
+    backgroundColor: '#fff',
+
+    // upar ki taraf overlap
+    marginTop: -30,
+
+    borderTopLeftRadius: s(45),
+    borderTopRightRadius: s(45),
+
+    overflow: 'hidden',
+  },
+});
