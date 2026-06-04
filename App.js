@@ -199,7 +199,10 @@
 import { StyleSheet, Text, View, Image } from 'react-native';
 import React from 'react';
 import { s, vs } from 'react-native-size-matters';
-import Bheader from "./src/components/Bheader";
+import Bheader from './src/components/Bheader';
+import BAddbutton from './src/components/BAddbutton';
+import Bdescription from "./src/components/Bdescription"
+import Bsubheader from "./src/components/Bsubheader";
 
 const App = () => {
   return (
@@ -207,11 +210,16 @@ const App = () => {
       <View style={styles.halfcontainer}>
         <Bheader />
       </View>
-        <Image
-    source={require('./src/assets/roasted.png')}
-    style={styles.foodImage}
-  />
-      <View style={styles.halfcontainer2}></View>
+      <Image
+        source={require('./src/assets/roasted.png')}
+        style={styles.foodImage}
+      />
+
+      <View style={styles.halfcontainer2}>
+        <BAddbutton />
+        < Bdescription/>
+        <Bsubheader />
+      </View>
     </View>
   );
 };
@@ -241,22 +249,22 @@ const styles = StyleSheet.create({
 
     overflow: 'hidden',
   },
- foodImage: {
-  width: s(420),
-  height: vs(420),
-  resizeMode: 'contain',
+  foodImage: {
+    width: s(420),
+    height: vs(420),
+    resizeMode: 'contain',
 
-  position: 'absolute',
-  top: '8%',
-  alignSelf: 'center',
+    position: 'absolute',
+    top: '8%',
+    alignSelf: 'center',
 
-  shadowColor: '#e05219',
-  shadowOffset: {
-    width: 0,
-    height: 10,
+    shadowColor: '#e05219',
+    shadowOffset: {
+      width: 0,
+      height: 10,
+    },
+    shadowOpacity: 0.5,
+    shadowRadius: 20,
+    elevation: 15,
   },
-  shadowOpacity: 0.5,
-  shadowRadius: 20,
-  elevation: 15,
-},
 });
