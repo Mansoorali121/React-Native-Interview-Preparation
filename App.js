@@ -279,12 +279,16 @@ import React from 'react'
 import { s } from 'react-native-size-matters';
 import Hheader from "./src/components/Hheader";
 import Htext from "./src/components/Htext";
+import HsearchButton from "./src/components/HsearchButton";
+import Hcategory from "./src/components/Hcategory";
 
 const App = () => {
   return (
     <View style={styles.container}>
       <Hheader />
       <Htext />
+      <HsearchButton />
+      <Hcategory />
     </View>
   )
 }
