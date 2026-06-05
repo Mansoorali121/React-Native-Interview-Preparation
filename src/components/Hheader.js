@@ -38,5 +38,5 @@ const styles = StyleSheet.create({
     borderRadius: s(20),
   },
   location: { flexDirection: 'row', alignItems: 'center', gap: s(5) },
-  cityname: { fontSize: s(15), fontWeight: '500', fontFamily: 'Outfit-Light' },
+  cityname: { fontSize: s(15), fontWeight: 'bold', fontFamily: 'Outfit-Light' },
 });

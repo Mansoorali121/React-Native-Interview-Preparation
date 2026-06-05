@@ -278,11 +278,13 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { s } from 'react-native-size-matters';
 import Hheader from "./src/components/Hheader";
+import Htext from "./src/components/Htext";
 
 const App = () => {
   return (
     <View style={styles.container}>
       <Hheader />
+      <Htext />
     </View>
   )
 }
