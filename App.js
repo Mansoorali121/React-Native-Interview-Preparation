@@ -271,17 +271,15 @@
 //   },
 // });
 
-
-
-
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
 import { s } from 'react-native-size-matters';
-import Hheader from "./src/components/Hheader";
-import Htext from "./src/components/Htext";
-import HsearchButton from "./src/components/HsearchButton";
-import Hcategory from "./src/components/Hcategory";
-import Htabs from "./src/components/Htabs";
+import Hheader from './src/components/Hheader';
+import Htext from './src/components/Htext';
+import HsearchButton from './src/components/HsearchButton';
+import Hcategory from './src/components/Hcategory';
+import Htabs from './src/components/Htabs';
+import Hfootertabs from './src/components/Hfootertabs';
 
 const App = () => {
   return (
@@ -291,15 +289,16 @@ const App = () => {
       <HsearchButton />
       <Hcategory />
       <Htabs />
+      <Hfootertabs />
     </View>
-  )
-}
+  );
+};
 
 export default App;
 
 const styles = StyleSheet.create({
-  container:{
-    backgroundColor:"#fffff",
-    flex:1
+  container: {
+    backgroundColor: '#fffff',
+    flex: 1,
   },
-})
+});
