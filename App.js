@@ -281,6 +281,7 @@ import Hheader from "./src/components/Hheader";
 import Htext from "./src/components/Htext";
 import HsearchButton from "./src/components/HsearchButton";
 import Hcategory from "./src/components/Hcategory";
+import Htabs from "./src/components/Htabs";
 
 const App = () => {
   return (
@@ -289,6 +290,7 @@ const App = () => {
       <Htext />
       <HsearchButton />
       <Hcategory />
+      <Htabs />
     </View>
   )
 }
