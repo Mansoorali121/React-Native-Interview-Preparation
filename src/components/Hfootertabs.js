@@ -18,11 +18,14 @@ const Hfootertabs = () => {
         />
       </View>
       <View style={styles.chickentext}>
-        <Text style={{textAlign:"center",fontFamily:"Outfit-Medium", fontSize:s(16)}}>Roasted Chicken</Text>
+        <Text style={styles.titletext}>Roasted Chicken</Text>
       </View>
       <View  style={styles.timecontainer}>
         <Text style={styles.text}>20min</Text>
         <Text style={styles.text}>⭐4.5</Text>
+      </View>
+      <View style={styles.cont}>
+        <Text style={styles.text}>$12.00</Text>
       </View>
     </View>
   );
@@ -32,10 +35,10 @@ export default Hfootertabs;
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: vs(25),
+    marginTop: vs(15),
     marginHorizontal: s(20),
     backgroundColor: '#eee',
-    height: vs(220),
+    height: vs(230),
     width: s(160),
     borderRadius: s(15),
   },
@@ -46,4 +49,6 @@ const styles = StyleSheet.create({
   chickentext:{marginHorizontal:s(20)},
   timecontainer:{flexDirection:"row",marginHorizontal:s(20) , justifyContent:"space-between"},
   text:{fontSize:s(13),fontFamily:"Outfit-Regular"},
+  cont:{marginHorizontal:s(20) ,marginTop:s(20)},
+  titletext:{textAlign:"center",fontFamily:"Outfit-Medium", fontSize:s(16)}
 });

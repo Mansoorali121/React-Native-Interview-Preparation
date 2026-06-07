@@ -35,7 +35,7 @@ export default Htabs;
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: vs(25),
+    marginTop: vs(14),
     marginHorizontal: s(20),
     flexDirection: 'row',
     justifyContent: 'space-between',
