@@ -20,7 +20,7 @@ const Hcategory = () => {
 export default Hcategory;
 
 const styles = StyleSheet.create({
-  container: { marginTop: vs(40), marginHorizontal: s(20) },
+  container: { marginTop: vs(30), marginHorizontal: s(20) },
   findtext: {
     fontSize: s(26),
     fontWeight: 'bold',
