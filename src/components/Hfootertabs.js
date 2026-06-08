@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#eee',
     height: vs(230),
     width: s(160),
-    borderRadius: s(15),
+    borderRadius: s(14),
   },
   hearticon: { left: s(130), top: vs(10) },
   image: { height: vs(17), width: s(17) },
