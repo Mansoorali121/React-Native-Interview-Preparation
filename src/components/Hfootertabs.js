@@ -20,12 +20,18 @@ const Hfootertabs = () => {
       <View style={styles.chickentext}>
         <Text style={styles.titletext}>Roasted Chicken</Text>
       </View>
-      <View  style={styles.timecontainer}>
+      <View style={styles.timecontainer}>
         <Text style={styles.text}>20min</Text>
         <Text style={styles.text}>⭐4.5</Text>
       </View>
       <View style={styles.cont}>
         <Text style={styles.text}>$12.00</Text>
+      </View>
+      <View style={styles.plusbutton}>
+        <Image
+          source={require('../assets/burger/add.png')}
+          style={styles.imageplus}
+        />
       </View>
     </View>
   );
@@ -46,9 +52,35 @@ const styles = StyleSheet.create({
   image: { height: vs(17), width: s(17) },
   image2: { height: vs(140), width: s(140) },
   roatedimage: { marginTop: s(-20) },
-  chickentext:{marginHorizontal:s(20)},
-  timecontainer:{flexDirection:"row",marginHorizontal:s(20) , justifyContent:"space-between"},
-  text:{fontSize:s(13),fontFamily:"Outfit-Regular"},
-  cont:{marginHorizontal:s(20) ,marginTop:s(20)},
-  titletext:{textAlign:"center",fontFamily:"Outfit-Medium", fontSize:s(16)}
+  chickentext: { marginHorizontal: s(20) },
+  timecontainer: {
+    flexDirection: 'row',
+    marginHorizontal: s(20),
+    justifyContent: 'space-between',
+  },
+  text: { fontSize: s(13), fontFamily: 'Outfit-Regular' },
+  cont: { marginHorizontal: s(20), marginTop: s(20) },
+  titletext: {
+    textAlign: 'center',
+    fontFamily: 'Outfit-Medium',
+    fontSize: s(16),
+  },
+  imageplus: {
+    height: vs(20),
+    width: s(20),
+    tintColor:"#fff"
+  },
+  plusbutton: {
+    backgroundColor: '#FF7A45',
+    height: vs(35),
+    width: s(35),
+    position: 'absolute',
+    alignItems: 'center',
+    justifyContent: 'center',
+    right:s(0),
+    bottom:vs(2),
+    
+  borderTopLeftRadius: s(12),
+  borderBottomRightRadius: s(14), 
+  },
 });
