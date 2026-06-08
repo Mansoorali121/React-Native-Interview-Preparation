@@ -271,25 +271,50 @@
 //   },
 // });
 
+// import { StyleSheet, Text, View } from 'react-native';
+// import React from 'react';
+// import { s } from 'react-native-size-matters';
+// import Hheader from './src/components/Hheader';
+// import Htext from './src/components/Htext';
+// import HsearchButton from './src/components/HsearchButton';
+// import Hcategory from './src/components/Hcategory';
+// import Htabs from './src/components/Htabs';
+// import Hfootertabs from './src/components/Hfootertabs';
+
+// const App = () => {
+//   return (
+//     <View style={styles.container}>
+//       <Hheader />
+//       <Htext />
+//       <HsearchButton />
+//       <Hcategory />
+//       <Htabs />
+//       <Hfootertabs />
+//     </View>
+//   );
+// };
+
+// export default App;
+
+// const styles = StyleSheet.create({
+//   container: {
+//     backgroundColor: '#fffff',
+//     flex: 1,
+//   },
+// });
+
 import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
-import { s } from 'react-native-size-matters';
-import Hheader from './src/components/Hheader';
-import Htext from './src/components/Htext';
-import HsearchButton from './src/components/HsearchButton';
-import Hcategory from './src/components/Hcategory';
-import Htabs from './src/components/Htabs';
-import Hfootertabs from './src/components/Hfootertabs';
+import { s, vs } from 'react-native-size-matters';
+import Cheader from './src/components/Cheader';
 
 const App = () => {
   return (
     <View style={styles.container}>
-      <Hheader />
-      <Htext />
-      <HsearchButton />
-      <Hcategory />
-      <Htabs />
-      <Hfootertabs />
+      <View style={styles.halfcontainer}>
+        <Cheader />
+      </View>
+      <View style={styles.whitecontainer}></View>
     </View>
   );
 };
@@ -297,8 +322,15 @@ const App = () => {
 export default App;
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#fffff',
-    flex: 1,
+  container: { flex: 1, backgroundColor: '#ffff' },
+  halfcontainer: { backgroundColor: '#FF7A45', flex: 0.2 },
+  whitecontainer: {
+    flex: 0.8,
+    backgroundColor: '#ffff',
+    overflow: 'hidden',
+    marginTop: -50,
+
+    borderTopLeftRadius: s(45),
+    borderTopRightRadius: s(45),
   },
 });
