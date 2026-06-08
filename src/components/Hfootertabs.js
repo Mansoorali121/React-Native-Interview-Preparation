@@ -1,39 +1,82 @@
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, FlatList } from 'react-native';
 import React from 'react';
 import { s, vs } from 'react-native-size-matters';
 
 const Hfootertabs = () => {
+  const data = [
+    {
+      id: '1',
+      icon: require('../assets/burger/heart.png'),
+      image: require('../assets/burger/roasted.png'),
+      title: 'Roasted Chicken',
+      time: '20min',
+      rating: '⭐4.5',
+      price: '$12.00',
+    },
+    {
+      id: '2',
+      icon: require('../assets/burger/heart.png'),
+      image: require('../assets/burger/roasted.png'),
+      title: 'Roasted Chicken',
+      time: '20min',
+      rating: '⭐4.5',
+      price: '$12.00',
+    },
+    {
+      id: '3',
+      icon: require('../assets/burger/heart.png'),
+      image: require('../assets/burger/roasted.png'),
+      title: 'Roasted Chicken',
+      time: '20min',
+      rating: '⭐4.5',
+      price: '$12.00',
+    },
+    {
+      id: '4',
+      icon: require('../assets/burger/heart.png'),
+      image: require('../assets/burger/roasted.png'),
+      title: 'Roasted Chicken',
+      time: '20min',
+      rating: '⭐4.5',
+      price: '$12.00',
+    },
+  ];
+
   return (
-    <View style={styles.container}>
-      <View style={styles.hearticon}>
-        <Image
-          source={require('../assets/burger/heart.png')}
-          style={styles.image}
-        />
-      </View>
-      <View style={styles.roatedimage}>
-        <Image
-          source={require('../assets/burger/roasted.png')}
-          style={styles.image2}
-        />
-      </View>
-      <View style={styles.chickentext}>
-        <Text style={styles.titletext}>Roasted Chicken</Text>
-      </View>
-      <View style={styles.timecontainer}>
-        <Text style={styles.text}>20min</Text>
-        <Text style={styles.text}>⭐4.5</Text>
-      </View>
-      <View style={styles.cont}>
-        <Text style={styles.text}>$12.00</Text>
-      </View>
-      <View style={styles.plusbutton}>
-        <Image
-          source={require('../assets/burger/add.png')}
-          style={styles.imageplus}
-        />
-      </View>
-    </View>
+    <FlatList
+    numColumns={2}
+    showsVerticalScrollIndicator={false}
+      data={data}
+      keyExtractor={item => item.id}
+      renderItem={({ item }) => {
+        return (
+          <View style={styles.container}>
+            <View style={styles.hearticon}>
+              <Image source={item.icon} style={styles.image} />
+            </View>
+            <View style={styles.roatedimage}>
+              <Image source={item.image} style={styles.image2} />
+            </View>
+            <View style={styles.chickentext}>
+              <Text style={styles.titletext}>{item.title}</Text>
+            </View>
+            <View style={styles.timecontainer}>
+              <Text style={styles.text}>{item.time}</Text>
+              <Text style={styles.text}>{item.rating}</Text>
+            </View>
+            <View style={styles.cont}>
+              <Text style={styles.text}>{item.price}</Text>
+            </View>
+            <View style={styles.plusbutton}>
+              <Image
+                source={require('../assets/burger/add.png')}
+                style={styles.imageplus}
+              />
+            </View>
+          </View>
+        );
+      }}
+    />
   );
 };
 
@@ -42,13 +85,13 @@ export default Hfootertabs;
 const styles = StyleSheet.create({
   container: {
     marginTop: vs(15),
-    marginHorizontal: s(20),
+    marginHorizontal: s(12),
     backgroundColor: '#eee',
     height: vs(230),
-    width: s(160),
+    width: s(150),
     borderRadius: s(14),
   },
-  hearticon: { left: s(130), top: vs(10) },
+  hearticon: { left: s(120), top: vs(10) },
   image: { height: vs(17), width: s(17) },
   image2: { height: vs(140), width: s(140) },
   roatedimage: { marginTop: s(-20) },
@@ -63,12 +106,12 @@ const styles = StyleSheet.create({
   titletext: {
     textAlign: 'center',
     fontFamily: 'Outfit-Medium',
-    fontSize: s(16),
+    fontSize: s(14),
   },
   imageplus: {
     height: vs(20),
     width: s(20),
-    tintColor:"#fff"
+    tintColor: '#fff',
   },
   plusbutton: {
     backgroundColor: '#FF7A45',
@@ -77,10 +120,10 @@ const styles = StyleSheet.create({
     position: 'absolute',
     alignItems: 'center',
     justifyContent: 'center',
-    right:s(0),
-    bottom:vs(2),
-    
-  borderTopLeftRadius: s(12),
-  borderBottomRightRadius: s(14), 
+    right: s(0),
+    bottom: vs(2),
+
+    borderTopLeftRadius: s(12),
+    borderBottomRightRadius: s(14),
   },
 });
