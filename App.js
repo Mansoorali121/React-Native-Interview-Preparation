@@ -330,7 +330,7 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     marginTop: -50,
 
-    borderTopLeftRadius: s(44),
+    borderTopLeftRadius: s(45),
     borderTopRightRadius: s(45),
   },
 });
