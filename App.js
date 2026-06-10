@@ -308,6 +308,7 @@ import React from 'react';
 import { s, vs } from 'react-native-size-matters';
 import Cheader from './src/components/Cheader';
 import Cproduct from "./src/components/Cproduct";
+import Cpromo from "./src/components/Cpromo";
 
 const App = () => {
   return (
@@ -319,7 +320,7 @@ const App = () => {
         <Cproduct />
                 <Cproduct />
         <Cproduct />
-
+<Cpromo />
       </View>
     </View>
   );

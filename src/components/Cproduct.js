@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     borderRadius: s(12),
     height: vs(100),
   },
-  image: { height: vs(100), width: s(100), },
+  image: { height: vs(100), width: s(100) },
   cardcontainer: {
     flexDirection: 'row',
     alignItems: 'center',
