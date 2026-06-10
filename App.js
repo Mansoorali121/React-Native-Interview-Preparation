@@ -307,6 +307,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import { s, vs } from 'react-native-size-matters';
 import Cheader from './src/components/Cheader';
+import Cproduct from "./src/components/Cproduct";
 
 const App = () => {
   return (
@@ -314,7 +315,9 @@ const App = () => {
       <View style={styles.halfcontainer}>
         <Cheader />
       </View>
-      <View style={styles.whitecontainer}></View>
+      <View style={styles.whitecontainer}>
+        <Cproduct />
+      </View>
     </View>
   );
 };
