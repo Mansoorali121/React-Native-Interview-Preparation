@@ -317,6 +317,9 @@ const App = () => {
       </View>
       <View style={styles.whitecontainer}>
         <Cproduct />
+                <Cproduct />
+        <Cproduct />
+
       </View>
     </View>
   );
