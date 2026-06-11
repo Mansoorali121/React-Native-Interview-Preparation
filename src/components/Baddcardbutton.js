@@ -13,7 +13,7 @@ const Baddcardbutton = ({ title }) => {
 export default Baddcardbutton;
 const styles = StyleSheet.create({
   container: {
-    marginTop: vs(50),
+    marginTop: vs(20),
     marginHorizontal: s(20),
     backgroundColor: '#FF7A45',
     height: vs(55),

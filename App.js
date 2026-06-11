@@ -309,6 +309,9 @@ import { s, vs } from 'react-native-size-matters';
 import Cheader from './src/components/Cheader';
 import Cproduct from "./src/components/Cproduct";
 import Cpromo from "./src/components/Cpromo";
+import Cfooter from "./src/components/Cfooter"
+import Baddcardbutton from "./src/components/Baddcardbutton";
+
 
 const App = () => {
   return (
@@ -321,6 +324,10 @@ const App = () => {
                 <Cproduct />
         <Cproduct />
 <Cpromo />
+<Cfooter />
+<Cfooter />
+<Baddcardbutton  title="Add to Cart" />
+
       </View>
     </View>
   );
