@@ -353,15 +353,18 @@
 
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import Homeheader from "./src2/components/Homeheader";
 
 const App = () => {
   return (
-    <View>
-      <Text>App</Text>
+    <View style={styles.container}>
+      <Homeheader/>
     </View>
   )
 }
 
 export default App;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container:{flex:1,backgroundColor:"#ffff"},
+})
