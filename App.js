@@ -342,7 +342,7 @@ const styles = StyleSheet.create({
     flex: 0.8,
     backgroundColor: '#ffff',
     overflow: 'hidden',
-    marginTop: -49,
+    marginTop: -48,
 
     borderTopLeftRadius: s(45),
     borderTopRightRadius: s(45),
