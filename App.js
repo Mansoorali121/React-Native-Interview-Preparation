@@ -355,12 +355,14 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import Homeheader from "./src2/components/Homeheader";
 import Homedescription from "./src2/components/Homedescription";
+import Searchbutton from "./src2/components/Searchbutton";
 
 const App = () => {
   return (
     <View style={styles.container}>
       <Homeheader/>
       <Homedescription />
+      <Searchbutton />
     </View>
   )
 }
