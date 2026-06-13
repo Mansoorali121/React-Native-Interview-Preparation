@@ -356,6 +356,7 @@ import React from 'react'
 import Homeheader from "./src2/components/Homeheader";
 import Homedescription from "./src2/components/Homedescription";
 import Searchbutton from "./src2/components/Searchbutton";
+import Discountcard from "./src2/components/Discountcard";
 
 const App = () => {
   return (
@@ -363,6 +364,7 @@ const App = () => {
       <Homeheader/>
       <Homedescription />
       <Searchbutton />
+      <Discountcard />
     </View>
   )
 }
