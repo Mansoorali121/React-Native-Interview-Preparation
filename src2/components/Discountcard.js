@@ -16,7 +16,12 @@ const Discountcard = () => {
         <View>
           <Image source={require('../assets/slice.png')} style={styles.image} />
         </View>
+       
       </View>
+       <View style={styles.categorytext}> 
+          <Text style={styles.text1}>Category</Text>
+          <Text style={styles.text2}>See all</Text>
+        </View>
     </View>
   );
 };
@@ -48,4 +53,7 @@ const styles = StyleSheet.create({
     paddingVertical:vs(5),
     borderRadius:s(45)
   },
+  categorytext:{flexDirection:"row", justifyContent:"space-between"},
+  text1:{fontSize:s(15),fontFamily:"Outfit-SemiBold"},
+  text2:{color:"gray",fontFamily:"Outfit-Light"},
 });
