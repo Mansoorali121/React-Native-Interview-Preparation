@@ -9,16 +9,14 @@ const Discountcard = () => {
         <View style={styles.textcontainer}>
           <Text style={styles.text}>Order a set With</Text>
           <Text style={styles.text}>40% Discount</Text>
-             <View style={styles.button}>
-            <Text style={{backgroundColor:"#0000"}}>Order Now</Text>
+          <View style={styles.button}>
+            <Text style={{ color: '#fff', fontFamily:"Outfit-Regular" }}>Order Now</Text>
           </View>
         </View>
         <View>
           <Image source={require('../assets/slice.png')} style={styles.image} />
         </View>
-        
       </View>
-      
     </View>
   );
 };
@@ -41,5 +39,13 @@ const styles = StyleSheet.create({
     marginHorizontal: s(10),
   },
   text: { fontFamily: 'Outfit-Light', fontSize: s(18) },
-  button: { backgroundColor: '#0000' },
+  button: {
+    backgroundColor: '#000',
+    marginTop: vs(20),
+    alignItems: 'center',
+    justifyContent: 'center',
+    width:s(90),
+    paddingVertical:vs(5),
+    borderRadius:s(45)
+  },
 });
