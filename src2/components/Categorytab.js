@@ -3,14 +3,29 @@ import React from 'react';
 import { s, vs } from 'react-native-size-matters';
 
 const Categorytab = () => {
+  const tabs = ['Burger', 'Pizza', 'Meat'];
   return (
-    <View style={styles.cont}>
-      <View style={styles.imagecontainer}>
-        <Image source={require('../assets/burger.png')} style={styles.image} />
-      </View>
-      <View style={styles.burgertext}>
-        <Text >Burger</Text>
-      </View>
+    <View style={styles.itemcontainer}>
+      {tabs.map(item => {
+        return (
+          <View
+            style={[
+              styles.cont,
+              item != 'Burger' && { backgroundColor: '#eee' },
+            ]}
+          >
+            <View style={styles.imagecontainer}>
+              <Image 
+                source={require('../assets/burger.png')}
+                style={styles.image}
+              />
+            </View>
+            <View style={styles.burgertext}>
+              <Text>{item}</Text>
+            </View>
+          </View>
+        );
+      })}
     </View>
   );
 };
@@ -19,8 +34,8 @@ export default Categorytab;
 
 const styles = StyleSheet.create({
   cont: {
-    marginTop: vs(40),
-    marginHorizontal: s(20),
+    marginTop: vs(15),
+    marginHorizontal: s(15),
     backgroundColor: '#c7e0ae',
     paddingVertical: vs(2),
     width: s(150),
@@ -34,11 +49,12 @@ const styles = StyleSheet.create({
   imagecontainer: {
     backgroundColor: '#fff',
     marginHorizontal: s(4),
-   
-    borderRadius:s(20),
-    height:vs(60),
-    width:s(60),
-    alignItems:"center",
-    justifyContent:"center"
+
+    borderRadius: s(20),
+    height: vs(60),
+    width: s(60),
+    alignItems: 'center',
+    justifyContent: 'center',
   },
+  itemcontainer: { marginTop: vs(20), flexDirection: 'row' },
 });
