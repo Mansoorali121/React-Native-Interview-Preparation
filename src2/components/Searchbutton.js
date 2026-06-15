@@ -22,7 +22,7 @@ export default Searchbutton;
 
 const styles = StyleSheet.create({
   cont: {
-    marginTop: vs(20),
+    marginTop: vs(14),
     marginHorizontal: s(20),
     backgroundColor: '#eeee',
     paddingVertical: vs(2),

@@ -21,7 +21,7 @@ const Categorytab = () => {
               />
             </View>
             <View style={styles.burgertext}>
-              <Text>{item}</Text>
+              <Text style={styles.itemname}> {item}</Text>
             </View>
           </View>
         );
@@ -57,4 +57,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   itemcontainer: { marginTop: vs(20), flexDirection: 'row' },
+  itemname:{fontSize:s(14),fontFamily:"Outfit-Regular"
+  },
 });

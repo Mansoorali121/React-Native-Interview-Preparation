@@ -20,7 +20,7 @@ const Discountcard = () => {
       </View>
        <View style={styles.categorytext}> 
           <Text style={styles.text1}>Category</Text>
-          <Text style={styles.text2}>See all</Text>
+          <Text style={styles.text2}>See All</Text>
         </View>
     </View>
   );
@@ -30,7 +30,7 @@ export default Discountcard;
 
 const styles = StyleSheet.create({
   cont: {
-    marginTop: vs(20),
+    marginTop: vs(14),
     marginHorizontal: s(20),
     backgroundColor: '#c7e0ae',
     height: vs(130),

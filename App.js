@@ -358,6 +358,8 @@ import Homedescription from "./src2/components/Homedescription";
 import Searchbutton from "./src2/components/Searchbutton";
 import Discountcard from "./src2/components/Discountcard";
 import Categorytab from "./src2/components/Categorytab";
+import Categorytext from "./src2/components/Categorytext"
+import Footercard from "./src2/components/Footercard";
 const App = () => {
   return (
     <View style={styles.container}>
@@ -366,6 +368,8 @@ const App = () => {
       <Searchbutton />
       <Discountcard />
       <Categorytab />
+      <Categorytext />
+      <Footercard />
     </View>
   )
 }
