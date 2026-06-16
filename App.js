@@ -351,31 +351,46 @@
 
 
 
+// import { StyleSheet, Text, View } from 'react-native'
+// import React from 'react'
+// import Homeheader from "./src2/components/Homeheader";
+// import Homedescription from "./src2/components/Homedescription";
+// import Searchbutton from "./src2/components/Searchbutton";
+// import Discountcard from "./src2/components/Discountcard";
+// import Categorytab from "./src2/components/Categorytab";
+// import Categorytext from "./src2/components/Categorytext"
+// import Footercard from "./src2/components/Footercard";
+// const App = () => {
+//   return (
+//     <View style={styles.container}>
+//       <Homeheader/>
+//       <Homedescription />
+//       <Searchbutton />
+//       <Discountcard />
+//       <Categorytab />
+//       <Categorytext />
+//       <Footercard />
+//     </View>
+//   )
+// }
+
+// export default App;
+
+// const styles = StyleSheet.create({
+//   container:{flex:1,backgroundColor:"#ffff"},
+// })
+
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import Homeheader from "./src2/components/Homeheader";
-import Homedescription from "./src2/components/Homedescription";
-import Searchbutton from "./src2/components/Searchbutton";
-import Discountcard from "./src2/components/Discountcard";
-import Categorytab from "./src2/components/Categorytab";
-import Categorytext from "./src2/components/Categorytext"
-import Footercard from "./src2/components/Footercard";
+
 const App = () => {
   return (
-    <View style={styles.container}>
-      <Homeheader/>
-      <Homedescription />
-      <Searchbutton />
-      <Discountcard />
-      <Categorytab />
-      <Categorytext />
-      <Footercard />
+    <View>
+      <Text>App</Text>
     </View>
   )
 }
 
 export default App;
 
-const styles = StyleSheet.create({
-  container:{flex:1,backgroundColor:"#ffff"},
-})
+const styles = StyleSheet.create({})
