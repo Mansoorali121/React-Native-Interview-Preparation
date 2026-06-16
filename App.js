@@ -382,15 +382,18 @@
 
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import Orderheader from "./src2/components/Orderheader";
 
 const App = () => {
   return (
-    <View>
-      <Text>App</Text>
+    <View style={styles.cont}>
+      <Orderheader />
     </View>
   )
 }
 
 export default App;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  cont:{flex:1,backgroundColor:"#fff"},
+})
