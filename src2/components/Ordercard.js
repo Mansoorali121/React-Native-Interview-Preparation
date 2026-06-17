@@ -2,6 +2,7 @@ import { Image, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import { s, vs } from 'react-native-size-matters';
 import Orderheader1 from './Orderheader1';
+import Cfootercard from "./Cfootercard";
 
 const Ordercard = () => {
   return (
@@ -10,6 +11,8 @@ const Ordercard = () => {
       <View style={styles.container}>
         <Image source={require('../assets/main.png')} style={styles.image} />
       </View>
+      <Cfootercard  />
+      
     </View>
   );
 };
