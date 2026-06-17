@@ -384,12 +384,15 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import Orderheader from "./src2/components/Orderheader";
 import Ordercard from "./src2/components/Ordercard";
+import Orderpizzacard from "./src2/components/Orderpizzacard";
 
 const App = () => {
   return (
     <View style={styles.cont}>
       <Orderheader />
       <Ordercard/>
+      <Orderpizzacard/>
+
     </View>
   )
 }
