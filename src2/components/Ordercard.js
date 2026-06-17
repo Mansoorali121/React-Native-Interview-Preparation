@@ -1,11 +1,15 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import { s, vs } from 'react-native-size-matters';
+import Orderheader1 from './Orderheader1';
 
 const Ordercard = () => {
   return (
     <View style={styles.cont}>
-      <Text>Ordercard</Text>
+      <Orderheader1 />
+      <View style={styles.container}>
+        <Image source={require('../assets/main.png')} style={styles.image} />
+      </View>
     </View>
   );
 };
@@ -15,9 +19,12 @@ export default Ordercard;
 const styles = StyleSheet.create({
   cont: {
     backgroundColor: '#c7e0ae',
-    height: vs(151),
-    width: s(150),
+    height: vs(280),
+    width: s(310),
     marginHorizontal: s(20),
     marginTop: vs(15),
+    borderRadius: s(20),
   },
+  image: { height: vs(150), width: s(150) },
+  container: { alignItems: 'center' },
 });
