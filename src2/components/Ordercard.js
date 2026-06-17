@@ -15,7 +15,7 @@ export default Ordercard;
 const styles = StyleSheet.create({
   cont: {
     backgroundColor: '#c7e0ae',
-    height: vs(150),
+    height: vs(151),
     width: s(150),
     marginHorizontal: s(20),
     marginTop: vs(15),
