@@ -403,11 +403,14 @@
 import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import { s, vs } from 'react-native-size-matters';
+import Theader from "./src2/components/Theader";
 
 const App = () => {
   return (
     <View style={styles.container}>
-      <View style={styles.view1}></View>
+      <View style={styles.view1}>
+        <Theader />
+      </View>
       <View style={styles.view2}></View>
     </View>
   );
