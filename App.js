@@ -312,7 +312,6 @@
 // import Cfooter from "./src/components/Cfooter"
 // import Baddcardbutton from "./src/components/Baddcardbutton";
 
-
 // const App = () => {
 //   return (
 //     <View style={styles.container}>
@@ -348,8 +347,6 @@
 //     borderTopRightRadius: s(45),
 //   },
 // });
-
-
 
 // import { StyleSheet, Text, View } from 'react-native'
 // import React from 'react'
@@ -403,17 +400,31 @@
 //   cont:{flex:1,backgroundColor:"#fff"},
 // })
 
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { s, vs } from 'react-native-size-matters';
 
 const App = () => {
   return (
-    <View>
-      <Text>App</Text>
+    <View style={styles.container}>
+      <View style={styles.view1}></View>
+      <View style={styles.view2}></View>
     </View>
-  )
-}
+  );
+};
 
 export default App;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container: { flex: 1, backgroundColor: '#fff' },
+  view1: { backgroundColor: '#c7e0ae', flex: 0.5 },
+  view2: {
+    backgroundColor: '#fff',
+    flex: 0.5,
+    overflow: 'hidden',
+    borderTopLeftRadius: s(45),
+    borderTopRightRadius: s(45),
+    marginTop:vs(-48)
+  },
+
+});
