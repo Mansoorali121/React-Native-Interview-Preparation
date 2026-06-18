@@ -404,12 +404,13 @@ import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import { s, vs } from 'react-native-size-matters';
 import Theader from "./src2/components/Theader";
-
+import Burgercomponent from "./src2/components/Burgercomponent";
 const App = () => {
   return (
     <View style={styles.container}>
       <View style={styles.view1}>
         <Theader />
+        <Burgercomponent />
       </View>
       <View style={styles.view2}></View>
     </View>
@@ -429,5 +430,6 @@ const styles = StyleSheet.create({
     borderTopRightRadius: s(45),
     marginTop:vs(-48)
   },
+  
 
 });

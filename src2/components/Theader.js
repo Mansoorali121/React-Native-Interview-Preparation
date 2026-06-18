@@ -33,13 +33,14 @@ const styles = StyleSheet.create({
   },
   image: { height: vs(15), width: s(15) },
   imagecontainer: {
-    backgroundColor: '#fff',
+    backgroundColor: '#c7e0ae',
     height: vs(50),
     width: s(50),
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: s(25),
-    borderWidth: s(0.3),
+    borderWidth: s(0.7),
+    borderColor:"#fff"
   },
   ordertext: { fontSize: s(16), fontFamily: 'Outfit-Regular' },
 });
