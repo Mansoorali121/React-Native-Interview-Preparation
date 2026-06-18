@@ -380,25 +380,40 @@
 //   container:{flex:1,backgroundColor:"#ffff"},
 // })
 
+// import { StyleSheet, Text, View } from 'react-native'
+// import React from 'react'
+// import Orderheader from "./src2/components/Orderheader";
+// import Ordercard from "./src2/components/Ordercard";
+// import Orderpizzacard from "./src2/components/Orderpizzacard";
+
+// const App = () => {
+//   return (
+//     <View style={styles.cont}>
+//       <Orderheader />
+//       <Ordercard/>
+//       <Orderpizzacard/>
+
+//     </View>
+//   )
+// }
+
+// export default App;
+
+// const styles = StyleSheet.create({
+//   cont:{flex:1,backgroundColor:"#fff"},
+// })
+
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import Orderheader from "./src2/components/Orderheader";
-import Ordercard from "./src2/components/Ordercard";
-import Orderpizzacard from "./src2/components/Orderpizzacard";
 
 const App = () => {
   return (
-    <View style={styles.cont}>
-      <Orderheader />
-      <Ordercard/>
-      <Orderpizzacard/>
-
+    <View>
+      <Text>App</Text>
     </View>
   )
 }
 
 export default App;
 
-const styles = StyleSheet.create({
-  cont:{flex:1,backgroundColor:"#fff"},
-})
+const styles = StyleSheet.create({})
