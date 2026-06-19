@@ -12,7 +12,29 @@ const Tfootercard = () => {
           <Image source={require('../assets/heart.png')} style={styles.image} />
         </View>
       </View>
-              <Text>$8.20</Text>
+              <Text style={styles.price}>$8.20</Text>
+           {/* List values */}
+           <View style={styles.listcontainer}>
+               <View style={styles.item1}>
+                
+                          <Image source={require('../assets/star.png')} style={styles.image} />
+                          <Text style={styles.value}>4.6</Text>
+
+              </View>
+               <View style={styles.item1}>
+                
+                          <Image source={require('../assets/clock.png')} style={styles.image} />
+                          <Text style={styles.value}>20-25 min</Text>
+
+              </View>
+               <View style={styles.item1}>
+                
+                          <Image source={require('../assets/fire.png')} style={styles.image} />
+                                                    <Text style={styles.value}>110 Kcal</Text>
+
+
+              </View>
+           </View>
 
     </View>
   );
@@ -37,4 +59,10 @@ const styles = StyleSheet.create({
     marginTop:s(-20)
   },
   description:{color:"gray",fontFamily:"Outfit-Thin"},
+  price:{fontSize: s(20), fontFamily: 'Outfit-Regular'},
+  item1:{marginTop:vs(15),flexDirection:"row",gap:s(10), alignItems:"center"
+  },
+  value:{fontSize: s(14), fontFamily: 'Outfit-Regular'},
+  listcontainer:{flexDirection:"row",justifyContent:"space-between"},
 });
+
