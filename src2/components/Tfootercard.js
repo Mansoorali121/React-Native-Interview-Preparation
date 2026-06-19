@@ -7,11 +7,13 @@ const Tfootercard = () => {
     <View style={styles.cont}>
       <Text style={styles.burgertitle}>Burger Bang</Text>
       <View style={styles.headercontainer}>
-        <Text>Taste the Burger Bang, Pure Joy</Text>
+        <Text style={styles.description}>Taste the Burger Bang, Pure Joy</Text>
         <View style={styles.circle}>
           <Image source={require('../assets/heart.png')} style={styles.image} />
         </View>
       </View>
+              <Text>$8.20</Text>
+
     </View>
   );
 };
@@ -34,4 +36,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginTop:s(-20)
   },
+  description:{color:"gray",fontFamily:"Outfit-Thin"},
 });
