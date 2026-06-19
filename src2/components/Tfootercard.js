@@ -81,6 +81,6 @@ const styles = StyleSheet.create({
     borderRadius: s(10),
   },
   footertext: { marginTop: vs(10) },
-  title:{fontSize: s(20), fontFamily: 'Outfit-Regular' },
+  title:{fontSize: s(18), fontFamily: 'Outfit-Regular' },
   info:{color: '#6e5d5d', fontFamily: 'Outfit-Thin',fontSize:s(14)},
 });
