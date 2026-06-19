@@ -405,6 +405,7 @@ import React from 'react';
 import { s, vs } from 'react-native-size-matters';
 import Theader from "./src2/components/Theader";
 import Burgercomponent from "./src2/components/Burgercomponent";
+import  Tfootercard from "./src2/components/Tfootercard";
 const App = () => {
   return (
     <View style={styles.container}>
@@ -412,7 +413,9 @@ const App = () => {
         <Theader />
         <Burgercomponent />
       </View>
-      <View style={styles.view2}></View>
+      <View style={styles.view2}>
+        <Tfootercard />
+      </View>
     </View>
   );
 };
