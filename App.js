@@ -440,15 +440,18 @@
 
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import Homescreen from "./src3/screens/Homescreen";
 
 const App = () => {
   return (
-    <View>
-      <Text>App</Text>
+    <View style={styles.cont}>
+      <Homescreen />
     </View>
   )
 }
 
 export default App;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  cont:{flex:1,backgroundColor:"#fff"},
+})
