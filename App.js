@@ -400,39 +400,55 @@
 //   cont:{flex:1,backgroundColor:"#fff"},
 // })
 
-import { StyleSheet, Text, View } from 'react-native';
-import React from 'react';
-import { s, vs } from 'react-native-size-matters';
-import Theader from "./src2/components/Theader";
-import Burgercomponent from "./src2/components/Burgercomponent";
-import  Tfootercard from "./src2/components/Tfootercard";
+// import { StyleSheet, Text, View } from 'react-native';
+// import React from 'react';
+// import { s, vs } from 'react-native-size-matters';
+// import Theader from "./src2/components/Theader";
+// import Burgercomponent from "./src2/components/Burgercomponent";
+// import  Tfootercard from "./src2/components/Tfootercard";
+// const App = () => {
+//   return (
+//     <View style={styles.container}>
+//       <View style={styles.view1}>
+//         <Theader />
+//         <Burgercomponent />
+//       </View>
+//       <View style={styles.view2}>
+//         <Tfootercard />
+//       </View>
+//     </View>
+//   );
+// };
+
+// export default App;
+
+// const styles = StyleSheet.create({
+//   container: { flex: 1, backgroundColor: '#fff' },
+//   view1: { backgroundColor: '#c7e0ae', flex: 0.5 },
+//   view2: {
+//     backgroundColor: '#fff',
+//     flex: 0.5,
+//     overflow: 'hidden',
+//     borderTopLeftRadius: s(45),
+//     borderTopRightRadius: s(45),
+//     marginTop:vs(-48)
+//   },
+  
+
+// });
+
+
+import { StyleSheet, Text, View } from 'react-native'
+import React from 'react'
+
 const App = () => {
   return (
-    <View style={styles.container}>
-      <View style={styles.view1}>
-        <Theader />
-        <Burgercomponent />
-      </View>
-      <View style={styles.view2}>
-        <Tfootercard />
-      </View>
+    <View>
+      <Text>App</Text>
     </View>
-  );
-};
+  )
+}
 
 export default App;
 
-const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#fff' },
-  view1: { backgroundColor: '#c7e0ae', flex: 0.5 },
-  view2: {
-    backgroundColor: '#fff',
-    flex: 0.5,
-    overflow: 'hidden',
-    borderTopLeftRadius: s(45),
-    borderTopRightRadius: s(45),
-    marginTop:vs(-48)
-  },
-  
-
-});
+const styles = StyleSheet.create({})
