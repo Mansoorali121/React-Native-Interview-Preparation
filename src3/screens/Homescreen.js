@@ -20,6 +20,12 @@ const Homescreen = () => {
         <Text style={styles.rating}> 4.8</Text>
         <Text style={styles.review}>(450 Review)</Text>
       </View>
+
+      <View style={styles.tabcontainer}>
+        <Text style={styles.tabtext}>Burger King</Text>
+        <Text style={styles.tabtext}>20 min</Text>
+        <Text style={styles.tabtext}>4.5 km</Text>
+      </View>
     </View>
   );
 };
@@ -37,8 +43,7 @@ const styles = StyleSheet.create({
   title: { fontSize: s(18), fontFamily: 'Outfit-Medium' },
   pricetext: {
     marginHorizontal: s(20),
-    position: 'absolute',
-    right: s(0),
+    right: s(-270),
     color: 'red',
     bottom: s(0),
     fontFamily: 'Outfit-Medium',
@@ -49,6 +54,13 @@ const styles = StyleSheet.create({
     marginHorizontal: s(20),
     flexDirection: 'row',
   },
-  rating:{  fontFamily: 'Outfit-Medium',fontSize:s(14)},
-  review:{fontFamily: 'Outfit-Medium',fontSize:s(14),marginStart:s(20)},
+  rating: { fontFamily: 'Outfit-Medium', fontSize: s(14) },
+  review: { fontFamily: 'Outfit-Medium', fontSize: s(14), marginStart: s(20) },
+  tabcontainer: {
+    marginHorizontal: s(20),
+    flexDirection: 'row',
+    gap: s(20),
+    marginTop: vs(20),
+  },
+  tabtext: { fontFamily: 'Outfit-Resgular', fontSize: s(14) },
 });
