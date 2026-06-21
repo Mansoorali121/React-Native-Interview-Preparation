@@ -26,6 +26,13 @@ const Homescreen = () => {
         <Text style={styles.tabtext}>20 min</Text>
         <Text style={styles.tabtext}>4.5 km</Text>
       </View>
+      {/* Items Quantity */}
+      <View style={styles.itemquantity}>
+        <Text>Energy</Text>
+        <Text>Carbs</Text>
+        <Text>Fats</Text>
+        <Text>Protein</Text>
+      </View>
     </View>
   );
 };
@@ -62,5 +69,11 @@ const styles = StyleSheet.create({
     gap: s(20),
     marginTop: vs(20),
   },
-  tabtext: { fontFamily: 'Outfit-Resgular', fontSize: s(14) },
+  tabtext: { fontFamily: 'Outfit-Regular', fontSize: s(14) },
+  itemquantity: {
+    marginTop: vs(10),
+    marginHorizontal: s(20),
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
 });
