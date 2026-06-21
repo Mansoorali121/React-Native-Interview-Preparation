@@ -17,7 +17,8 @@ const Homescreen = () => {
       <Text style={styles.pricetext}>$9.50</Text>
       <View style={styles.ratincontainer}>
         <Image source={require('../assets/star.png')} style={styles.image2} />
-        <Text> 4.8</Text>
+        <Text style={styles.rating}> 4.8</Text>
+        <Text style={styles.review}>(450 Review)</Text>
       </View>
     </View>
   );
@@ -48,4 +49,6 @@ const styles = StyleSheet.create({
     marginHorizontal: s(20),
     flexDirection: 'row',
   },
+  rating:{  fontFamily: 'Outfit-Medium',fontSize:s(14)},
+  review:{fontFamily: 'Outfit-Medium',fontSize:s(14),marginStart:s(20)},
 });
