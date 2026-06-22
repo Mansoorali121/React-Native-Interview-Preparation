@@ -28,6 +28,12 @@ const Homescreen = () => {
       </View>
       {/* Items Quantity */}
       <View style={styles.itemquantity}>
+        <Text style={styles.quantity}>Energy</Text>
+        <Text style={styles.quantity}>Carbs</Text>
+        <Text style={styles.quantity}>Fats</Text>
+        <Text style={styles.quantity}>Protein</Text>
+      </View>
+      <View style={styles.itemname}>
         <Text>Energy</Text>
         <Text>Carbs</Text>
         <Text>Fats</Text>
@@ -74,6 +80,14 @@ const styles = StyleSheet.create({
     marginTop: vs(10),
     marginHorizontal: s(20),
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'space-evenly',
+  },
+  quantity: { fontSize: s(12), color:"gray" },
+  itemname: {
+    flexDirection: 'row',
+    marginTop: vs(10),
+    marginHorizontal: s(20),
+    justifyContent:"space-evenly",
+    marginRight:s(10)
   },
 });
