@@ -2,6 +2,7 @@ import { Image, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import Hheader from '../components/Hheader';
 import { s, vs } from 'react-native-size-matters';
+import Addbutton from '../components/Addbutton';
 
 const Homescreen = () => {
   return (
@@ -33,11 +34,24 @@ const Homescreen = () => {
         <Text style={styles.quantity}>Fats</Text>
         <Text style={styles.quantity}>Protein</Text>
       </View>
+      {/* Items Names */}
+
       <View style={styles.itemname}>
         <Text style={styles.quantityname}>352 kcal</Text>
-        <Text  style={styles.quantityname}>50gm</Text>
-        <Text  style={styles.quantityname}>40gm</Text>
-        <Text  style={styles.quantityname}>60gm</Text>
+        <Text style={styles.quantityname}>50gm</Text>
+        <Text style={styles.quantityname}>40gm</Text>
+        <Text style={styles.quantityname}>60gm</Text>
+      </View>
+      <View style={styles.footercontainer}>
+        <Text style={styles.title}>Description</Text>
+        <Text style={styles.description}>
+          Chic Burger offers a stylish twist on classic flavors,serving
+          juicy,handcrafted burgers with fresh ingredients,gournment
+          toppings,and a cozy. <Text>Read more</Text>
+        </Text>
+      </View>
+      <View style={{ marginTop: vs(7) }}>
+        <Addbutton text='Add to cart' />
       </View>
     </View>
   );
@@ -82,14 +96,16 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-evenly',
   },
-  quantity: { fontSize: s(12), color:"gray" },
+  quantity: { fontSize: s(12), color: 'gray' },
   itemname: {
     flexDirection: 'row',
     marginTop: vs(10),
     marginHorizontal: s(20),
-    justifyContent:"space-evenly",
-    marginRight:s(15),
-    fontFamily:"Outfit-Light"
+    justifyContent: 'space-evenly',
+    marginRight: s(15),
+    fontFamily: 'Outfit-Light',
   },
-  quantityname:{fontSize:s(15),fontFamily:"Outfit-Regular"},
+  quantityname: { fontSize: s(15), fontFamily: 'Outfit-Regular' },
+  footercontainer: { marginTop: vs(5), marginHorizontal: s(20) },
+  description: { color: 'gray', fontFamily: 'Outfit-Light', fontSize: s(14) },
 });
