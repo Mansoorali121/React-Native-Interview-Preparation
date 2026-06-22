@@ -2,7 +2,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import { s, vs } from 'react-native-size-matters';
 
-const Addbutton = ({Text}) => {
+const Addbutton = ({text}) => {
   return (
     <View style={styles.cont}>
       <Text style={styles.btntext}>{text}</Text>
