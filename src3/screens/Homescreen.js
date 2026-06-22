@@ -34,10 +34,10 @@ const Homescreen = () => {
         <Text style={styles.quantity}>Protein</Text>
       </View>
       <View style={styles.itemname}>
-        <Text>Energy</Text>
-        <Text>Carbs</Text>
-        <Text>Fats</Text>
-        <Text>Protein</Text>
+        <Text style={styles.quantityname}>352 kcal</Text>
+        <Text  style={styles.quantityname}>50gm</Text>
+        <Text  style={styles.quantityname}>40gm</Text>
+        <Text  style={styles.quantityname}>60gm</Text>
       </View>
     </View>
   );
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
   tabtext: { fontFamily: 'Outfit-Regular', fontSize: s(14) },
   itemquantity: {
     marginTop: vs(10),
-    marginHorizontal: s(20),
+    marginHorizontal: s(4),
     flexDirection: 'row',
     justifyContent: 'space-evenly',
   },
@@ -88,6 +88,8 @@ const styles = StyleSheet.create({
     marginTop: vs(10),
     marginHorizontal: s(20),
     justifyContent:"space-evenly",
-    marginRight:s(10)
+    marginRight:s(15),
+    fontFamily:"Outfit-Light"
   },
+  quantityname:{fontSize:s(15),fontFamily:"Outfit-Regular"},
 });
