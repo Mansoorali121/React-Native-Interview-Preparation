@@ -441,11 +441,13 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import Homescreen from "./src3/screens/Homescreen";
+import Mycart from "./src3/screens/Mycart";
 
 const App = () => {
   return (
     <View style={styles.cont}>
-      <Homescreen />
+      {/* <Homescreen /> */}
+      <Mycart />
     </View>
   )
 }
