@@ -5,7 +5,7 @@ import { s, vs } from 'react-native-size-matters';
 
 const Mycart = () => {
   return (
-    <View>
+    <View  >
       <Hheader title="My Cart" />
       <View style={styles.card}>
         <Image
@@ -21,9 +21,7 @@ const Mycart = () => {
         </View>
      
       </View>
-         <View style={styles.time}>
-            <Text>30 mins</Text>
-        </View>
+        
     </View>
   );
 };
@@ -35,7 +33,7 @@ const styles = StyleSheet.create({
   card: {
     backgroundColor: 'red',
     marginHorizontal: s(20),
-    flexDirection: 'row',
+   
     borderRadius: s(20),
   },
   deleteimage: { height: vs(20), width: s(20), tintColor: 'blue' },
