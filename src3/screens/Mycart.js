@@ -79,8 +79,8 @@
 // //         <Text>30 mins</Text>
 // //        </View>
 
-
 import {
+  FlatList,
   Image,
   StyleSheet,
   Text,
@@ -91,23 +91,39 @@ import React from 'react';
 import {s, vs} from 'react-native-size-matters';
 import Hheader from '../components/Hheader';
 
-const Mycart = () => {
-  return (
-    <View style={styles.container}>
-      <Hheader title="My Cart" />
+const cartData = [
+  {
+    id: '1',
+    title: 'Chicken Burger',
+    time: '30 mins',
+    rating: '4.8 (205 Reviews)',
+    price: '$10.96',
+    quantity: 2,
+    image: require('../assets/Burgerrr.jpg'),
+  },
+  {
+    id: '2',
+    title: 'Pizza Parlor',
+    time: '25 mins',
+    rating: '4.6 (180 Reviews)',
+    price: '$12.50',
+    quantity: 1,
+    image: require('../assets/pizza.png'),
+  },
+];
 
+const Mycart = () => {
+  const renderItem = ({item}) => {
+    return (
       <View style={styles.card}>
         {/* Food Image */}
-        <Image
-          source={require('../assets/Burgerrr.jpg')}
-          style={styles.image}
-        />
+        <Image source={item.image} style={styles.image} />
 
-        {/* Right Side Content */}
+        {/* Content */}
         <View style={styles.content}>
           {/* Top Row */}
           <View style={styles.topRow}>
-            <Text style={styles.title}>Chicken Burger</Text>
+            <Text style={styles.title}>{item.title}</Text>
 
             <TouchableOpacity style={styles.deleteBtn}>
               <Image
@@ -118,31 +134,45 @@ const Mycart = () => {
           </View>
 
           {/* Time */}
-          <Text style={styles.time}>⏱ 30 mins</Text>
+          <Text style={styles.time}>⏱ {item.time}</Text>
 
           {/* Rating */}
-          <Text style={styles.rating}>⭐ 4.8 (205 Reviews)</Text>
+          <Text style={styles.rating}>⭐ {item.rating}</Text>
 
           {/* Bottom Row */}
           <View style={styles.bottomRow}>
-            {/* Quantity */}
             <View style={styles.quantityContainer}>
               <TouchableOpacity style={styles.minusBtn}>
                 <Text style={styles.btnText}>-</Text>
               </TouchableOpacity>
 
-              <Text style={styles.quantity}>2</Text>
+              <Text style={styles.quantity}>{item.quantity}</Text>
 
               <TouchableOpacity style={styles.plusBtn}>
                 <Text style={styles.btnText}>+</Text>
               </TouchableOpacity>
             </View>
 
-            {/* Price */}
-            <Text style={styles.price}>$10.96</Text>
+            <Text style={styles.price}>{item.price}</Text>
           </View>
         </View>
       </View>
+    );
+  };
+
+  return (
+    <View style={styles.container}>
+      <Hheader title="My Cart" />
+
+      <FlatList
+        data={cartData}
+        renderItem={renderItem}
+        keyExtractor={item => item.id}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{
+          paddingBottom: vs(20),
+        }}
+      />
     </View>
   );
 };
@@ -159,9 +189,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     backgroundColor: '#fff',
     marginHorizontal: s(20),
-    marginTop: vs(20),
-    borderRadius: s(20),
+    marginTop: vs(15),
     padding: s(12),
+    borderRadius: s(20),
     elevation: 4,
   },
 
@@ -184,16 +214,15 @@ const styles = StyleSheet.create({
   },
 
   title: {
-    fontSize: s(20),
+    fontSize: s(15),
     fontWeight: '600',
     color: '#000',
-    fontFamily:"Outfit-Regular"
   },
 
   deleteBtn: {
-    width: s(40),
-    height: vs(40),
-    borderRadius: s(20),
+    width: s(20),
+    height: vs(20),
+    borderRadius: s(10),
     backgroundColor: '#FFF2F2',
     justifyContent: 'center',
     alignItems: 'center',
@@ -207,29 +236,27 @@ const styles = StyleSheet.create({
   },
 
   time: {
-    fontSize: s(16),
+    fontSize: s(12),
     color: '#666',
-        fontFamily:"Outfit-Regular"
-
+    marginTop: vs(5),
   },
 
   rating: {
-    fontSize: s(16),
+    fontSize: s(12),
     color: '#666',
-        fontFamily:"Outfit-Regular"
-
+    marginTop: vs(5),
   },
 
   bottomRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    marginTop: vs(10),
   },
 
   quantityContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    
   },
 
   minusBtn: {
@@ -252,26 +279,20 @@ const styles = StyleSheet.create({
 
   btnText: {
     color: '#fff',
-    fontSize: s(22),
+    fontSize: s(14),
     fontWeight: 'bold',
-        fontFamily:"Outfit-Regular"
-
   },
 
   quantity: {
     marginHorizontal: s(15),
-    fontSize: s(18),
+    fontSize: s(14),
     fontWeight: '600',
     color: '#000',
-        fontFamily:"Outfit-Regular"
-
   },
 
   price: {
-    fontSize: s(24),
-    fontWeight: 'bold',
+    fontSize: s(12),
     color: '#000',
-        fontFamily:"Outfit-Regular"
-
+    marginStart:s(5)
   },
 });
