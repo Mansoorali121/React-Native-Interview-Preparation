@@ -442,12 +442,15 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import Homescreen from "./src3/screens/Homescreen";
 import Mycart from "./src3/screens/Mycart";
+import Cartfooter from "./src3/components/Cartfooter";
 
 const App = () => {
   return (
     <View style={styles.cont}>
       {/* <Homescreen /> */}
       <Mycart />
+      {/* Cart Screen footer  */}
+      <Cartfooter />
     </View>
   )
 }
