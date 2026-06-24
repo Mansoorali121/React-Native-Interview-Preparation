@@ -59,7 +59,7 @@ const Cartfooter = () => {
           </View>
              <View style={styles.common}>
             <Text style={styles.text}>Total Payment</Text>
-            <Text style={styles.text}>$27.00</Text>
+            <Text style={styles.text}>$44.00</Text>
             {/* <Text>Delivery Charge</Text> */}
           </View>
        {/*  Continue button add*/}
