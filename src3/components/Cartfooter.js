@@ -21,6 +21,14 @@ const Cartfooter = () => {
           <Text style={styles.text}>📌 123 Main Street, New York</Text>
         </View>
       </View>
+      {/* Voucher Box */}
+      <View style={styles.vouchercard}>
+        <Text>Hi </Text>
+          <Image
+            source={require('../assets/voucher.png')}
+            style={styles.voucherimage}
+          />
+      </View>
     </View>
   );
 };
@@ -46,4 +54,7 @@ const styles = StyleSheet.create({
     marginStart: s(20),
   },
   text:{fontFamily:"Outfit-Medium",fontSize:s(14)},
+  vouchercard:{marginHorizontal:s(20),marginTop:vs(10)},
+  voucherimage:{    height: vs(25),
+    width: s(25),}
 });
