@@ -1,6 +1,7 @@
 import { Image, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import { s, vs } from 'react-native-size-matters';
+import Addbutton from './Addbutton';
 
 const Cartfooter = () => {
   return (
@@ -38,8 +39,32 @@ const Cartfooter = () => {
             source={require('../assets/chevron.png')}
             style={styles.voucherimage}
           />
+        
         </View>
+        {/* Payment Text */}
        </View>
+       {/* Payment summary */}
+       <View style={styles.paymentcontainer}>
+        <Text style={styles.paymentsummary}>Payment Summary</Text>
+       </View>
+         <View style={styles.common}>
+            <Text style={styles.text}>Sub Total</Text>
+            <Text style={styles.text}>$22.00</Text>
+            {/* <Text>Delivery Charge</Text> */}
+          </View>
+             <View style={styles.common}>
+            <Text style={styles.text}>Delivery Charge</Text>
+            <Text style={styles.text}>$12.00</Text>
+            {/* <Text>Delivery Charge</Text> */}
+          </View>
+             <View style={styles.common}>
+            <Text style={styles.text}>Total Payment</Text>
+            <Text style={styles.text}>$27.00</Text>
+            {/* <Text>Delivery Charge</Text> */}
+          </View>
+       {/*  Continue button add*/}
+
+       <Addbutton  text="Continue"/>
       </View>
     </View>
   );
@@ -80,6 +105,11 @@ const styles = StyleSheet.create({
     color: '#FF5A00',
   },
   arrowiconcontainer: { marginHorizontal: s(20), alignItems: 'center' },
-  voucheritems:{flexDirection:"row",alignItems:"center",}
+  voucheritems:{flexDirection:"row",alignItems:"center"},
+  paymentcontainer:{marginTop:vs(6)},
+  paymentsummary:{ fontSize: s(18), fontFamily: 'Outfit-Medium' },
+  common:{flexDirection:"row",justifyContent:"space-between",alignItems:"center"},
+
+
 });
 
