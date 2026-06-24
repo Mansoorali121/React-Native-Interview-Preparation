@@ -21,13 +21,25 @@ const Cartfooter = () => {
           <Text style={styles.text}>📌 123 Main Street, New York</Text>
         </View>
       </View>
-      {/* Voucher Box */}
-      <View style={styles.vouchercard}>
-        <Text>Hi </Text>
+      <View>
+       {/* Voucher Items Conntainer */}
+       <View style={styles.voucheritems}>
+         {/* Voucher Box */}
+        <View style={styles.vouchercard}>
           <Image
             source={require('../assets/voucher.png')}
             style={styles.voucherimage}
           />
+          <Text style={styles.vouchertext}>Add voucher or promote code </Text>
+        </View>
+        {/* Arrow Container */}
+        <View style={styles.arrowiconcontainer}>
+          <Image
+            source={require('../assets/chevron.png')}
+            style={styles.voucherimage}
+          />
+        </View>
+       </View>
       </View>
     </View>
   );
@@ -53,8 +65,21 @@ const styles = StyleSheet.create({
     width: s(40),
     marginStart: s(20),
   },
-  text:{fontFamily:"Outfit-Medium",fontSize:s(14)},
-  vouchercard:{marginHorizontal:s(20),marginTop:vs(10)},
-  voucherimage:{    height: vs(25),
-    width: s(25),}
+  text: { fontFamily: 'Outfit-Medium', fontSize: s(14) },
+  vouchercard: {
+    marginHorizontal: s(20),
+    marginTop: vs(10),
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: s(10),
+  },
+  voucherimage: { height: vs(25), width: s(25), tintColor: '#FF5A00' },
+  vouchertext: {
+    fontFamily: 'Outfit-Medium',
+    fontSize: s(14),
+    color: '#FF5A00',
+  },
+  arrowiconcontainer: { marginHorizontal: s(20), alignItems: 'center' },
+  voucheritems:{flexDirection:"row",alignItems:"center",}
 });
+
