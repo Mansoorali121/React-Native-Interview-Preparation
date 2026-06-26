@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
 
     paddingHorizontal: s(20),
-    paddingTop: vs(50),
+    paddingTop: vs(30),
   },
 
   iconContainer: {
