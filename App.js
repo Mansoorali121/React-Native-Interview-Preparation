@@ -448,9 +448,9 @@ const App = () => {
   return (
     <View style={styles.cont}>
       {/* <Homescreen /> */}
-      <Mycart />
+      {/* <Mycart /> */}
       {/* Cart Screen footer  */}
-      <Cartfooter />
+      {/* <Cartfooter /> */}
     </View>
   )
 }
