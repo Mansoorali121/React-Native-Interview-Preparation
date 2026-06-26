@@ -443,6 +443,7 @@ import React from 'react'
 import Homescreen from "./src3/screens/Homescreen";
 import Mycart from "./src3/screens/Mycart";
 import Cartfooter from "./src3/components/Cartfooter";
+import Items from "./src3/screens/Items";
 
 const App = () => {
   return (
@@ -451,6 +452,7 @@ const App = () => {
       {/* <Mycart /> */}
       {/* Cart Screen footer  */}
       {/* <Cartfooter /> */}
+      <Items/>
     </View>
   )
 }
