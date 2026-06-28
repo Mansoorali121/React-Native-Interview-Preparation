@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import { s, vs } from 'react-native-size-matters';
+import Burgertabs from "../components/Burgertabs";
 
 const Items = () => {
   return (
@@ -40,7 +41,11 @@ const Items = () => {
       </View>
 
       {/* Bottom White Section */}
-      <View style={styles.view2}></View>
+      <View style={styles.view2}>
+        {/* Second Half View */}
+              <Burgertabs/>
+
+      </View>
     </View>
   );
 };
