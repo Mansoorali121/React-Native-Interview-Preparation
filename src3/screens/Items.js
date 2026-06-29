@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import { s, vs } from 'react-native-size-matters';
 import Burgertabs from '../components/Burgertabs';
+import OrderTabs from "../components/OrderTabs";
 
 const Items = () => {
   return (
@@ -77,6 +78,8 @@ const Items = () => {
         <Text style={styles.text}>Delievery Time</Text>
         <Text style={styles.text}>Min order</Text>
       </View>
+      {/* Order Tabs */}
+      <OrderTabs />
     </View>
   );
 };
