@@ -54,28 +54,28 @@ const Items = () => {
             source={require('../assets/star.png')}
             style={styles.imagestar}
           />
-          <Text>4.9</Text>
+          <Text style={styles.text}>4.9</Text>
         </View>
         <View style={styles.timingcontainer}>
           <Image
             source={require('../assets/star.png')}
             style={styles.imagestar}
           />
-          <Text>4.9</Text>
+          <Text style={styles.text}>20-30 min</Text>
         </View>{' '}
         <View style={styles.timingcontainer}>
           <Image
             source={require('../assets/star.png')}
             style={styles.imagestar}
           />
-          <Text>4.9</Text>
+          <Text style={styles.text}>5.3k</Text>
         </View>
       </View>
       {/* Delievery Texts */}
       <View style={[styles.delieveryitemscontainer, { marginRight: s(20) }]}>
-        <Text>Review</Text>
-        <Text>Delievery Time</Text>
-        <Text>Min order</Text>
+        <Text style={styles.text}>Review</Text>
+        <Text style={styles.text}>Delievery Time</Text>
+        <Text style={styles.text}>Min order</Text>
       </View>
     </View>
   );
@@ -138,6 +138,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginHorizontal: s(40),
     justifyContent: 'space-between',
-    marginTop: vs(5),
+    marginTop: vs(10),
   },
+  text:{fontSize:s(12),fontFamily:"Outfit-Regular"},
 });
