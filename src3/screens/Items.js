@@ -5,9 +5,10 @@ import {
   StyleSheet,
   View,
   TouchableOpacity,
+  Text,
 } from 'react-native';
 import { s, vs } from 'react-native-size-matters';
-import Burgertabs from "../components/Burgertabs";
+import Burgertabs from '../components/Burgertabs';
 
 const Items = () => {
   return (
@@ -43,8 +44,38 @@ const Items = () => {
       {/* Bottom White Section */}
       <View style={styles.view2}>
         {/* Second Half View */}
-              <Burgertabs/>
+        <Burgertabs />
+      </View>
 
+      {/* Delievery Timings */}
+      <View style={styles.delieveryitemscontainer}>
+        <View style={styles.timingcontainer}>
+          <Image
+            source={require('../assets/star.png')}
+            style={styles.imagestar}
+          />
+          <Text>4.9</Text>
+        </View>
+        <View style={styles.timingcontainer}>
+          <Image
+            source={require('../assets/star.png')}
+            style={styles.imagestar}
+          />
+          <Text>4.9</Text>
+        </View>{' '}
+        <View style={styles.timingcontainer}>
+          <Image
+            source={require('../assets/star.png')}
+            style={styles.imagestar}
+          />
+          <Text>4.9</Text>
+        </View>
+      </View>
+      {/* Delievery Texts */}
+      <View style={[styles.delieveryitemscontainer, { marginRight: s(20) }]}>
+        <Text>Review</Text>
+        <Text>Delievery Time</Text>
+        <Text>Min order</Text>
       </View>
     </View>
   );
@@ -94,12 +125,19 @@ const styles = StyleSheet.create({
   },
 
   view2: {
-    flex: 0.62,
     marginTop: vs(-35),
 
     backgroundColor: '#fff',
 
     borderTopLeftRadius: s(35),
     borderTopRightRadius: s(35),
+  },
+  timingcontainer: { flexDirection: 'row', gap: s(5) },
+  imagestar: { width: s(20), height: s(20) },
+  delieveryitemscontainer: {
+    flexDirection: 'row',
+    marginHorizontal: s(40),
+    justifyContent: 'space-between',
+    marginTop: vs(5),
   },
 });

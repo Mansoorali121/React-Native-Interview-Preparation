@@ -11,17 +11,23 @@ const Burgertabs = () => {
           <Image source={require('../assets/cover.png')} style={styles.image} />
         </View>
         <View style={{ marginStart: s(10) }}>
-          <Text>The Burger Factory</Text>
-          <Text>Main str 20/13</Text>
+          <Text style={styles.text}>The Burger Factory</Text>
+          <Text style={styles.text}>Main str 20/13</Text>
         </View>
         {/* Icons circles */}
         <View style={{ flexDirection: 'row', gap: s(5) }}>
-          <View
-            style={{ backgroundColor: 'black', height: vs(25), width: vs(25) }}
-          ></View>
-          <View
-            style={{ backgroundColor: 'black', height: vs(25), width: vs(25) }}
-          ></View>
+          <View style={styles.smallcircle}>
+            <Image
+              source={require('../assets/cover.png')}
+              style={styles.images2}
+            />
+          </View>
+          <View style={styles.smallcircle}>
+            <Image
+              source={require('../assets/cover.png')}
+              style={styles.images2}
+            />
+          </View>
         </View>
       </View>
     </View>
@@ -46,5 +52,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginHorizontal: s(20),
     justifyContent: 'space-between',
+  },
+  images2: { height: vs(20), width: s(20), borderRadius: s(10) },
+  text: { fontFamily: 'Outfit-Medium', fontSize: s(14) },
+  smallcircle: {
+    backgroundColor: 'black',
+    height: vs(25),
+    width: vs(25),
+    borderRadius: s(10),
   },
 });
