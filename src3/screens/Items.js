@@ -6,14 +6,20 @@ import {
   View,
   TouchableOpacity,
   Text,
+  ScrollView,
+  Dimensions,
 } from 'react-native';
 import { s, vs } from 'react-native-size-matters';
 import Burgertabs from '../components/Burgertabs';
-import OrderTabs from "../components/OrderTabs";
+import OrderTabs from '../components/OrderTabs';
+import Footercards from '../components/Footercards';
+
+// Get exact screen dimensions for responsiveness
+const { height } = Dimensions.get('window');
 
 const Items = () => {
   return (
-    <View style={styles.cont}>
+    <ScrollView style={styles.cont} showsVerticalScrollIndicator={false}>
       {/* Top Image Section */}
       <View style={styles.view1}>
         <ImageBackground
@@ -42,45 +48,59 @@ const Items = () => {
         </ImageBackground>
       </View>
 
-      {/* Bottom White Section */}
+      {/* Overlapping White Section */}
       <View style={styles.view2}>
-        {/* Second Half View */}
         <Burgertabs />
       </View>
 
-      {/* Delievery Timings */}
-      <View style={styles.delieveryitemscontainer}>
-        <View style={styles.timingcontainer}>
+      {/* Delivery Timings */}
+      <View style={styles.deliveryItemsContainer}>
+        <View style={styles.timingContainer}>
           <Image
             source={require('../assets/star.png')}
-            style={styles.imagestar}
+            style={styles.imageStar}
           />
-          <Text style={styles.text}>4.9</Text>
+          <Text style={styles.textBold}>4.9</Text>
         </View>
-        <View style={styles.timingcontainer}>
+        <View style={styles.timingContainer}>
           <Image
             source={require('../assets/star.png')}
-            style={styles.imagestar}
+            style={styles.imageStar}
           />
-          <Text style={styles.text}>20-30 min</Text>
-        </View>{' '}
-        <View style={styles.timingcontainer}>
+          <Text style={styles.textBold}>20-30 min</Text>
+        </View>
+        <View style={styles.timingContainer}>
           <Image
             source={require('../assets/star.png')}
-            style={styles.imagestar}
+            style={styles.imageStar}
           />
-          <Text style={styles.text}>5.3k</Text>
+          <Text style={styles.textBold}>5.3k</Text>
         </View>
       </View>
-      {/* Delievery Texts */}
-      <View style={[styles.delieveryitemscontainer, { marginRight: s(20) }]}>
-        <Text style={styles.text}>Review</Text>
-        <Text style={styles.text}>Delievery Time</Text>
-        <Text style={styles.text}>Min order</Text>
+
+      {/* Delivery Texts (aligned directly under the timings) */}
+      <View style={styles.deliveryLabelsContainer}>
+        <Text style={styles.textLabel}>Review</Text>
+        <Text style={styles.textLabel}>Delivery Time</Text>
+        <Text style={styles.textLabel}>Min order</Text>
       </View>
+
       {/* Order Tabs */}
-      <OrderTabs />
-    </View>
+      <View style={styles.sectionMargin}>
+        <OrderTabs />
+      </View>
+
+      {/* Popular Items Text */}
+      <View style={styles.popularItems}>
+        <Text style={styles.popular}>Popular Items</Text>
+        <Text style={styles.viewAll}>view all</Text>
+      </View>
+
+      {/* Footer Cards */}
+      <View style={styles.sectionMargin}>
+        <Footercards />
+      </View>
+    </ScrollView>
   );
 };
 
@@ -91,57 +111,89 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
   },
-
   view1: {
-    flex: 0.38,
+    // Give the image a responsive fixed height instead of a strict flex percentage
+    height: height * 0.35, 
+    width: '100%',
   },
-
   image: {
     flex: 1,
     width: '100%',
-    justifyContent: 'flex-start',
   },
-
   headerIcons: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-
     paddingHorizontal: s(20),
-    paddingTop: vs(29),
+    paddingTop: vs(45), // Increased top padding slightly for newer notched screens
   },
-
   iconContainer: {
     width: s(42),
     height: s(42),
-    borderRadius: s(20),
+    borderRadius: s(21), // Half of width/height makes it a perfect circle
     backgroundColor: '#fff',
-
     justifyContent: 'center',
     alignItems: 'center',
   },
-
   icon: {
     width: s(20),
     height: s(20),
     tintColor: '#000',
   },
-
   view2: {
     marginTop: vs(-35),
-
     backgroundColor: '#fff',
-
     borderTopLeftRadius: s(35),
     borderTopRightRadius: s(35),
+    paddingBottom: vs(10),
   },
-  timingcontainer: { flexDirection: 'row', gap: s(5) },
-  imagestar: { width: s(20), height: s(20) },
-  delieveryitemscontainer: {
+  deliveryItemsContainer: {
     flexDirection: 'row',
-    marginHorizontal: s(40),
     justifyContent: 'space-between',
+    marginHorizontal: s(30), // Adjusted margins to be more balanced
     marginTop: vs(10),
   },
-  text:{fontSize:s(12),fontFamily:"Outfit-Regular"},
+  deliveryLabelsContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginHorizontal: s(30),
+    marginTop: vs(2),
+  },
+  timingContainer: { 
+    flexDirection: 'row', 
+    alignItems: 'center',
+    gap: s(5) 
+  },
+  imageStar: { 
+    width: s(16), 
+    height: s(16) 
+  },
+  textBold: { 
+    fontSize: s(14), 
+    fontFamily: 'Outfit-Medium', // Assuming you have a medium variant for bold texts
+  },
+  textLabel: { 
+    fontSize: s(11), 
+    fontFamily: 'Outfit-Regular',
+    color: 'gray'
+  },
+  sectionMargin: {
+    marginHorizontal: s(20),
+  },
+  popularItems: {
+    marginTop: vs(25),
+    flexDirection: 'row',
+    marginHorizontal: s(20),
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  popular: { 
+    fontSize: s(18), 
+    fontFamily: 'Outfit-Medium' 
+  },
+  viewAll: { 
+    fontSize: s(14), 
+    fontFamily: 'Outfit-Regular', 
+    color: 'gray' 
+  },
 });
