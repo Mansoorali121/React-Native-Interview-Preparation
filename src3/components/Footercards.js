@@ -31,10 +31,7 @@ const Footercards = () => {
       renderItem={({ item }) => {
         return (
           <View style={styles.cont}>
-            <Image
-              source={item.image}
-              style={styles.image}
-            />
+            <Image source={item.image} style={styles.image} />
             <Text style={styles.smokyburger}>{item.title}</Text>
             <Text style={styles.review}>{item.review}</Text>
             <View style={styles.footeritems}>
@@ -54,10 +51,10 @@ const Footercards = () => {
 export default Footercards;
 
 const styles = StyleSheet.create({
-  cont: {marginStart:s(2)} ,
+  cont: { marginStart: s(2) },
   image: { height: vs(150), width: s(150), borderRadius: s(20) },
   smokyburger: { fontSize: s(14), fontFamily: 'Outfit-Regular' },
-  review: { fontSize: s(11), fontFamily: 'Outfit-Regular' },
+  review: { fontSize: s(12), fontFamily: 'Outfit-Regular' },
   plusimage: { height: vs(30), width: s(30) },
   footeritems: {
     flexDirection: 'row',
