@@ -125,7 +125,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingHorizontal: s(20),
-    paddingTop: vs(45), // Increased top padding slightly for newer notched screens
+    paddingTop: vs(25), // Increased top padding slightly for newer notched screens
   },
   iconContainer: {
     width: s(42),
