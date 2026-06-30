@@ -128,8 +128,8 @@ const styles = StyleSheet.create({
     paddingTop: vs(25), // Increased top padding slightly for newer notched screens
   },
   iconContainer: {
-    width: s(42),
-    height: s(42),
+    width: s(41),
+    height: s(41),
     borderRadius: s(21), // Half of width/height makes it a perfect circle
     backgroundColor: '#fff',
     justifyContent: 'center',
