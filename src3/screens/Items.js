@@ -179,6 +179,7 @@ const styles = StyleSheet.create({
   },
   sectionMargin: {
     marginHorizontal: s(20),
+    marginTop:vs(5)
   },
   popularItems: {
     marginTop: vs(25),
